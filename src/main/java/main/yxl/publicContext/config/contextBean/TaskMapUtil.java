@@ -43,19 +43,23 @@ public class TaskMapUtil {
         } else {
             //若用户不在map里则查询数据库
             byte[] data = publicContextMapper.findDataByTaskId(task.getTaskId());
-
-            TestProto.Task.Builder builder;
-            try {
-                builder = TestProto.Task.parseFrom(data).toBuilder();
-            } catch (InvalidProtocolBufferException e) {
-                logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.PROTOBUF_ERROR, Method.class.getName()));
+            if (data != null) {
+                TestProto.Task.Builder builder;
+                try {
+                    builder = TestProto.Task.parseFrom(data).toBuilder();
+                } catch (InvalidProtocolBufferException e) {
+                    logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.PROTOBUF_ERROR, Method.class.getName()));
+                    return false;
+                }
+                //最后再更新map
+                this.tasks.put(task.getTaskId(), builder);
+                logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.TASK_EXIST, Method.class.getName()));
                 return false;
+            } else {
+                this.tasks.put(task.getTaskId(), task.toBuilder());
+                return true;
             }
-            //最后再更新map
-            this.tasks.put(task.getTaskId(), builder);
         }
-
-        return true;
     }
 
     /**
@@ -65,7 +69,21 @@ public class TaskMapUtil {
         if (this.tasks.containsKey(taskId)) {
             return this.tasks.get(taskId);
         }
-        return null;
+        //若用户不在map里则查询数据库
+        byte[] data = publicContextMapper.findDataByTaskId(taskId);
+        if (data == null) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.TASK_NOT_FOUND, Method.class.getName()));
+            return null;
+        }
+        TestProto.Task.Builder builder;
+        try {
+            builder = TestProto.Task.parseFrom(data).toBuilder();
+        } catch (InvalidProtocolBufferException e) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.PROTOBUF_ERROR, Method.class.getName()));
+            return null;
+        }
+        this.tasks.put(builder.getTaskId(), builder);
+        return builder;
     }
 
     /**

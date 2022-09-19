@@ -40,7 +40,7 @@ public enum OptionDetails {
     //---------------------MainServer---------------------
     //工具类报错
     //Task
-    TASK_EXIST("添加任务失败","任务已存在")
+    TASK_EXIST("添加任务失败","任务已存在"),TASK_NOT_FOUND("查询任务失败","任务不存在"),
 
     ;
 
