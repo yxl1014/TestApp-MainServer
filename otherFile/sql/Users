@@ -1,0 +1,31 @@
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| userId       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| userName     | varchar(30)  | NO   |     | NULL    |                |
+| userTel      | varchar(15)  | NO   |     | NULL    |                |
+| userEmail    | varchar(50)  | YES  |     | NULL    |                |
+| userPassword | varchar(100) | NO   |     | NULL    |                |
+| userType     | tinyint(1)   | NO   |     | 0       |                |
+| userMoney    | double       | NO   |     | 0       |                |
+| userCompany  | varchar(100) | YES  |     | NULL    |                |
+| userHome     | varchar(100) | YES  |     | NULL    |                |
+| userIp       | varchar(20)  | YES  |     | NULL    |                |
+| userPos      | varchar(50)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+
+
+CREATE TABLE `Users` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户Id',
+  `userName` varchar(30) NOT NULL COMMENT '用户昵称',
+  `userTel` varchar(15) NOT NULL COMMENT '用户电话',
+  `userEmail` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
+  `userPassword` varchar(100) NOT NULL COMMENT '用户密码',
+  `userType` tinyint(1) NOT NULL DEFAULT '0' COMMENT '用户类型(1=boss,0=worker)',
+  `userMoney` double NOT NULL DEFAULT '0' COMMENT '用户账户余额',
+  `userCompany` varchar(100) DEFAULT NULL COMMENT '用户公司',
+  `userHome` varchar(100) DEFAULT NULL COMMENT '用户具体地址',
+  `userIp` varchar(20) DEFAULT NULL COMMENT '用户登录Ip',
+  `userPos` varchar(50) DEFAULT NULL COMMENT '用户登录Ip所在地(江苏-南京)',
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
