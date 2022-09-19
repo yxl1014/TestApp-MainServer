@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+// 指定模板类的名称，名称必须是有实际业务意义的
+option java_outer_classname = "TestProto";
+option java_package = "main.pto";
+
+enum Types{
+  USER = 0;
+  C2S_LOGIN = 1;
+  S2C_LOGIN = 2;
+  C2S_REGISTER = 3;
+  S2C_REGISTER = 4;
+}
+
+//--------------------LoginServer--------------------
+message User{
+  optional int32 userId = 1;
+  optional string userName = 2;
+  optional string userTel = 3;
+  optional string userEmail = 4;
+  optional string userPassword = 5;
+  optional bool userType = 6;
+  optional double userMoney = 7;
+  optional string userCompany = 8;
+  optional string userHome = 9;
+  optional string userIp = 10;
+  optional string userPos = 11;
+}
+
+message C2S_Login{
+  int32 loginType = 1; //登录方式 0-->电话登录  1-->邮箱登录 ...
+  User user = 2;//用户信息
+}
+
+message S2C_Login{
+  string msg = 1;
+  optional string token = 2;
+  optional bool status = 3;
+}
+
+message C2S_Register{
+  User user = 1;
+}
+
+message S2C_Register{
+  bool status = 1;
+  string msg = 2;
+}
+
+
+
+//--------------------MainServer--------------------
+
+enum TaskProtocl{
+  NONE = 0;
+  HTTP = 1;
+  TCP = 2;
+  UDP = 3;
+}
+
+message TaskShell{
+  string ip = 1;                      //请求IP
+  string port = 2;                    //请求Port
+  map<string, string> heads = 3;      //报文头信息
+  string body = 4;                    //报文体信息
+  int32 type = 5;                     //压测方式 1、同一时间  2、持续一段时间
+  int32 condition = 6;                //请求先行条件（测试阶段）
+  string conditionMsg = 7;            //先行条件内容
+  int32 responseType = 8;             //先行条件获取方式1、html 2、json  3、byte数[] 4、responseHead  5、responseSession 6、responseCookie  ...
+  string respFind = 9;                //先行条件获取关键字
+}
+
+message TaskResult{
+
+}
+
+message Task{
+  int32 taskId = 1;                   //任务id
+  string taskName = 2;                //任务名
+  int32 userId = 3;                   //发布者id
+  TaskProtocl taskProtocl = 4;        //任务协议
+  map<int32, TaskShell> shell = 5;    //任务脚本
+  int32 taskCost = 6;                 //任务所需人数
+  repeated int32 taskCons = 7;        //正在测试的用户id
+  TaskResult result = 8;              //任务返回结果集
+}
+
+
+
+
+
+
+
+//--------------------ClientServer--------------------
