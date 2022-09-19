@@ -1,0 +1,16 @@
+server:
+  port: 22222
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/testapp_V2
+logging:
+  charset:
+    file: UTF-8
+  level:
+    root: info
+  file:
+    path: log/
