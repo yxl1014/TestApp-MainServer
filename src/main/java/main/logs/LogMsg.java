@@ -6,9 +6,15 @@ package main.logs;
  */
 
 public enum LogMsg {
+
+    //---------------------LoginServer---------------------
     //测试
     TEST("测试一下"),
-    LOGIN("登录操作"), REGISTER("注册操作"),INTERCEPTOR("拦截器")
+    LOGIN("登录操作"), REGISTER("注册操作"),INTERCEPTOR("拦截器"),
+
+    //---------------------MainServer---------------------
+    UTIL("工具类"),MYSQL("数据库"),
+
     ;
 
 

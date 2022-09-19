@@ -1,0 +1,14 @@
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| taskId | int(11) | NO   | PRI | NULL    |       |
+| data   | blob    | YES  |     | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+
+
+CREATE TABLE `PublicContext` (
+  `taskId` int(11) NOT NULL,
+  `data` blob,
+  PRIMARY KEY (`taskId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

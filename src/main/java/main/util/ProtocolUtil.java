@@ -1,6 +1,6 @@
 package main.util;
 
-import main.pto.TestProto;
+import pto.TestProto;
 
 import java.nio.ByteBuffer;
 
