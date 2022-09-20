@@ -1,6 +1,5 @@
 package main.zyb.controller;
 
-import main.annotation.Consumer;
 import main.annotation.Producer;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/producer")//生产者接口
-public class producerController {
+public class ProducerController {
     @Producer
     @PostMapping("/release")//发布任务接口
     public byte[] release(@RequestBody byte[] data)

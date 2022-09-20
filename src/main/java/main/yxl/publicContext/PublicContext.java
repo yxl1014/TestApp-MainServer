@@ -10,11 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pto.TestProto;
 
-import java.nio.file.OpenOption;
 import java.util.HashMap;
 import java.util.List;
 
-import static java.lang.String.valueOf;
 
 /**
  * @author main.yxl
@@ -39,8 +37,6 @@ public class PublicContext {
      * 任务发布者开始任务
      * 这里判断任务是否存在，若不存在则返回false
      * 若任务状态为true说明已经开始，返回false
-     * 并且向taskConductMap种中添加数据，将旧的数据覆盖
-     * TODO 在任务终止时，强制将所有正在测试这个任务的值清0
      * 其他不判断
      */
     public TestProto.ResponseMsg.Builder prod_StartTask(int taskId) {
