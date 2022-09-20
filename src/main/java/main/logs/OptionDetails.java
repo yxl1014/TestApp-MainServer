@@ -6,6 +6,7 @@ package main.logs;
  */
 public enum OptionDetails {
 
+    //---------------------LoginServer---------------------
     //测试
     TEST_OK("测试成功", "无敌"),
 
@@ -36,6 +37,7 @@ public enum OptionDetails {
     REGISTER_TEL_EXIST("注册失败","此电话已存在"), REGISTER_OK("注册成功", "注册成功"),
 
 
+
     //过滤操作
     FILTER_MSG("过滤操作","token不为空"),FILTER_MSG_ERROR("过滤操作","token为空"),
 
@@ -44,6 +46,14 @@ public enum OptionDetails {
     ;
 
 
+
+
+    //---------------------MainServer---------------------
+    //工具类报错
+    //Task
+    TASK_EXIST("添加任务失败","任务已存在"),TASK_NOT_FOUND("查询任务失败","任务不存在"),
+
+    ;
 
     private String status;
     private String msg;

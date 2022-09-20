@@ -2,7 +2,7 @@ syntax = "proto3";
 
 // 指定模板类的名称，名称必须是有实际业务意义的
 option java_outer_classname = "TestProto";
-option java_package = "main.pto";
+option java_package = "pto";
 
 enum Types{
   USER = 0;
@@ -85,6 +85,12 @@ message Task{
   TaskResult result = 8;              //任务返回结果集
 }
 
+message S_User{
+  int32 userId = 1;                   //用户id
+  User user = 2;                      //用户元数据
+  repeated int32 taskIds = 3;         //用户接受的所有任务Id
+  int32 doingTaskId = 4;              //用户正在执行的任务Id  没有则为0
+}
 
 
 

@@ -1,11 +1,9 @@
 package main.yxl.publicContext.config;
 
+import main.yxl.publicContext.config.contextBean.TaskMapUtil;
+import main.yxl.publicContext.config.contextBean.UserMapUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import main.pto.TestProto;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author main.yxl
@@ -17,7 +15,12 @@ public class PublicContextBean {
 
 
     @Bean
-    public Map<Integer, TestProto.Task> getTaskMap() {
-        return new HashMap<>();
+    public TaskMapUtil getTaskMap() {
+        return new TaskMapUtil();
+    }
+
+    @Bean
+    public UserMapUtil getUserMap() {
+        return new UserMapUtil();
     }
 }

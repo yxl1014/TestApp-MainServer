@@ -2,7 +2,9 @@ package main.logs;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import main.pto.TestProto;
+import pto.TestProto;
+
+import java.lang.reflect.Method;
 
 /**
  * @author yxl
@@ -17,8 +19,8 @@ public class LogUtil {
         return logMsg.getName() + "---" + msg;
     }
 
-    public static String makeOptionDetails(LogMsg logMsg, OptionDetails optionDetails) {
-        return logMsg.getName() + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg();
+    public static String makeOptionDetails(LogMsg logMsg, OptionDetails optionDetails, String methodName) {
+        return logMsg.getName() + "---" + methodName + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg();
     }
 
     public static String makeOptionDetails(LogMsg logMsg, OptionDetails optionDetails, TestProto.User user) {

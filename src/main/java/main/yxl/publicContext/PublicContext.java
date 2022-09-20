@@ -1,10 +1,9 @@
 package main.yxl.publicContext;
 
-import main.pto.TestProto;
+import main.yxl.publicContext.config.contextBean.TaskMapUtil;
+import main.yxl.publicContext.config.contextBean.UserMapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 /**
  * @author main.yxl
@@ -15,5 +14,8 @@ import java.util.Map;
 public class PublicContext {
 
     @Autowired
-    private Map<Integer, TestProto.Task> taskMap;
+    private TaskMapUtil taskMap;
+
+    @Autowired
+    private UserMapUtil userMap;
 }

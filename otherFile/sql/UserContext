@@ -1,0 +1,14 @@
++--------+---------+------+-----+---------+-------+
+| Field  | Type    | Null | Key | Default | Extra |
++--------+---------+------+-----+---------+-------+
+| userId | int(11) | NO   | PRI | NULL    |       |
+| data   | blob    | YES  |     | NULL    |       |
++--------+---------+------+-----+---------+-------+
+
+
+
+CREATE TABLE `UserContext` (
+  `userId` int(11) NOT NULL,
+  `data` blob,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
