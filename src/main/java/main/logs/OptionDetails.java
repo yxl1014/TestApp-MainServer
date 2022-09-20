@@ -29,10 +29,20 @@ public enum OptionDetails {
     //登录
     LOGIN_OK("登录成功", "登录成功"),UPDATE_IP("登录成功","Ip地址发生变化"),
     LOGIN_TEL_PWD_ERROR("登陆失败", "电话或密码错误"), LOGIN_EMAIL_PWD_ERROR("登陆失败", "邮箱或密码错误"),
+    LOGIN_TOKEN_ERROR("登录失败","token验证失败"),
 
 
     //注册
-    REGISTER_TEL_EXIST("注册失败","此电话已存在"), REGISTER_OK("注册成功", "注册成功");
+    REGISTER_TEL_EXIST("注册失败","此电话已存在"), REGISTER_OK("注册成功", "注册成功"),
+
+
+    //过滤操作
+    FILTER_MSG("过滤操作","token不为空"),FILTER_MSG_ERROR("过滤操作","token为空"),
+
+    //身份验证操作
+    IDENTITY_administrators("验证操作","管理员访问"),IDENTITY_USER("验证操作","普通用户访问被拦截")
+    ;
+
 
 
     private String status;

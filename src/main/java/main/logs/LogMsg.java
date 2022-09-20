@@ -8,7 +8,9 @@ package main.logs;
 public enum LogMsg {
     //测试
     TEST("测试一下"),
-    LOGIN("登录操作"), REGISTER("注册操作"),INTERCEPTOR("拦截器")
+    LOGIN("登录操作"), REGISTER("注册操作"),INTERCEPTOR("拦截器"),
+    FILTER("过滤操作"),
+    IDENTITY("验证操作")
     ;
 
 
