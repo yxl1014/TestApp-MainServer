@@ -83,6 +83,7 @@ message Task{
   int32 taskCost = 6;                 //任务所需人数
   repeated int32 taskCons = 7;        //正在测试的用户id
   TaskResult result = 8;              //任务返回结果集
+  bool status = 9;                    //任务当前状态  是否可以测试
 }
 
 message S_User{
@@ -90,8 +91,20 @@ message S_User{
   User user = 2;                      //用户元数据
   repeated int32 taskIds = 3;         //用户接受的所有任务Id
   int32 doingTaskId = 4;              //用户正在执行的任务Id  没有则为0
+  bool online = 5;                    //用户是否在线
 }
 
+
+message TaskConduct{
+  int32 taskId = 1;
+  repeated int32 userIds = 2;
+  map<int32, int32> shellMapping = 3; //用户id：对应执行脚本阶段号
+}
+
+message ResponseMsg{
+  bool status = 1;
+  string msg = 2;
+}
 
 
 

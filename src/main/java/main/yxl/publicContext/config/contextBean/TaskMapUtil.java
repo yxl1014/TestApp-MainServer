@@ -56,7 +56,8 @@ public class TaskMapUtil {
                 logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.TASK_EXIST, Method.class.getName()));
                 return false;
             } else {
-                this.tasks.put(task.getTaskId(), task.toBuilder());
+                TestProto.Task.Builder builder = task.toBuilder().setStatus(false);
+                this.tasks.put(task.getTaskId(), builder);
                 return true;
             }
         }

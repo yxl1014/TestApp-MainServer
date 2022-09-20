@@ -42,8 +42,7 @@ public enum OptionDetails {
     FILTER_MSG("过滤操作","token不为空"),FILTER_MSG_ERROR("过滤操作","token为空"),
 
     //身份验证操作
-    IDENTITY_administrators("验证操作","管理员访问"),IDENTITY_USER("验证操作","普通用户访问被拦截")
-    ;
+    IDENTITY_administrators("验证操作","管理员访问"),IDENTITY_USER("验证操作","普通用户访问被拦截"),
 
 
 
@@ -52,6 +51,10 @@ public enum OptionDetails {
     //工具类报错
     //Task
     TASK_EXIST("添加任务失败","任务已存在"),TASK_NOT_FOUND("查询任务失败","任务不存在"),
+    P_TASK_START_OK("生产者开始任务","生产者开始任务成功"),P_TASK_EXIST("生产者开始任务","任务已经开始"),
+    P_TASK_NOT_FOUND("生产者开始任务","任务不存在"),P_TASK_NO_START("生产者结束任务","任务为开始"),
+
+    USER_NOT_FOUND("获取用户信息失败","用户不存在"),PUBLIC_CONDUCT_NOT_FOUND("获取任务进行时失败","任务进行时不存在"),
 
     ;
 

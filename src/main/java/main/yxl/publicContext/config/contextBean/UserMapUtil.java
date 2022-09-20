@@ -64,6 +64,7 @@ public class UserMapUtil {
                     return false;
                 }
             }
+            builder.setOnline(true);
             //最后再更新map
             this.users.put(user.getUserId(), builder);
         }
@@ -76,13 +77,40 @@ public class UserMapUtil {
     public TestProto.S_User.Builder getSUser(int userId) {
         if (this.users.containsKey(userId)) {
             return this.users.get(userId);
+        } else {
+            //若用户不在map里则查询数据库
+            byte[] data = userContextMapper.findDataByUserId(userId);
+
+            TestProto.S_User.Builder builder;
+
+            //若数据库中数据为空则初始化一份数据
+            if (data == null) {
+                logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.USER_NOT_FOUND, Method.class.getName()));
+                return null;
+            } else {
+                try {
+                    builder = TestProto.S_User.parseFrom(data).toBuilder();
+                } catch (InvalidProtocolBufferException e) {
+                    logger.info(LogUtil.makeOptionDetails(LogMsg.UTIL, OptionDetails.PROTOBUF_ERROR, Method.class.getName()));
+                    return null;
+                }
+            }
+            //最后再更新map
+            this.users.put(userId, builder);
+
         }
         return null;
     }
 
+    public boolean userOffline(int userId) {
+        TestProto.S_User.Builder builder = this.users.get(userId);
+        builder.setOnline(false);
+        return true;
+    }
+
     /**
      * 返回userMap的clone对象，用于定时落盘
-     * */
+     */
     public Map<Integer, TestProto.S_User.Builder> cloneUserMaps() {
         return (HashMap<Integer, TestProto.S_User.Builder>) this.users.clone();
     }

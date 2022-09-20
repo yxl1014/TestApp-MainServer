@@ -592,13 +592,13 @@ public final class TestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_User_descriptor;
+      return pto.TestProto.internal_static_User_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_User_fieldAccessorTable
+      return pto.TestProto.internal_static_User_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.User.class, pto.TestProto.User.Builder.class);
     }
@@ -1357,13 +1357,13 @@ public final class TestProto {
         pto.TestProto.UserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_User_descriptor;
+        return pto.TestProto.internal_static_User_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_User_fieldAccessorTable
+        return pto.TestProto.internal_static_User_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.User.class, pto.TestProto.User.Builder.class);
       }
@@ -1414,12 +1414,12 @@ public final class TestProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_User_descriptor;
+        return pto.TestProto.internal_static_User_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.User getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.User.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -1528,7 +1528,7 @@ public final class TestProto {
       }
 
       public Builder mergeFrom(pto.TestProto.User other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.User.getDefaultInstance()) return this;
         if (other.hasUserId()) {
           setUserId(other.getUserId());
         }
@@ -2568,13 +2568,13 @@ public final class TestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_C2S_Login_descriptor;
+      return pto.TestProto.internal_static_C2S_Login_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_C2S_Login_fieldAccessorTable
+      return pto.TestProto.internal_static_C2S_Login_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.C2S_Login.class, pto.TestProto.C2S_Login.Builder.class);
     }
@@ -2812,13 +2812,13 @@ public final class TestProto {
         pto.TestProto.C2S_LoginOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_C2S_Login_descriptor;
+        return pto.TestProto.internal_static_C2S_Login_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_C2S_Login_fieldAccessorTable
+        return pto.TestProto.internal_static_C2S_Login_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.C2S_Login.class, pto.TestProto.C2S_Login.Builder.class);
       }
@@ -2855,12 +2855,12 @@ public final class TestProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_C2S_Login_descriptor;
+        return pto.TestProto.internal_static_C2S_Login_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.C2S_Login getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.C2S_Login.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -2928,7 +2928,7 @@ public final class TestProto {
       }
 
       public Builder mergeFrom(pto.TestProto.C2S_Login other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.C2S_Login.getDefaultInstance()) return this;
         if (other.getLoginType() != 0) {
           setLoginType(other.getLoginType());
         }
@@ -3346,13 +3346,13 @@ public final class TestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_S2C_Login_descriptor;
+      return pto.TestProto.internal_static_S2C_Login_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_S2C_Login_fieldAccessorTable
+      return pto.TestProto.internal_static_S2C_Login_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.S2C_Login.class, pto.TestProto.S2C_Login.Builder.class);
     }
@@ -3656,13 +3656,13 @@ public final class TestProto {
         pto.TestProto.S2C_LoginOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_S2C_Login_descriptor;
+        return pto.TestProto.internal_static_S2C_Login_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_S2C_Login_fieldAccessorTable
+        return pto.TestProto.internal_static_S2C_Login_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.S2C_Login.class, pto.TestProto.S2C_Login.Builder.class);
       }
@@ -3697,12 +3697,12 @@ public final class TestProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_S2C_Login_descriptor;
+        return pto.TestProto.internal_static_S2C_Login_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.S2C_Login getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.S2C_Login.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -3776,7 +3776,7 @@ public final class TestProto {
       }
 
       public Builder mergeFrom(pto.TestProto.S2C_Login other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.S2C_Login.getDefaultInstance()) return this;
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
@@ -4169,13 +4169,13 @@ public final class TestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_C2S_Register_descriptor;
+      return pto.TestProto.internal_static_C2S_Register_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_C2S_Register_fieldAccessorTable
+      return pto.TestProto.internal_static_C2S_Register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.C2S_Register.class, pto.TestProto.C2S_Register.Builder.class);
     }
@@ -4375,13 +4375,13 @@ public final class TestProto {
         pto.TestProto.C2S_RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_C2S_Register_descriptor;
+        return pto.TestProto.internal_static_C2S_Register_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_C2S_Register_fieldAccessorTable
+        return pto.TestProto.internal_static_C2S_Register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.C2S_Register.class, pto.TestProto.C2S_Register.Builder.class);
       }
@@ -4416,12 +4416,12 @@ public final class TestProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_C2S_Register_descriptor;
+        return pto.TestProto.internal_static_C2S_Register_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.C2S_Register getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.C2S_Register.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -4488,7 +4488,7 @@ public final class TestProto {
       }
 
       public Builder mergeFrom(pto.TestProto.C2S_Register other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.C2S_Register.getDefaultInstance()) return this;
         if (other.hasUser()) {
           mergeUser(other.getUser());
         }
@@ -4794,13 +4794,13 @@ public final class TestProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_S2C_Register_descriptor;
+      return pto.TestProto.internal_static_S2C_Register_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_S2C_Register_fieldAccessorTable
+      return pto.TestProto.internal_static_S2C_Register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.S2C_Register.class, pto.TestProto.S2C_Register.Builder.class);
     }
@@ -5029,13 +5029,13 @@ public final class TestProto {
         pto.TestProto.S2C_RegisterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_S2C_Register_descriptor;
+        return pto.TestProto.internal_static_S2C_Register_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_S2C_Register_fieldAccessorTable
+        return pto.TestProto.internal_static_S2C_Register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.S2C_Register.class, pto.TestProto.S2C_Register.Builder.class);
       }
@@ -5068,12 +5068,12 @@ public final class TestProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_S2C_Register_descriptor;
+        return pto.TestProto.internal_static_S2C_Register_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.S2C_Register getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.S2C_Register.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -5137,7 +5137,7 @@ public final class TestProto {
       }
 
       public Builder mergeFrom(pto.TestProto.S2C_Register other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.S2C_Register.getDefaultInstance()) return this;
         if (other.getStatus() != false) {
           setStatus(other.getStatus());
         }
@@ -5655,7 +5655,7 @@ java.lang.String defaultValue);
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_TaskShell_descriptor;
+      return pto.TestProto.internal_static_TaskShell_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -5673,7 +5673,7 @@ java.lang.String defaultValue);
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_TaskShell_fieldAccessorTable
+      return pto.TestProto.internal_static_TaskShell_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.TaskShell.class, pto.TestProto.TaskShell.Builder.class);
     }
@@ -5776,7 +5776,7 @@ java.lang.String defaultValue);
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                      internal_static_TaskShell_HeadsEntry_descriptor,
+                  pto.TestProto.internal_static_TaskShell_HeadsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -6308,7 +6308,7 @@ java.lang.String defaultValue);
         pto.TestProto.TaskShellOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_TaskShell_descriptor;
+        return pto.TestProto.internal_static_TaskShell_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -6336,7 +6336,7 @@ java.lang.String defaultValue);
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_TaskShell_fieldAccessorTable
+        return pto.TestProto.internal_static_TaskShell_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.TaskShell.class, pto.TestProto.TaskShell.Builder.class);
       }
@@ -6382,12 +6382,12 @@ java.lang.String defaultValue);
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_TaskShell_descriptor;
+        return pto.TestProto.internal_static_TaskShell_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.TaskShell getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.TaskShell.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -6460,7 +6460,7 @@ java.lang.String defaultValue);
       }
 
       public Builder mergeFrom(pto.TestProto.TaskShell other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.TaskShell.getDefaultInstance()) return this;
         if (!other.getIp().isEmpty()) {
           ip_ = other.ip_;
           onChanged();
@@ -7414,13 +7414,13 @@ java.lang.String defaultValue);
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_TaskResult_descriptor;
+      return pto.TestProto.internal_static_TaskResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_TaskResult_fieldAccessorTable
+      return pto.TestProto.internal_static_TaskResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.TaskResult.class, pto.TestProto.TaskResult.Builder.class);
     }
@@ -7578,13 +7578,13 @@ java.lang.String defaultValue);
         pto.TestProto.TaskResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_TaskResult_descriptor;
+        return pto.TestProto.internal_static_TaskResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_TaskResult_fieldAccessorTable
+        return pto.TestProto.internal_static_TaskResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.TaskResult.class, pto.TestProto.TaskResult.Builder.class);
       }
@@ -7613,12 +7613,12 @@ java.lang.String defaultValue);
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_TaskResult_descriptor;
+        return pto.TestProto.internal_static_TaskResult_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.TaskResult getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.TaskResult.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -7680,7 +7680,7 @@ java.lang.String defaultValue);
       }
 
       public Builder mergeFrom(pto.TestProto.TaskResult other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.TaskResult.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7946,6 +7946,16 @@ pto.TestProto.TaskShell defaultValue);
      * <code>.TaskResult result = 8;</code>
      */
     pto.TestProto.TaskResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <pre>
+     *任务当前状态  是否可以测试
+     * </pre>
+     *
+     * <code>bool status = 9;</code>
+     * @return The status.
+     */
+    boolean getStatus();
   }
   /**
    * Protobuf type {@code Task}
@@ -8070,6 +8080,11 @@ pto.TestProto.TaskShell defaultValue);
 
               break;
             }
+            case 72: {
+
+              status_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -8096,7 +8111,7 @@ pto.TestProto.TaskShell defaultValue);
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_Task_descriptor;
+      return pto.TestProto.internal_static_Task_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -8114,7 +8129,7 @@ pto.TestProto.TaskShell defaultValue);
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_Task_fieldAccessorTable
+      return pto.TestProto.internal_static_Task_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.Task.class, pto.TestProto.Task.Builder.class);
     }
@@ -8228,7 +8243,7 @@ pto.TestProto.TaskShell defaultValue);
           java.lang.Integer, pto.TestProto.TaskShell> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, pto.TestProto.TaskShell>newDefaultInstance(
-                      internal_static_Task_ShellEntry_descriptor,
+                  pto.TestProto.internal_static_Task_ShellEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -8412,6 +8427,21 @@ pto.TestProto.TaskShell defaultValue);
       return getResult();
     }
 
+    public static final int STATUS_FIELD_NUMBER = 9;
+    private boolean status_;
+    /**
+     * <pre>
+     *任务当前状态  是否可以测试
+     * </pre>
+     *
+     * <code>bool status = 9;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8457,6 +8487,9 @@ pto.TestProto.TaskShell defaultValue);
       }
       if (result_ != null) {
         output.writeMessage(8, getResult());
+      }
+      if (status_ != false) {
+        output.writeBool(9, status_);
       }
       unknownFields.writeTo(output);
     }
@@ -8514,6 +8547,10 @@ pto.TestProto.TaskShell defaultValue);
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getResult());
       }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, status_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8547,6 +8584,8 @@ pto.TestProto.TaskShell defaultValue);
         if (!getResult()
             .equals(other.getResult())) return false;
       }
+      if (getStatus()
+          != other.getStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8580,6 +8619,9 @@ pto.TestProto.TaskShell defaultValue);
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getResult().hashCode();
       }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8684,7 +8726,7 @@ pto.TestProto.TaskShell defaultValue);
         pto.TestProto.TaskOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_Task_descriptor;
+        return pto.TestProto.internal_static_Task_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -8712,7 +8754,7 @@ pto.TestProto.TaskShell defaultValue);
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_Task_fieldAccessorTable
+        return pto.TestProto.internal_static_Task_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.Task.class, pto.TestProto.Task.Builder.class);
       }
@@ -8754,18 +8796,20 @@ pto.TestProto.TaskShell defaultValue);
           result_ = null;
           resultBuilder_ = null;
         }
+        status_ = false;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_Task_descriptor;
+        return pto.TestProto.internal_static_Task_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.Task getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.Task.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -8798,6 +8842,7 @@ pto.TestProto.TaskShell defaultValue);
         } else {
           result.result_ = resultBuilder_.build();
         }
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -8845,7 +8890,7 @@ pto.TestProto.TaskShell defaultValue);
       }
 
       public Builder mergeFrom(pto.TestProto.Task other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.Task.getDefaultInstance()) return this;
         if (other.getTaskId() != 0) {
           setTaskId(other.getTaskId());
         }
@@ -8876,6 +8921,9 @@ pto.TestProto.TaskShell defaultValue);
         }
         if (other.hasResult()) {
           mergeResult(other.getResult());
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9626,6 +9674,49 @@ pto.TestProto.TaskShell defaultValue);
         }
         return resultBuilder_;
       }
+
+      private boolean status_ ;
+      /**
+       * <pre>
+       *任务当前状态  是否可以测试
+       * </pre>
+       *
+       * <code>bool status = 9;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <pre>
+       *任务当前状态  是否可以测试
+       * </pre>
+       *
+       * <code>bool status = 9;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务当前状态  是否可以测试
+       * </pre>
+       *
+       * <code>bool status = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9684,37 +9775,65 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *用户id
+     * </pre>
+     *
      * <code>int32 userId = 1;</code>
      * @return The userId.
      */
     int getUserId();
 
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      * @return Whether the user field is set.
      */
     boolean hasUser();
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      * @return The user.
      */
     pto.TestProto.User getUser();
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      */
     pto.TestProto.UserOrBuilder getUserOrBuilder();
 
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @return A list containing the taskIds.
      */
     java.util.List<java.lang.Integer> getTaskIdsList();
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @return The count of taskIds.
      */
     int getTaskIdsCount();
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @param index The index of the element to return.
      * @return The taskIds at the given index.
@@ -9722,10 +9841,24 @@ pto.TestProto.TaskShell defaultValue);
     int getTaskIds(int index);
 
     /**
+     * <pre>
+     *用户正在执行的任务Id  没有则为0
+     * </pre>
+     *
      * <code>int32 doingTaskId = 4;</code>
      * @return The doingTaskId.
      */
     int getDoingTaskId();
+
+    /**
+     * <pre>
+     *用户是否在线
+     * </pre>
+     *
+     * <code>bool online = 5;</code>
+     * @return The online.
+     */
+    boolean getOnline();
   }
   /**
    * Protobuf type {@code S_User}
@@ -9818,6 +9951,11 @@ pto.TestProto.TaskShell defaultValue);
               doingTaskId_ = input.readInt32();
               break;
             }
+            case 40: {
+
+              online_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9844,13 +9982,13 @@ pto.TestProto.TaskShell defaultValue);
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return internal_static_S_User_descriptor;
+      return pto.TestProto.internal_static_S_User_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return internal_static_S_User_fieldAccessorTable
+      return pto.TestProto.internal_static_S_User_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pto.TestProto.S_User.class, pto.TestProto.S_User.Builder.class);
     }
@@ -9858,6 +9996,10 @@ pto.TestProto.TaskShell defaultValue);
     public static final int USERID_FIELD_NUMBER = 1;
     private int userId_;
     /**
+     * <pre>
+     *用户id
+     * </pre>
+     *
      * <code>int32 userId = 1;</code>
      * @return The userId.
      */
@@ -9869,6 +10011,10 @@ pto.TestProto.TaskShell defaultValue);
     public static final int USER_FIELD_NUMBER = 2;
     private pto.TestProto.User user_;
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      * @return Whether the user field is set.
      */
@@ -9877,6 +10023,10 @@ pto.TestProto.TaskShell defaultValue);
       return user_ != null;
     }
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      * @return The user.
      */
@@ -9885,6 +10035,10 @@ pto.TestProto.TaskShell defaultValue);
       return user_ == null ? pto.TestProto.User.getDefaultInstance() : user_;
     }
     /**
+     * <pre>
+     *用户元数据
+     * </pre>
+     *
      * <code>.User user = 2;</code>
      */
     @java.lang.Override
@@ -9895,6 +10049,10 @@ pto.TestProto.TaskShell defaultValue);
     public static final int TASKIDS_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList taskIds_;
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @return A list containing the taskIds.
      */
@@ -9904,6 +10062,10 @@ pto.TestProto.TaskShell defaultValue);
       return taskIds_;
     }
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @return The count of taskIds.
      */
@@ -9911,6 +10073,10 @@ pto.TestProto.TaskShell defaultValue);
       return taskIds_.size();
     }
     /**
+     * <pre>
+     *用户接受的所有任务Id
+     * </pre>
+     *
      * <code>repeated int32 taskIds = 3;</code>
      * @param index The index of the element to return.
      * @return The taskIds at the given index.
@@ -9923,12 +10089,31 @@ pto.TestProto.TaskShell defaultValue);
     public static final int DOINGTASKID_FIELD_NUMBER = 4;
     private int doingTaskId_;
     /**
+     * <pre>
+     *用户正在执行的任务Id  没有则为0
+     * </pre>
+     *
      * <code>int32 doingTaskId = 4;</code>
      * @return The doingTaskId.
      */
     @java.lang.Override
     public int getDoingTaskId() {
       return doingTaskId_;
+    }
+
+    public static final int ONLINE_FIELD_NUMBER = 5;
+    private boolean online_;
+    /**
+     * <pre>
+     *用户是否在线
+     * </pre>
+     *
+     * <code>bool online = 5;</code>
+     * @return The online.
+     */
+    @java.lang.Override
+    public boolean getOnline() {
+      return online_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9961,6 +10146,9 @@ pto.TestProto.TaskShell defaultValue);
       }
       if (doingTaskId_ != 0) {
         output.writeInt32(4, doingTaskId_);
+      }
+      if (online_ != false) {
+        output.writeBool(5, online_);
       }
       unknownFields.writeTo(output);
     }
@@ -9997,6 +10185,10 @@ pto.TestProto.TaskShell defaultValue);
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, doingTaskId_);
       }
+      if (online_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, online_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10023,6 +10215,8 @@ pto.TestProto.TaskShell defaultValue);
           .equals(other.getTaskIdsList())) return false;
       if (getDoingTaskId()
           != other.getDoingTaskId()) return false;
+      if (getOnline()
+          != other.getOnline()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10046,6 +10240,9 @@ pto.TestProto.TaskShell defaultValue);
       }
       hash = (37 * hash) + DOINGTASKID_FIELD_NUMBER;
       hash = (53 * hash) + getDoingTaskId();
+      hash = (37 * hash) + ONLINE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOnline());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10150,13 +10347,13 @@ pto.TestProto.TaskShell defaultValue);
         pto.TestProto.S_UserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return internal_static_S_User_descriptor;
+        return pto.TestProto.internal_static_S_User_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return internal_static_S_User_fieldAccessorTable
+        return pto.TestProto.internal_static_S_User_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pto.TestProto.S_User.class, pto.TestProto.S_User.Builder.class);
       }
@@ -10191,18 +10388,20 @@ pto.TestProto.TaskShell defaultValue);
         bitField0_ = (bitField0_ & ~0x00000001);
         doingTaskId_ = 0;
 
+        online_ = false;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return internal_static_S_User_descriptor;
+        return pto.TestProto.internal_static_S_User_descriptor;
       }
 
       @java.lang.Override
       public pto.TestProto.S_User getDefaultInstanceForType() {
-        return getDefaultInstance();
+        return pto.TestProto.S_User.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -10230,6 +10429,7 @@ pto.TestProto.TaskShell defaultValue);
         }
         result.taskIds_ = taskIds_;
         result.doingTaskId_ = doingTaskId_;
+        result.online_ = online_;
         onBuilt();
         return result;
       }
@@ -10277,7 +10477,7 @@ pto.TestProto.TaskShell defaultValue);
       }
 
       public Builder mergeFrom(pto.TestProto.S_User other) {
-        if (other == getDefaultInstance()) return this;
+        if (other == pto.TestProto.S_User.getDefaultInstance()) return this;
         if (other.getUserId() != 0) {
           setUserId(other.getUserId());
         }
@@ -10296,6 +10496,9 @@ pto.TestProto.TaskShell defaultValue);
         }
         if (other.getDoingTaskId() != 0) {
           setDoingTaskId(other.getDoingTaskId());
+        }
+        if (other.getOnline() != false) {
+          setOnline(other.getOnline());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10329,6 +10532,10 @@ pto.TestProto.TaskShell defaultValue);
 
       private int userId_ ;
       /**
+       * <pre>
+       *用户id
+       * </pre>
+       *
        * <code>int32 userId = 1;</code>
        * @return The userId.
        */
@@ -10337,6 +10544,10 @@ pto.TestProto.TaskShell defaultValue);
         return userId_;
       }
       /**
+       * <pre>
+       *用户id
+       * </pre>
+       *
        * <code>int32 userId = 1;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
@@ -10348,6 +10559,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户id
+       * </pre>
+       *
        * <code>int32 userId = 1;</code>
        * @return This builder for chaining.
        */
@@ -10362,6 +10577,10 @@ pto.TestProto.TaskShell defaultValue);
       private com.google.protobuf.SingleFieldBuilderV3<
           pto.TestProto.User, pto.TestProto.User.Builder, pto.TestProto.UserOrBuilder> userBuilder_;
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        * @return Whether the user field is set.
        */
@@ -10369,6 +10588,10 @@ pto.TestProto.TaskShell defaultValue);
         return userBuilder_ != null || user_ != null;
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        * @return The user.
        */
@@ -10380,6 +10603,10 @@ pto.TestProto.TaskShell defaultValue);
         }
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public Builder setUser(pto.TestProto.User value) {
@@ -10396,6 +10623,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public Builder setUser(
@@ -10410,6 +10641,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public Builder mergeUser(pto.TestProto.User value) {
@@ -10428,6 +10663,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public Builder clearUser() {
@@ -10442,6 +10681,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public pto.TestProto.User.Builder getUserBuilder() {
@@ -10450,6 +10693,10 @@ pto.TestProto.TaskShell defaultValue);
         return getUserFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       public pto.TestProto.UserOrBuilder getUserOrBuilder() {
@@ -10461,6 +10708,10 @@ pto.TestProto.TaskShell defaultValue);
         }
       }
       /**
+       * <pre>
+       *用户元数据
+       * </pre>
+       *
        * <code>.User user = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -10485,6 +10736,10 @@ pto.TestProto.TaskShell defaultValue);
          }
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @return A list containing the taskIds.
        */
@@ -10494,6 +10749,10 @@ pto.TestProto.TaskShell defaultValue);
                  java.util.Collections.unmodifiableList(taskIds_) : taskIds_;
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @return The count of taskIds.
        */
@@ -10501,6 +10760,10 @@ pto.TestProto.TaskShell defaultValue);
         return taskIds_.size();
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @param index The index of the element to return.
        * @return The taskIds at the given index.
@@ -10509,6 +10772,10 @@ pto.TestProto.TaskShell defaultValue);
         return taskIds_.getInt(index);
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @param index The index to set the value at.
        * @param value The taskIds to set.
@@ -10522,6 +10789,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @param value The taskIds to add.
        * @return This builder for chaining.
@@ -10533,6 +10804,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @param values The taskIds to add.
        * @return This builder for chaining.
@@ -10546,6 +10821,10 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户接受的所有任务Id
+       * </pre>
+       *
        * <code>repeated int32 taskIds = 3;</code>
        * @return This builder for chaining.
        */
@@ -10558,6 +10837,10 @@ pto.TestProto.TaskShell defaultValue);
 
       private int doingTaskId_ ;
       /**
+       * <pre>
+       *用户正在执行的任务Id  没有则为0
+       * </pre>
+       *
        * <code>int32 doingTaskId = 4;</code>
        * @return The doingTaskId.
        */
@@ -10566,6 +10849,10 @@ pto.TestProto.TaskShell defaultValue);
         return doingTaskId_;
       }
       /**
+       * <pre>
+       *用户正在执行的任务Id  没有则为0
+       * </pre>
+       *
        * <code>int32 doingTaskId = 4;</code>
        * @param value The doingTaskId to set.
        * @return This builder for chaining.
@@ -10577,12 +10864,59 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
       /**
+       * <pre>
+       *用户正在执行的任务Id  没有则为0
+       * </pre>
+       *
        * <code>int32 doingTaskId = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearDoingTaskId() {
         
         doingTaskId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean online_ ;
+      /**
+       * <pre>
+       *用户是否在线
+       * </pre>
+       *
+       * <code>bool online = 5;</code>
+       * @return The online.
+       */
+      @java.lang.Override
+      public boolean getOnline() {
+        return online_;
+      }
+      /**
+       * <pre>
+       *用户是否在线
+       * </pre>
+       *
+       * <code>bool online = 5;</code>
+       * @param value The online to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnline(boolean value) {
+        
+        online_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户是否在线
+       * </pre>
+       *
+       * <code>bool online = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnline() {
+        
+        online_ = false;
         onChanged();
         return this;
       }
@@ -10634,6 +10968,1715 @@ pto.TestProto.TaskShell defaultValue);
 
     @java.lang.Override
     public pto.TestProto.S_User getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TaskConductOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TaskConduct)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 taskId = 1;</code>
+     * @return The taskId.
+     */
+    int getTaskId();
+
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @return A list containing the userIds.
+     */
+    java.util.List<java.lang.Integer> getUserIdsList();
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @return The count of userIds.
+     */
+    int getUserIdsCount();
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @param index The index of the element to return.
+     * @return The userIds at the given index.
+     */
+    int getUserIds(int index);
+
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    int getShellMappingCount();
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    boolean containsShellMapping(
+        int key);
+    /**
+     * Use {@link #getShellMappingMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getShellMapping();
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getShellMappingMap();
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+
+    int getShellMappingOrDefault(
+        int key,
+        int defaultValue);
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+
+    int getShellMappingOrThrow(
+        int key);
+  }
+  /**
+   * Protobuf type {@code TaskConduct}
+   */
+  public static final class TaskConduct extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TaskConduct)
+      TaskConductOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TaskConduct.newBuilder() to construct.
+    private TaskConduct(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskConduct() {
+      userIds_ = emptyIntList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TaskConduct();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TaskConduct(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              taskId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                userIds_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              userIds_.addInt(input.readInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                userIds_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                userIds_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                shellMapping_ = com.google.protobuf.MapField.newMapField(
+                    ShellMappingDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              shellMapping__ = input.readMessage(
+                  ShellMappingDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              shellMapping_.getMutableMap().put(
+                  shellMapping__.getKey(), shellMapping__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          userIds_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_TaskConduct_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetShellMapping();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_TaskConduct_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.TaskConduct.class, pto.TestProto.TaskConduct.Builder.class);
+    }
+
+    public static final int TASKID_FIELD_NUMBER = 1;
+    private int taskId_;
+    /**
+     * <code>int32 taskId = 1;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public int getTaskId() {
+      return taskId_;
+    }
+
+    public static final int USERIDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.Internal.IntList userIds_;
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @return A list containing the userIds.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUserIdsList() {
+      return userIds_;
+    }
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @return The count of userIds.
+     */
+    public int getUserIdsCount() {
+      return userIds_.size();
+    }
+    /**
+     * <code>repeated int32 userIds = 2;</code>
+     * @param index The index of the element to return.
+     * @return The userIds at the given index.
+     */
+    public int getUserIds(int index) {
+      return userIds_.getInt(index);
+    }
+    private int userIdsMemoizedSerializedSize = -1;
+
+    public static final int SHELLMAPPING_FIELD_NUMBER = 3;
+    private static final class ShellMappingDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                  pto.TestProto.internal_static_TaskConduct_ShellMappingEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Integer> shellMapping_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetShellMapping() {
+      if (shellMapping_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ShellMappingDefaultEntryHolder.defaultEntry);
+      }
+      return shellMapping_;
+    }
+
+    public int getShellMappingCount() {
+      return internalGetShellMapping().getMap().size();
+    }
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsShellMapping(
+        int key) {
+      
+      return internalGetShellMapping().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getShellMappingMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getShellMapping() {
+      return getShellMappingMap();
+    }
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getShellMappingMap() {
+      return internalGetShellMapping().getMap();
+    }
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    @java.lang.Override
+
+    public int getShellMappingOrDefault(
+        int key,
+        int defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetShellMapping().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     *用户id：对应执行脚本阶段号
+     * </pre>
+     *
+     * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+     */
+    @java.lang.Override
+
+    public int getShellMappingOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetShellMapping().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (taskId_ != 0) {
+        output.writeInt32(1, taskId_);
+      }
+      if (getUserIdsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(userIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < userIds_.size(); i++) {
+        output.writeInt32NoTag(userIds_.getInt(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetShellMapping(),
+          ShellMappingDefaultEntryHolder.defaultEntry,
+          3);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (taskId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, taskId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < userIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(userIds_.getInt(i));
+        }
+        size += dataSize;
+        if (!getUserIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        userIdsMemoizedSerializedSize = dataSize;
+      }
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetShellMapping().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        shellMapping__ = ShellMappingDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, shellMapping__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.TaskConduct)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.TaskConduct other = (pto.TestProto.TaskConduct) obj;
+
+      if (getTaskId()
+          != other.getTaskId()) return false;
+      if (!getUserIdsList()
+          .equals(other.getUserIdsList())) return false;
+      if (!internalGetShellMapping().equals(
+          other.internalGetShellMapping())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TASKID_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskId();
+      if (getUserIdsCount() > 0) {
+        hash = (37 * hash) + USERIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserIdsList().hashCode();
+      }
+      if (!internalGetShellMapping().getMap().isEmpty()) {
+        hash = (37 * hash) + SHELLMAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetShellMapping().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.TaskConduct parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskConduct parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskConduct parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskConduct parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.TaskConduct prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code TaskConduct}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TaskConduct)
+        pto.TestProto.TaskConductOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_TaskConduct_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetShellMapping();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableShellMapping();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_TaskConduct_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.TaskConduct.class, pto.TestProto.TaskConduct.Builder.class);
+      }
+
+      // Construct using pto.TestProto.TaskConduct.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        taskId_ = 0;
+
+        userIds_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableShellMapping().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_TaskConduct_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskConduct getDefaultInstanceForType() {
+        return pto.TestProto.TaskConduct.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskConduct build() {
+        pto.TestProto.TaskConduct result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskConduct buildPartial() {
+        pto.TestProto.TaskConduct result = new pto.TestProto.TaskConduct(this);
+        int from_bitField0_ = bitField0_;
+        result.taskId_ = taskId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          userIds_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.userIds_ = userIds_;
+        result.shellMapping_ = internalGetShellMapping();
+        result.shellMapping_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.TaskConduct) {
+          return mergeFrom((pto.TestProto.TaskConduct)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.TaskConduct other) {
+        if (other == pto.TestProto.TaskConduct.getDefaultInstance()) return this;
+        if (other.getTaskId() != 0) {
+          setTaskId(other.getTaskId());
+        }
+        if (!other.userIds_.isEmpty()) {
+          if (userIds_.isEmpty()) {
+            userIds_ = other.userIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUserIdsIsMutable();
+            userIds_.addAll(other.userIds_);
+          }
+          onChanged();
+        }
+        internalGetMutableShellMapping().mergeFrom(
+            other.internalGetShellMapping());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.TaskConduct parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.TaskConduct) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int taskId_ ;
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @return The taskId.
+       */
+      @java.lang.Override
+      public int getTaskId() {
+        return taskId_;
+      }
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @param value The taskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskId(int value) {
+        
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskId() {
+        
+        taskId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList userIds_ = emptyIntList();
+      private void ensureUserIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          userIds_ = mutableCopy(userIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @return A list containing the userIds.
+       */
+      public java.util.List<java.lang.Integer>
+          getUserIdsList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(userIds_) : userIds_;
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @return The count of userIds.
+       */
+      public int getUserIdsCount() {
+        return userIds_.size();
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @param index The index of the element to return.
+       * @return The userIds at the given index.
+       */
+      public int getUserIds(int index) {
+        return userIds_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The userIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIds(
+          int index, int value) {
+        ensureUserIdsIsMutable();
+        userIds_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @param value The userIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUserIds(int value) {
+        ensureUserIdsIsMutable();
+        userIds_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @param values The userIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUserIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUserIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 userIds = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserIds() {
+        userIds_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Integer> shellMapping_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetShellMapping() {
+        if (shellMapping_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ShellMappingDefaultEntryHolder.defaultEntry);
+        }
+        return shellMapping_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetMutableShellMapping() {
+        onChanged();;
+        if (shellMapping_ == null) {
+          shellMapping_ = com.google.protobuf.MapField.newMapField(
+              ShellMappingDefaultEntryHolder.defaultEntry);
+        }
+        if (!shellMapping_.isMutable()) {
+          shellMapping_ = shellMapping_.copy();
+        }
+        return shellMapping_;
+      }
+
+      public int getShellMappingCount() {
+        return internalGetShellMapping().getMap().size();
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsShellMapping(
+          int key) {
+        
+        return internalGetShellMapping().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getShellMappingMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getShellMapping() {
+        return getShellMappingMap();
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getShellMappingMap() {
+        return internalGetShellMapping().getMap();
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+      @java.lang.Override
+
+      public int getShellMappingOrDefault(
+          int key,
+          int defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetShellMapping().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+      @java.lang.Override
+
+      public int getShellMappingOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetShellMapping().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearShellMapping() {
+        internalGetMutableShellMapping().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+
+      public Builder removeShellMapping(
+          int key) {
+        
+        internalGetMutableShellMapping().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer>
+      getMutableShellMapping() {
+        return internalGetMutableShellMapping().getMutableMap();
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+      public Builder putShellMapping(
+          int key,
+          int value) {
+        
+        
+        internalGetMutableShellMapping().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       *用户id：对应执行脚本阶段号
+       * </pre>
+       *
+       * <code>map&lt;int32, int32&gt; shellMapping = 3;</code>
+       */
+
+      public Builder putAllShellMapping(
+          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+        internalGetMutableShellMapping().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TaskConduct)
+    }
+
+    // @@protoc_insertion_point(class_scope:TaskConduct)
+    private static final pto.TestProto.TaskConduct DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.TaskConduct();
+    }
+
+    public static pto.TestProto.TaskConduct getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskConduct>
+        PARSER = new com.google.protobuf.AbstractParser<TaskConduct>() {
+      @java.lang.Override
+      public TaskConduct parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskConduct(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskConduct> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskConduct> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.TaskConduct getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResponseMsgOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ResponseMsg)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool status = 1;</code>
+     * @return The status.
+     */
+    boolean getStatus();
+
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+  }
+  /**
+   * Protobuf type {@code ResponseMsg}
+   */
+  public static final class ResponseMsg extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ResponseMsg)
+      ResponseMsgOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResponseMsg.newBuilder() to construct.
+    private ResponseMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResponseMsg() {
+      msg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResponseMsg();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResponseMsg(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              status_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_ResponseMsg_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_ResponseMsg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.ResponseMsg.class, pto.TestProto.ResponseMsg.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private boolean status_;
+    /**
+     * <code>bool status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != false) {
+        output.writeBool(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.ResponseMsg)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.ResponseMsg other = (pto.TestProto.ResponseMsg) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.ResponseMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.ResponseMsg parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ResponseMsg parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ResponseMsg parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.ResponseMsg prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ResponseMsg}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ResponseMsg)
+        pto.TestProto.ResponseMsgOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_ResponseMsg_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_ResponseMsg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.ResponseMsg.class, pto.TestProto.ResponseMsg.Builder.class);
+      }
+
+      // Construct using pto.TestProto.ResponseMsg.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        status_ = false;
+
+        msg_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_ResponseMsg_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ResponseMsg getDefaultInstanceForType() {
+        return pto.TestProto.ResponseMsg.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ResponseMsg build() {
+        pto.TestProto.ResponseMsg result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ResponseMsg buildPartial() {
+        pto.TestProto.ResponseMsg result = new pto.TestProto.ResponseMsg(this);
+        result.status_ = status_;
+        result.msg_ = msg_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.ResponseMsg) {
+          return mergeFrom((pto.TestProto.ResponseMsg)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.ResponseMsg other) {
+        if (other == pto.TestProto.ResponseMsg.getDefaultInstance()) return this;
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.ResponseMsg parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.ResponseMsg) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 2;</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ResponseMsg)
+    }
+
+    // @@protoc_insertion_point(class_scope:ResponseMsg)
+    private static final pto.TestProto.ResponseMsg DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.ResponseMsg();
+    }
+
+    public static pto.TestProto.ResponseMsg getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResponseMsg>
+        PARSER = new com.google.protobuf.AbstractParser<ResponseMsg>() {
+      @java.lang.Override
+      public ResponseMsg parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponseMsg(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResponseMsg> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResponseMsg> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.ResponseMsg getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10694,6 +12737,21 @@ pto.TestProto.TaskShell defaultValue);
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S_User_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TaskConduct_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TaskConduct_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TaskConduct_ShellMappingEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TaskConduct_ShellMappingEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ResponseMsg_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ResponseMsg_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10725,19 +12783,25 @@ pto.TestProto.TaskShell defaultValue);
       "ondition\030\006 \001(\005\022\024\n\014conditionMsg\030\007 \001(\t\022\024\n\014" +
       "responseType\030\010 \001(\005\022\020\n\010respFind\030\t \001(\t\032,\n\n" +
       "HeadsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"\014\n\nTaskResult\"\367\001\n\004Task\022\016\n\006taskId\030\001 \001(" +
+      "8\001\"\014\n\nTaskResult\"\207\002\n\004Task\022\016\n\006taskId\030\001 \001(" +
       "\005\022\020\n\010taskName\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022!\n\013t" +
       "askProtocl\030\004 \001(\0162\014.TaskProtocl\022\037\n\005shell\030" +
       "\005 \003(\0132\020.Task.ShellEntry\022\020\n\010taskCost\030\006 \001(" +
       "\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.Ta" +
-      "skResult\0328\n\nShellEntry\022\013\n\003key\030\001 \001(\005\022\031\n\005v" +
-      "alue\030\002 \001(\0132\n.TaskShell:\0028\001\"S\n\006S_User\022\016\n\006" +
-      "userId\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\017\n\007tas" +
-      "kIds\030\003 \003(\005\022\023\n\013doingTaskId\030\004 \001(\005*S\n\005Types" +
-      "\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_LOGIN\020\002" +
-      "\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REGISTER\020\004*3\n\013" +
-      "TaskProtocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002" +
-      "\022\007\n\003UDP\020\003B\020\n\003ptoB\tTestProtob\006proto3"
+      "skResult\022\016\n\006status\030\t \001(\010\0328\n\nShellEntry\022\013" +
+      "\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:\002" +
+      "8\001\"c\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
+      "(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskI" +
+      "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\"\231\001\n\013TaskConduct\022" +
+      "\016\n\006taskId\030\001 \001(\005\022\017\n\007userIds\030\002 \003(\005\0224\n\014shel" +
+      "lMapping\030\003 \003(\0132\036.TaskConduct.ShellMappin" +
+      "gEntry\0323\n\021ShellMappingEntry\022\013\n\003key\030\001 \001(\005" +
+      "\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n\013ResponseMsg\022\016\n\006st" +
+      "atus\030\001 \001(\010\022\013\n\003msg\030\002 \001(\t*S\n\005Types\022\010\n\004USER" +
+      "\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_LOGIN\020\002\022\020\n\014C2S_" +
+      "REGISTER\020\003\022\020\n\014S2C_REGISTER\020\004*3\n\013TaskProt" +
+      "ocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020" +
+      "\003B\020\n\003ptoB\tTestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10796,7 +12860,7 @@ pto.TestProto.TaskShell defaultValue);
     internal_static_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Task_descriptor,
-        new java.lang.String[] { "TaskId", "TaskName", "UserId", "TaskProtocl", "Shell", "TaskCost", "TaskCons", "Result", });
+        new java.lang.String[] { "TaskId", "TaskName", "UserId", "TaskProtocl", "Shell", "TaskCost", "TaskCons", "Result", "Status", });
     internal_static_Task_ShellEntry_descriptor =
       internal_static_Task_descriptor.getNestedTypes().get(0);
     internal_static_Task_ShellEntry_fieldAccessorTable = new
@@ -10808,7 +12872,25 @@ pto.TestProto.TaskShell defaultValue);
     internal_static_S_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S_User_descriptor,
-        new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", });
+        new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", "Online", });
+    internal_static_TaskConduct_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_TaskConduct_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TaskConduct_descriptor,
+        new java.lang.String[] { "TaskId", "UserIds", "ShellMapping", });
+    internal_static_TaskConduct_ShellMappingEntry_descriptor =
+      internal_static_TaskConduct_descriptor.getNestedTypes().get(0);
+    internal_static_TaskConduct_ShellMappingEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TaskConduct_ShellMappingEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ResponseMsg_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_ResponseMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ResponseMsg_descriptor,
+        new java.lang.String[] { "Status", "Msg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

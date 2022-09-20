@@ -1,13 +1,12 @@
 package main.interceptor;
 
-import com.mysql.cj.Session;
 import main.filter.MainDoFilter;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
-import main.pto.TestProto;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.servlet.HandlerInterceptor;
+import pto.TestProto;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
