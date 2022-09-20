@@ -1,5 +1,6 @@
 package main.util.config;
 
+import main.util.Unsign;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import main.util.ProtocolUtil;

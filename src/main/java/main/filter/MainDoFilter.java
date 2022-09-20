@@ -1,19 +1,28 @@
 package main.filter;
 
+
+import main.logs.LogMsg;
+import main.logs.LogUtil;
+import main.logs.OptionDetails;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import static main.util.Unsign.unsign;
 
 @WebFilter(filterName = "MainDoFilter")
 public class MainDoFilter implements Filter {
-    private String url;
 
+    private final static Logger logger = LogUtil.getLogger(MainDoFilter.class);
+
+    private String url;
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         this.url = filterConfig.getInitParameter("main/*");
         System.out.println("过滤器的初始化方法！URL=" + this.url + "，开始访问.........");
+
     }
 
     @Override
@@ -23,12 +32,38 @@ public class MainDoFilter implements Filter {
 
         String requestURI = request.getRequestURI();//获取本次请求路径
         System.out.println("拦截到请求："+requestURI);
-        String tocken =request.getHeader("tocken");
-        if(tocken==null)
+
+        String token =request.getHeader("token");
+        if (request.getSession().getAttribute("user")!=null)
         {
+            return;
+        }
+
+        if(token==null)
+        {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG));
+            response.getWriter().write("error：token为空,请重新登陆");
+        }else
+        {
+            try{
+                byte[] data = unsign(token,byte[].class);
+                /**
+                 * 添加到session中
+                 */
+                logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_ERROR));
+                request.getSession().setAttribute("user",data);
+                request.getSession().setMaxInactiveInterval(1200);//
+                logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
+            }catch (Exception e)
+            {
+                /**
+                 * 日志方法
+                 */
+                response.getWriter().write("error：token验证不通过");
+                logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_TOKEN_ERROR));
+            }
 
         }
-        //使用秘钥解密tocken成功继续执行并将未解密的tocken加入到redis中；
 
     }
 
