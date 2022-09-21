@@ -31,25 +31,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         registration.addPathPatterns("/**");
         //excludePathPatterns()方法添加不拦截的路径
         //添加不拦截路径
-        registration.excludePathPatterns(//添加不拦截路径，需要拦截的路径不填写，只需要判断用户状态，是管理员返回t,不是管理员返回f
-//                //登录
-//                "/login",
-//                //退出登录
-//                "/loginOut",
-//                //获取验证码
-//                "/getCode",
-//                //发送短信
-//                "/sendshortMessage",
-//                //重置账号
-//                "/unsealaccount",
-//                //文件上传
-//                "/uploadImg",
-//                //html静态资源
-//                "/**/*.html",
-//                //js静态资源
-//                "/**/*.js",
-//                //css静态资源
-//                "/**/*.css"
+        registration.excludePathPatterns(
         );
     }
 }

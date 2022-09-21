@@ -39,4 +39,9 @@ public class LogUtil {
     public static String makeOptionDetails(LogMsg logMsg, OptionDetails optionDetails) {
         return logMsg.getName() + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg();
     }
+
+    public static String filterUrl(LogMsg logMsg,OptionDetails optionDetails)
+    {
+        return logMsg.getName()+"---"+optionDetails.getStatus()+"---"+optionDetails.getMsg();
+    }
 }

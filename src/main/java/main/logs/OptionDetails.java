@@ -24,6 +24,8 @@ public enum OptionDetails {
 
 
     NO_CHECK("拦截器日志", "访问无CHECK接口"), CHECK("拦截器日志", "访问有CHECK接口"),
+    NO_PRODUCER("拦截器日志","访问无Producer接口"),NO_Consumer("拦截器日志","访问无Consumer接口"),
+    PRODUCER("拦截器日志","访问有Producer接口"),Consumer("拦截器日志","访问有Consumer接口"),
     CHECK_OK("拦截器日志","token验证成功"),
 
 
@@ -39,7 +41,7 @@ public enum OptionDetails {
 
 
     //过滤操作
-    FILTER_MSG("过滤操作","token不为空"),FILTER_MSG_ERROR("过滤操作","token为空"),
+    FILTER_MSG("过滤操作","token不为空"),FILTER_MSG_ERROR("过滤操作","token为空"),FILTER_MSG_OK("过滤操作","token验证通过"),
 
     //身份验证操作
     IDENTITY_administrators("验证操作","管理员访问"),IDENTITY_USER("验证操作","普通用户访问被拦截"),
