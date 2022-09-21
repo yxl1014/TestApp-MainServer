@@ -13,11 +13,8 @@ public enum LogMsg {
     LOGIN("登录操作"), REGISTER("注册操作"),INTERCEPTOR("拦截器"),
     FILTER("过滤操作"),
     IDENTITY("验证操作"),
-
-
     //---------------------MainServer---------------------
     UTIL("工具类"),MYSQL("数据库"),PUBLIC_CONTEXT("核心逻辑区"),
-
     ;
 
 

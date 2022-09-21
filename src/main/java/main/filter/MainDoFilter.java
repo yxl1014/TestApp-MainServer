@@ -31,9 +31,13 @@ public class MainDoFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         String requestURI = request.getRequestURI();//获取本次请求路径
-        System.out.println("拦截到请求："+requestURI);
-
+        //记录访问地址日志
+        //到日志枚举添加msg
+        //再将参数放入到filterUrl中
+        OptionDetails.FILTER_MSG.setMsg(requestURI);
+        logger.info(LogUtil.filterUrl(LogMsg.FILTER,OptionDetails.FILTER_MSG));
         String token =request.getHeader("token");
+
         if (request.getSession().getAttribute("user")!=null)
         {
             return;
@@ -41,7 +45,7 @@ public class MainDoFilter implements Filter {
 
         if(token==null)
         {
-            logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG));
+            logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_ERROR));
             response.getWriter().write("error：token为空,请重新登陆");
         }else
         {
@@ -50,7 +54,7 @@ public class MainDoFilter implements Filter {
                 /**
                  * 添加到session中
                  */
-                logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_ERROR));
+                logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_OK));
                 request.getSession().setAttribute("user",data);
                 request.getSession().setMaxInactiveInterval(1200);//
                 logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
@@ -62,7 +66,6 @@ public class MainDoFilter implements Filter {
                 response.getWriter().write("error：token验证不通过");
                 logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_TOKEN_ERROR));
             }
-
         }
 
     }
