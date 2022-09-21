@@ -52,7 +52,11 @@ public enum OptionDetails {
     //Task
     TASK_EXIST("添加任务失败","任务已存在"),TASK_NOT_FOUND("查询任务失败","任务不存在"),
     P_TASK_START_OK("生产者开始任务","生产者开始任务成功"),P_TASK_EXIST("生产者开始任务","任务已经开始"),
-    P_TASK_NOT_FOUND("生产者开始任务","任务不存在"),P_TASK_NO_START("生产者结束任务","任务为开始"),
+    P_TASK_NOT_FOUND("生产者开始任务","任务不存在"),P_TASK_NO_START("生产者结束任务","任务未开始"),
+
+    P_TASK_ADD_OK("生产者发布任务","发布成功"),P_GET_ADD_TASKS_NO_USER("生产者获取发布的任务","该用户不存在"),
+
+
 
     USER_NOT_FOUND("获取用户信息失败","用户不存在"),PUBLIC_CONDUCT_NOT_FOUND("获取任务进行时失败","任务进行时不存在"),
 

@@ -92,6 +92,7 @@ message S_User{
   repeated int32 taskIds = 3;         //用户接受的所有任务Id
   int32 doingTaskId = 4;              //用户正在执行的任务Id  没有则为0
   bool online = 5;                    //用户是否在线
+  repeated int32 addTasks = 6;        //用户发布的所有任务Id
 }
 
 
@@ -104,6 +105,10 @@ message TaskConduct{
 message ResponseMsg{
   bool status = 1;
   string msg = 2;
+}
+
+message ProdAddTasks{
+  repeated Task tasks = 1;
 }
 
 

@@ -9859,6 +9859,35 @@ pto.TestProto.TaskShell defaultValue);
      * @return The online.
      */
     boolean getOnline();
+
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @return A list containing the addTasks.
+     */
+    java.util.List<java.lang.Integer> getAddTasksList();
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @return The count of addTasks.
+     */
+    int getAddTasksCount();
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @param index The index of the element to return.
+     * @return The addTasks at the given index.
+     */
+    int getAddTasks(int index);
   }
   /**
    * Protobuf type {@code S_User}
@@ -9874,6 +9903,7 @@ pto.TestProto.TaskShell defaultValue);
     }
     private S_User() {
       taskIds_ = emptyIntList();
+      addTasks_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -9956,6 +9986,27 @@ pto.TestProto.TaskShell defaultValue);
               online_ = input.readBool();
               break;
             }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                addTasks_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              addTasks_.addInt(input.readInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                addTasks_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                addTasks_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9975,6 +10026,9 @@ pto.TestProto.TaskShell defaultValue);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           taskIds_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          addTasks_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -10116,6 +10170,46 @@ pto.TestProto.TaskShell defaultValue);
       return online_;
     }
 
+    public static final int ADDTASKS_FIELD_NUMBER = 6;
+    private com.google.protobuf.Internal.IntList addTasks_;
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @return A list containing the addTasks.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getAddTasksList() {
+      return addTasks_;
+    }
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @return The count of addTasks.
+     */
+    public int getAddTasksCount() {
+      return addTasks_.size();
+    }
+    /**
+     * <pre>
+     *用户发布的所有任务Id
+     * </pre>
+     *
+     * <code>repeated int32 addTasks = 6;</code>
+     * @param index The index of the element to return.
+     * @return The addTasks at the given index.
+     */
+    public int getAddTasks(int index) {
+      return addTasks_.getInt(index);
+    }
+    private int addTasksMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10149,6 +10243,13 @@ pto.TestProto.TaskShell defaultValue);
       }
       if (online_ != false) {
         output.writeBool(5, online_);
+      }
+      if (getAddTasksList().size() > 0) {
+        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(addTasksMemoizedSerializedSize);
+      }
+      for (int i = 0; i < addTasks_.size(); i++) {
+        output.writeInt32NoTag(addTasks_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -10189,6 +10290,20 @@ pto.TestProto.TaskShell defaultValue);
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, online_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < addTasks_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(addTasks_.getInt(i));
+        }
+        size += dataSize;
+        if (!getAddTasksList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        addTasksMemoizedSerializedSize = dataSize;
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10217,6 +10332,8 @@ pto.TestProto.TaskShell defaultValue);
           != other.getDoingTaskId()) return false;
       if (getOnline()
           != other.getOnline()) return false;
+      if (!getAddTasksList()
+          .equals(other.getAddTasksList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10243,6 +10360,10 @@ pto.TestProto.TaskShell defaultValue);
       hash = (37 * hash) + ONLINE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getOnline());
+      if (getAddTasksCount() > 0) {
+        hash = (37 * hash) + ADDTASKS_FIELD_NUMBER;
+        hash = (53 * hash) + getAddTasksList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10390,6 +10511,8 @@ pto.TestProto.TaskShell defaultValue);
 
         online_ = false;
 
+        addTasks_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -10430,6 +10553,11 @@ pto.TestProto.TaskShell defaultValue);
         result.taskIds_ = taskIds_;
         result.doingTaskId_ = doingTaskId_;
         result.online_ = online_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          addTasks_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.addTasks_ = addTasks_;
         onBuilt();
         return result;
       }
@@ -10499,6 +10627,16 @@ pto.TestProto.TaskShell defaultValue);
         }
         if (other.getOnline() != false) {
           setOnline(other.getOnline());
+        }
+        if (!other.addTasks_.isEmpty()) {
+          if (addTasks_.isEmpty()) {
+            addTasks_ = other.addTasks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAddTasksIsMutable();
+            addTasks_.addAll(other.addTasks_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10917,6 +11055,113 @@ pto.TestProto.TaskShell defaultValue);
       public Builder clearOnline() {
         
         online_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList addTasks_ = emptyIntList();
+      private void ensureAddTasksIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          addTasks_ = mutableCopy(addTasks_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @return A list containing the addTasks.
+       */
+      public java.util.List<java.lang.Integer>
+          getAddTasksList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(addTasks_) : addTasks_;
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @return The count of addTasks.
+       */
+      public int getAddTasksCount() {
+        return addTasks_.size();
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @param index The index of the element to return.
+       * @return The addTasks at the given index.
+       */
+      public int getAddTasks(int index) {
+        return addTasks_.getInt(index);
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The addTasks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddTasks(
+          int index, int value) {
+        ensureAddTasksIsMutable();
+        addTasks_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @param value The addTasks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddTasks(int value) {
+        ensureAddTasksIsMutable();
+        addTasks_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @param values The addTasks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAddTasks(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureAddTasksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, addTasks_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户发布的所有任务Id
+       * </pre>
+       *
+       * <code>repeated int32 addTasks = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddTasks() {
+        addTasks_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -12682,6 +12927,801 @@ pto.TestProto.TaskShell defaultValue);
 
   }
 
+  public interface ProdAddTasksOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ProdAddTasks)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    java.util.List<pto.TestProto.Task> 
+        getTasksList();
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    pto.TestProto.Task getTasks(int index);
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    int getTasksCount();
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    java.util.List<? extends pto.TestProto.TaskOrBuilder> 
+        getTasksOrBuilderList();
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    pto.TestProto.TaskOrBuilder getTasksOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code ProdAddTasks}
+   */
+  public static final class ProdAddTasks extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ProdAddTasks)
+      ProdAddTasksOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProdAddTasks.newBuilder() to construct.
+    private ProdAddTasks(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProdAddTasks() {
+      tasks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ProdAddTasks();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProdAddTasks(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tasks_ = new java.util.ArrayList<pto.TestProto.Task>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tasks_.add(
+                  input.readMessage(pto.TestProto.Task.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          tasks_ = java.util.Collections.unmodifiableList(tasks_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_ProdAddTasks_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_ProdAddTasks_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.ProdAddTasks.class, pto.TestProto.ProdAddTasks.Builder.class);
+    }
+
+    public static final int TASKS_FIELD_NUMBER = 1;
+    private java.util.List<pto.TestProto.Task> tasks_;
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<pto.TestProto.Task> getTasksList() {
+      return tasks_;
+    }
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends pto.TestProto.TaskOrBuilder> 
+        getTasksOrBuilderList() {
+      return tasks_;
+    }
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    @java.lang.Override
+    public int getTasksCount() {
+      return tasks_.size();
+    }
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.Task getTasks(int index) {
+      return tasks_.get(index);
+    }
+    /**
+     * <code>repeated .Task tasks = 1;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.TaskOrBuilder getTasksOrBuilder(
+        int index) {
+      return tasks_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < tasks_.size(); i++) {
+        output.writeMessage(1, tasks_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < tasks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, tasks_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.ProdAddTasks)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.ProdAddTasks other = (pto.TestProto.ProdAddTasks) obj;
+
+      if (!getTasksList()
+          .equals(other.getTasksList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTasksCount() > 0) {
+        hash = (37 * hash) + TASKS_FIELD_NUMBER;
+        hash = (53 * hash) + getTasksList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.ProdAddTasks parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ProdAddTasks parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.ProdAddTasks parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.ProdAddTasks prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ProdAddTasks}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ProdAddTasks)
+        pto.TestProto.ProdAddTasksOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_ProdAddTasks_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_ProdAddTasks_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.ProdAddTasks.class, pto.TestProto.ProdAddTasks.Builder.class);
+      }
+
+      // Construct using pto.TestProto.ProdAddTasks.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTasksFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (tasksBuilder_ == null) {
+          tasks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          tasksBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_ProdAddTasks_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ProdAddTasks getDefaultInstanceForType() {
+        return pto.TestProto.ProdAddTasks.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ProdAddTasks build() {
+        pto.TestProto.ProdAddTasks result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.ProdAddTasks buildPartial() {
+        pto.TestProto.ProdAddTasks result = new pto.TestProto.ProdAddTasks(this);
+        int from_bitField0_ = bitField0_;
+        if (tasksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            tasks_ = java.util.Collections.unmodifiableList(tasks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.tasks_ = tasks_;
+        } else {
+          result.tasks_ = tasksBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.ProdAddTasks) {
+          return mergeFrom((pto.TestProto.ProdAddTasks)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.ProdAddTasks other) {
+        if (other == pto.TestProto.ProdAddTasks.getDefaultInstance()) return this;
+        if (tasksBuilder_ == null) {
+          if (!other.tasks_.isEmpty()) {
+            if (tasks_.isEmpty()) {
+              tasks_ = other.tasks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTasksIsMutable();
+              tasks_.addAll(other.tasks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tasks_.isEmpty()) {
+            if (tasksBuilder_.isEmpty()) {
+              tasksBuilder_.dispose();
+              tasksBuilder_ = null;
+              tasks_ = other.tasks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              tasksBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTasksFieldBuilder() : null;
+            } else {
+              tasksBuilder_.addAllMessages(other.tasks_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.ProdAddTasks parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.ProdAddTasks) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<pto.TestProto.Task> tasks_ =
+        java.util.Collections.emptyList();
+      private void ensureTasksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          tasks_ = new java.util.ArrayList<pto.TestProto.Task>(tasks_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> tasksBuilder_;
+
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public java.util.List<pto.TestProto.Task> getTasksList() {
+        if (tasksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tasks_);
+        } else {
+          return tasksBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public int getTasksCount() {
+        if (tasksBuilder_ == null) {
+          return tasks_.size();
+        } else {
+          return tasksBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public pto.TestProto.Task getTasks(int index) {
+        if (tasksBuilder_ == null) {
+          return tasks_.get(index);
+        } else {
+          return tasksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder setTasks(
+          int index, pto.TestProto.Task value) {
+        if (tasksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTasksIsMutable();
+          tasks_.set(index, value);
+          onChanged();
+        } else {
+          tasksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder setTasks(
+          int index, pto.TestProto.Task.Builder builderForValue) {
+        if (tasksBuilder_ == null) {
+          ensureTasksIsMutable();
+          tasks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tasksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder addTasks(pto.TestProto.Task value) {
+        if (tasksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTasksIsMutable();
+          tasks_.add(value);
+          onChanged();
+        } else {
+          tasksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder addTasks(
+          int index, pto.TestProto.Task value) {
+        if (tasksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTasksIsMutable();
+          tasks_.add(index, value);
+          onChanged();
+        } else {
+          tasksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder addTasks(
+          pto.TestProto.Task.Builder builderForValue) {
+        if (tasksBuilder_ == null) {
+          ensureTasksIsMutable();
+          tasks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tasksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder addTasks(
+          int index, pto.TestProto.Task.Builder builderForValue) {
+        if (tasksBuilder_ == null) {
+          ensureTasksIsMutable();
+          tasks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tasksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder addAllTasks(
+          java.lang.Iterable<? extends pto.TestProto.Task> values) {
+        if (tasksBuilder_ == null) {
+          ensureTasksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tasks_);
+          onChanged();
+        } else {
+          tasksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder clearTasks() {
+        if (tasksBuilder_ == null) {
+          tasks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          tasksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public Builder removeTasks(int index) {
+        if (tasksBuilder_ == null) {
+          ensureTasksIsMutable();
+          tasks_.remove(index);
+          onChanged();
+        } else {
+          tasksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public pto.TestProto.Task.Builder getTasksBuilder(
+          int index) {
+        return getTasksFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public pto.TestProto.TaskOrBuilder getTasksOrBuilder(
+          int index) {
+        if (tasksBuilder_ == null) {
+          return tasks_.get(index);  } else {
+          return tasksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public java.util.List<? extends pto.TestProto.TaskOrBuilder> 
+           getTasksOrBuilderList() {
+        if (tasksBuilder_ != null) {
+          return tasksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tasks_);
+        }
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public pto.TestProto.Task.Builder addTasksBuilder() {
+        return getTasksFieldBuilder().addBuilder(
+            pto.TestProto.Task.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public pto.TestProto.Task.Builder addTasksBuilder(
+          int index) {
+        return getTasksFieldBuilder().addBuilder(
+            index, pto.TestProto.Task.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Task tasks = 1;</code>
+       */
+      public java.util.List<pto.TestProto.Task.Builder> 
+           getTasksBuilderList() {
+        return getTasksFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> 
+          getTasksFieldBuilder() {
+        if (tasksBuilder_ == null) {
+          tasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder>(
+                  tasks_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tasks_ = null;
+        }
+        return tasksBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ProdAddTasks)
+    }
+
+    // @@protoc_insertion_point(class_scope:ProdAddTasks)
+    private static final pto.TestProto.ProdAddTasks DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.ProdAddTasks();
+    }
+
+    public static pto.TestProto.ProdAddTasks getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProdAddTasks>
+        PARSER = new com.google.protobuf.AbstractParser<ProdAddTasks>() {
+      @java.lang.Override
+      public ProdAddTasks parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProdAddTasks(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProdAddTasks> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProdAddTasks> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.ProdAddTasks getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_User_descriptor;
   private static final 
@@ -12752,6 +13792,11 @@ pto.TestProto.TaskShell defaultValue);
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ResponseMsg_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ProdAddTasks_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ProdAddTasks_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12790,18 +13835,20 @@ pto.TestProto.TaskShell defaultValue);
       "\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.Ta" +
       "skResult\022\016\n\006status\030\t \001(\010\0328\n\nShellEntry\022\013" +
       "\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:\002" +
-      "8\001\"c\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
+      "8\001\"u\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
       "(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskI" +
-      "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\"\231\001\n\013TaskConduct\022" +
-      "\016\n\006taskId\030\001 \001(\005\022\017\n\007userIds\030\002 \003(\005\0224\n\014shel" +
-      "lMapping\030\003 \003(\0132\036.TaskConduct.ShellMappin" +
-      "gEntry\0323\n\021ShellMappingEntry\022\013\n\003key\030\001 \001(\005" +
-      "\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n\013ResponseMsg\022\016\n\006st" +
-      "atus\030\001 \001(\010\022\013\n\003msg\030\002 \001(\t*S\n\005Types\022\010\n\004USER" +
-      "\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_LOGIN\020\002\022\020\n\014C2S_" +
-      "REGISTER\020\003\022\020\n\014S2C_REGISTER\020\004*3\n\013TaskProt" +
-      "ocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020" +
-      "\003B\020\n\003ptoB\tTestProtob\006proto3"
+      "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003(" +
+      "\005\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n\007use" +
+      "rIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.TaskC" +
+      "onduct.ShellMappingEntry\0323\n\021ShellMapping" +
+      "Entry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n" +
+      "\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030\002 \001(" +
+      "\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task*" +
+      "S\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C" +
+      "_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REGIST" +
+      "ER\020\004*3\n\013TaskProtocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022" +
+      "\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003ptoB\tTestProtob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12872,7 +13919,7 @@ pto.TestProto.TaskShell defaultValue);
     internal_static_S_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S_User_descriptor,
-        new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", "Online", });
+        new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", "Online", "AddTasks", });
     internal_static_TaskConduct_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_TaskConduct_fieldAccessorTable = new
@@ -12891,6 +13938,12 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResponseMsg_descriptor,
         new java.lang.String[] { "Status", "Msg", });
+    internal_static_ProdAddTasks_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_ProdAddTasks_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ProdAddTasks_descriptor,
+        new java.lang.String[] { "Tasks", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

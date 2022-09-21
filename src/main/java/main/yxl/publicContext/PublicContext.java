@@ -125,4 +125,71 @@ public class PublicContext {
         this.taskConductMap.remove(taskId);
         return builder;
     }
+
+
+    /**
+     * 生产者添加任务
+     */
+    public TestProto.ResponseMsg.Builder prod_AddTask(TestProto.Task.Builder task) {
+        TestProto.ResponseMsg.Builder builder = TestProto.ResponseMsg.newBuilder();
+        TestProto.Task.Builder temp = taskMap.getTask(task.getTaskId());
+        if (temp != null) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.TASK_EXIST, task.getTaskId()));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.TASK_EXIST.getMsg());
+            return builder;
+        }
+        boolean b = taskMap.addTask(task.build().toByteArray());
+        if (!b) {
+            logger.error(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.SYSTEM_ERROR));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.SYSTEM_ERROR.getMsg());
+        } else {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.P_TASK_ADD_OK, task.getTaskId()));
+            builder.setMsg(OptionDetails.P_TASK_ADD_OK.getMsg());
+            builder.setStatus(true);
+        }
+        return builder;
+    }
+
+
+    /**
+     * 生产者获取任务测试结果集
+     */
+    public TestProto.TaskResult.Builder prod_GetResult(int taskId) {
+        TestProto.TaskResult.Builder builder = null;
+        TestProto.Task.Builder task = this.taskMap.getTask(taskId);
+        if (task == null) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.P_TASK_NOT_FOUND, taskId));
+            return builder;
+        }
+        builder = task.getResult().toBuilder();
+        return builder;
+    }
+
+
+    /**
+     * 生产者和消费者公用逻辑、获取任务信息
+     */
+    public TestProto.Task.Builder getTask(int taskId) {
+        return this.taskMap.getTask(taskId);
+    }
+
+
+    /**
+     * 生产者获取发布的所有任务的详细信息
+     * */
+    public TestProto.ProdAddTasks.Builder prod_GetAddTasks(int userId) {
+        TestProto.ProdAddTasks.Builder builder = TestProto.ProdAddTasks.newBuilder();
+        TestProto.S_User.Builder sUser = this.userMap.getSUser(userId);
+        if (sUser == null) {
+            logger.info(LogUtil.makeOptionDetails(userId, LogMsg.PUBLIC_CONTEXT, OptionDetails.P_GET_ADD_TASKS_NO_USER));
+            return null;
+        }
+        List<Integer> addTasksList = sUser.getAddTasksList();
+        for (Integer tid : addTasksList) {
+            builder.addTasks(this.getTask(tid));
+        }
+        return builder;
+    }
 }
