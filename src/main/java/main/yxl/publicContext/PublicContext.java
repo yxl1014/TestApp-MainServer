@@ -129,6 +129,9 @@ public class PublicContext {
 
     /**
      * 生产者添加任务
+     *
+     * @param task 需要添加的任务builder
+     * @return ResponseMsg.Builder
      */
     public TestProto.ResponseMsg.Builder prod_AddTask(TestProto.Task.Builder task) {
         TestProto.ResponseMsg.Builder builder = TestProto.ResponseMsg.newBuilder();
@@ -178,7 +181,7 @@ public class PublicContext {
 
     /**
      * 生产者获取发布的所有任务的详细信息
-     * */
+     */
     public TestProto.ProdAddTasks.Builder prod_GetAddTasks(int userId) {
         TestProto.ProdAddTasks.Builder builder = TestProto.ProdAddTasks.newBuilder();
         TestProto.S_User.Builder sUser = this.userMap.getSUser(userId);
@@ -192,4 +195,88 @@ public class PublicContext {
         }
         return builder;
     }
+
+    //------------------------------------------------------------------------------------------------------------------
+
+
+    /**
+     * 消费者接受任务
+     *
+     * @param taskId 任务id
+     * @param userId 用户id
+     * @return ResponseMsg.Builder
+     */
+    public TestProto.ResponseMsg.Builder cons_TakeTask(int taskId, int userId) {
+        TestProto.ResponseMsg.Builder builder = TestProto.ResponseMsg.newBuilder();
+        TestProto.S_User.Builder sUser = userMap.getSUser(userId);
+
+        //判断是否已经接受该任务
+        if (sUser.getAddTasksList().contains(taskId)) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.C_TAKE_IS_TAKE, taskId, userId));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.C_TAKE_IS_TAKE.getMsg());
+            return builder;
+        }
+
+        userMap.getSUser(userId).addAddTasks(taskId);
+        taskMap.getTask(taskId).addTaskCons(userId);
+
+        builder.setStatus(true);
+        builder.setMsg(OptionDetails.C_TAKE_TASK_OK.getMsg());
+        return builder;
+    }
+
+    /**
+     * 消费者开始任务
+     *
+     * @param taskId 任务id
+     * @param userId 用户id
+     * @return ResponseMsg.Builder
+     * */
+    public TestProto.ResponseMsg.Builder cons_StartTask(int taskId, int userId) {
+        TestProto.ResponseMsg.Builder builder = TestProto.ResponseMsg.newBuilder();
+
+        //判断是否已经接受该任务
+        if (userMap.getSUser(userId).getAddTasksList().contains(taskId)) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.C_START_NO_TAKE, taskId, userId));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.C_START_NO_TAKE.getMsg());
+            return builder;
+        }
+
+        //判断该任务是否可以接受
+        if (!taskMap.getTask(taskId).getStatus()) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.C_START_TASK_NOT_START, taskId, userId));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.C_START_TASK_NOT_START.getMsg());
+            return builder;
+        }
+
+        TestProto.TaskConduct.Builder builder1 = taskConductMap.get(taskId);
+        if (builder1 == null) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.SYSTEM_ERROR));
+            builder.setStatus(false);
+            builder.setMsg(OptionDetails.SYSTEM_ERROR.getMsg());
+            return builder;
+        }
+
+        builder1.setUserIds(userId, -1);
+        userMap.getSUser(userId).setDoingTaskId(taskId);
+        //TODO 通过调度器给这个用户分配任务
+
+        builder.setStatus(true);
+        builder.setMsg(OptionDetails.C_START_TASK_OK.getMsg());
+        return builder;
+    }
+
+
+
+    public TestProto.ResponseMsg.Builder cons_EndTask(int taskId,int userId){
+        TestProto.ResponseMsg.Builder builder = TestProto.ResponseMsg.newBuilder();
+
+        builder.setStatus(true);
+        builder.setMsg(OptionDetails.C_START_TASK_OK.getMsg());
+        return builder;
+    }
+
 }

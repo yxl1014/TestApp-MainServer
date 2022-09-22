@@ -40,8 +40,11 @@ public class LogUtil {
         return logMsg.getName() + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg();
     }
 
-    public static String filterUrl(LogMsg logMsg,OptionDetails optionDetails)
-    {
-        return logMsg.getName()+"---"+optionDetails.getStatus()+"---"+optionDetails.getMsg();
+    public static String filterUrl(LogMsg logMsg, OptionDetails optionDetails) {
+        return logMsg.getName() + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg();
+    }
+
+    public static String makeOptionDetails(LogMsg logMsg, OptionDetails optionDetails, int taskId, int userId) {
+        return logMsg.getName() + "---" + optionDetails.getStatus() + "---" + optionDetails.getMsg() + "---taskId:" + taskId + "---userId:" + userId;
     }
 }
