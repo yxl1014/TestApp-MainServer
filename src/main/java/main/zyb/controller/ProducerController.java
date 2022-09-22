@@ -1,5 +1,4 @@
 package main.zyb.controller;
-
 import com.google.protobuf.InvalidProtocolBufferException;
 import main.annotation.Producer;
 import main.logs.LogMsg;
@@ -7,7 +6,6 @@ import main.logs.LogUtil;
 import main.logs.OptionDetails;
 import main.util.ProtocolUtil;
 import main.zyb.service.ProducerService;
-import main.zyb.service.impl.ProducerServiceImpl;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,18 +31,16 @@ public class ProducerController {
 
         byte[] temp = protocolUtil.decodeProtocol(data);
         if (temp == null) {
-            logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.PROTOBUF_ERROR));
-            TestProto.S2C_Login.Builder result = TestProto.S2C_Login.newBuilder();
-            result.setStatus(false);
-            result.setMsg(OptionDetails.PROTOBUF_ERROR.getMsg());
+            logger.info(LogUtil.makeOptionDetails(LogMsg.ACCESS_DATA_INTERFACE, OptionDetails.ACCESS_DATA_INTERFACE_NULL));
+            TestProto.S2C_prodAddTask.Builder result = TestProto.S2C_prodAddTask.newBuilder();
+            TestProto.ResponseMsg.Builder ResponseMsg = TestProto.ResponseMsg.newBuilder();
+            ResponseMsg.setMsg(OptionDetails.ACCESS_DATA_INTERFACE_NULL.getMsg());
+            ResponseMsg.setStatus(false);
+            result.setMsg(ResponseMsg);
             byte[] bytes = result.buildPartial().toByteArray();
-            return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_LOGIN);
+            return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_PROD_ADD_TASK);
         }
-        TestProto.Task builder = null;
-
-        builder = TestProto.Task.parseFrom(data);
-
-        return producerService.prod_AddTask(builder);
+        return producerService.prod_AddTask(data);
     }
 
     @Producer
@@ -53,12 +49,14 @@ public class ProducerController {
     {
         byte[] temp = protocolUtil.decodeProtocol(data);
         if (temp == null) {
-            logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.PROTOBUF_ERROR));
-            TestProto.S2C_Login.Builder result = TestProto.S2C_Login.newBuilder();
-            result.setStatus(false);
-            result.setMsg(OptionDetails.PROTOBUF_ERROR.getMsg());
+            logger.info(LogUtil.makeOptionDetails(LogMsg.ACCESS_DATA_INTERFACE, OptionDetails.ACCESS_DATA_INTERFACE_NULL));
+            TestProto.S2C_ProdStartTask.Builder result = TestProto.S2C_ProdStartTask.newBuilder();
+            TestProto.ResponseMsg.Builder ResponseMsg = TestProto.ResponseMsg.newBuilder();
+            ResponseMsg.setMsg(OptionDetails.ACCESS_DATA_INTERFACE_NULL.getMsg());
+            ResponseMsg.setStatus(false);
+            result.setMsg(ResponseMsg);
             byte[] bytes = result.buildPartial().toByteArray();
-            return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_LOGIN);
+            return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_PROD_START_TASK);
         }
         return producerService.prod_StartTask(temp);
     }

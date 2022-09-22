@@ -41,7 +41,6 @@ public class PowerInterceptor implements HandlerInterceptor {
             logger.info(LogUtil.makeOptionDetails(LogMsg.INTERCEPTOR, OptionDetails.NO_PRODUCER));
 
         }
-
         /*
         判断是不是Consumer方法
          */

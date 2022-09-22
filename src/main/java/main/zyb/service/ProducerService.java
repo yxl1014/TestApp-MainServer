@@ -15,6 +15,6 @@ public interface ProducerService {//生产者服务
     /**
      * 生产者添加任务
      */
-    public byte[] prod_AddTask(TestProto.Task data);
+    public byte[] prod_AddTask(byte[] data);
 
 }

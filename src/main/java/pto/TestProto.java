@@ -39,6 +39,14 @@ public final class TestProto {
      * <code>S2C_REGISTER = 4;</code>
      */
     S2C_REGISTER(4),
+    /**
+     * <code>S2C_PROD_START_TASK = 5;</code>
+     */
+    S2C_PROD_START_TASK(5),
+    /**
+     * <code>S2C_PROD_ADD_TASK = 6;</code>
+     */
+    S2C_PROD_ADD_TASK(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -62,6 +70,14 @@ public final class TestProto {
      * <code>S2C_REGISTER = 4;</code>
      */
     public static final int S2C_REGISTER_VALUE = 4;
+    /**
+     * <code>S2C_PROD_START_TASK = 5;</code>
+     */
+    public static final int S2C_PROD_START_TASK_VALUE = 5;
+    /**
+     * <code>S2C_PROD_ADD_TASK = 6;</code>
+     */
+    public static final int S2C_PROD_ADD_TASK_VALUE = 6;
 
 
     public final int getNumber() {
@@ -93,6 +109,8 @@ public final class TestProto {
         case 2: return S2C_LOGIN;
         case 3: return C2S_REGISTER;
         case 4: return S2C_REGISTER;
+        case 5: return S2C_PROD_START_TASK;
+        case 6: return S2C_PROD_ADD_TASK;
         default: return null;
       }
     }
@@ -13722,6 +13740,2365 @@ pto.TestProto.TaskShell defaultValue);
 
   }
 
+  public interface C2S_ProdStartTaskOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_ProdStartTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 taskId = 1;</code>
+     * @return The taskId.
+     */
+    int getTaskId();
+  }
+  /**
+   * Protobuf type {@code C2S_ProdStartTask}
+   */
+  public static final class C2S_ProdStartTask extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_ProdStartTask)
+      C2S_ProdStartTaskOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use C2S_ProdStartTask.newBuilder() to construct.
+    private C2S_ProdStartTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_ProdStartTask() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new C2S_ProdStartTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private C2S_ProdStartTask(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              taskId_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_C2S_ProdStartTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_C2S_ProdStartTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.C2S_ProdStartTask.class, pto.TestProto.C2S_ProdStartTask.Builder.class);
+    }
+
+    public static final int TASKID_FIELD_NUMBER = 1;
+    private int taskId_;
+    /**
+     * <code>int32 taskId = 1;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public int getTaskId() {
+      return taskId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (taskId_ != 0) {
+        output.writeInt32(1, taskId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (taskId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, taskId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.C2S_ProdStartTask)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.C2S_ProdStartTask other = (pto.TestProto.C2S_ProdStartTask) obj;
+
+      if (getTaskId()
+          != other.getTaskId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TASKID_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskId();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_ProdStartTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.C2S_ProdStartTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code C2S_ProdStartTask}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_ProdStartTask)
+        pto.TestProto.C2S_ProdStartTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_C2S_ProdStartTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_C2S_ProdStartTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.C2S_ProdStartTask.class, pto.TestProto.C2S_ProdStartTask.Builder.class);
+      }
+
+      // Construct using pto.TestProto.C2S_ProdStartTask.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        taskId_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_C2S_ProdStartTask_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_ProdStartTask getDefaultInstanceForType() {
+        return pto.TestProto.C2S_ProdStartTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_ProdStartTask build() {
+        pto.TestProto.C2S_ProdStartTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_ProdStartTask buildPartial() {
+        pto.TestProto.C2S_ProdStartTask result = new pto.TestProto.C2S_ProdStartTask(this);
+        result.taskId_ = taskId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.C2S_ProdStartTask) {
+          return mergeFrom((pto.TestProto.C2S_ProdStartTask)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.C2S_ProdStartTask other) {
+        if (other == pto.TestProto.C2S_ProdStartTask.getDefaultInstance()) return this;
+        if (other.getTaskId() != 0) {
+          setTaskId(other.getTaskId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.C2S_ProdStartTask parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.C2S_ProdStartTask) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int taskId_ ;
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @return The taskId.
+       */
+      @java.lang.Override
+      public int getTaskId() {
+        return taskId_;
+      }
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @param value The taskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskId(int value) {
+        
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 taskId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskId() {
+        
+        taskId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_ProdStartTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_ProdStartTask)
+    private static final pto.TestProto.C2S_ProdStartTask DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.C2S_ProdStartTask();
+    }
+
+    public static pto.TestProto.C2S_ProdStartTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_ProdStartTask>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_ProdStartTask>() {
+      @java.lang.Override
+      public C2S_ProdStartTask parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new C2S_ProdStartTask(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_ProdStartTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_ProdStartTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.C2S_ProdStartTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_ProdStartTaskOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_ProdStartTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return Whether the msg field is set.
+     */
+    boolean hasMsg();
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return The msg.
+     */
+    pto.TestProto.ResponseMsg getMsg();
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     */
+    pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder();
+  }
+  /**
+   * Protobuf type {@code S2C_ProdStartTask}
+   */
+  public static final class S2C_ProdStartTask extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_ProdStartTask)
+      S2C_ProdStartTaskOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use S2C_ProdStartTask.newBuilder() to construct.
+    private S2C_ProdStartTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_ProdStartTask() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new S2C_ProdStartTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private S2C_ProdStartTask(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              pto.TestProto.ResponseMsg.Builder subBuilder = null;
+              if (msg_ != null) {
+                subBuilder = msg_.toBuilder();
+              }
+              msg_ = input.readMessage(pto.TestProto.ResponseMsg.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg_);
+                msg_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_S2C_ProdStartTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_S2C_ProdStartTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.S2C_ProdStartTask.class, pto.TestProto.S2C_ProdStartTask.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private pto.TestProto.ResponseMsg msg_;
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return Whether the msg field is set.
+     */
+    @java.lang.Override
+    public boolean hasMsg() {
+      return msg_ != null;
+    }
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public pto.TestProto.ResponseMsg getMsg() {
+      return msg_ == null ? pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+    }
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder() {
+      return getMsg();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (msg_ != null) {
+        output.writeMessage(1, getMsg());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (msg_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMsg());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.S2C_ProdStartTask)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.S2C_ProdStartTask other = (pto.TestProto.S2C_ProdStartTask) obj;
+
+      if (hasMsg() != other.hasMsg()) return false;
+      if (hasMsg()) {
+        if (!getMsg()
+            .equals(other.getMsg())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMsg()) {
+        hash = (37 * hash) + MSG_FIELD_NUMBER;
+        hash = (53 * hash) + getMsg().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_ProdStartTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.S2C_ProdStartTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_ProdStartTask}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_ProdStartTask)
+        pto.TestProto.S2C_ProdStartTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_S2C_ProdStartTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_S2C_ProdStartTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.S2C_ProdStartTask.class, pto.TestProto.S2C_ProdStartTask.Builder.class);
+      }
+
+      // Construct using pto.TestProto.S2C_ProdStartTask.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (msgBuilder_ == null) {
+          msg_ = null;
+        } else {
+          msg_ = null;
+          msgBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_S2C_ProdStartTask_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_ProdStartTask getDefaultInstanceForType() {
+        return pto.TestProto.S2C_ProdStartTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_ProdStartTask build() {
+        pto.TestProto.S2C_ProdStartTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_ProdStartTask buildPartial() {
+        pto.TestProto.S2C_ProdStartTask result = new pto.TestProto.S2C_ProdStartTask(this);
+        if (msgBuilder_ == null) {
+          result.msg_ = msg_;
+        } else {
+          result.msg_ = msgBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.S2C_ProdStartTask) {
+          return mergeFrom((pto.TestProto.S2C_ProdStartTask)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.S2C_ProdStartTask other) {
+        if (other == pto.TestProto.S2C_ProdStartTask.getDefaultInstance()) return this;
+        if (other.hasMsg()) {
+          mergeMsg(other.getMsg());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.S2C_ProdStartTask parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.S2C_ProdStartTask) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private pto.TestProto.ResponseMsg msg_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder> msgBuilder_;
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       * @return Whether the msg field is set.
+       */
+      public boolean hasMsg() {
+        return msgBuilder_ != null || msg_ != null;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       * @return The msg.
+       */
+      public pto.TestProto.ResponseMsg getMsg() {
+        if (msgBuilder_ == null) {
+          return msg_ == null ? pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+        } else {
+          return msgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder setMsg(pto.TestProto.ResponseMsg value) {
+        if (msgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg_ = value;
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder setMsg(
+          pto.TestProto.ResponseMsg.Builder builderForValue) {
+        if (msgBuilder_ == null) {
+          msg_ = builderForValue.build();
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder mergeMsg(pto.TestProto.ResponseMsg value) {
+        if (msgBuilder_ == null) {
+          if (msg_ != null) {
+            msg_ =
+              pto.TestProto.ResponseMsg.newBuilder(msg_).mergeFrom(value).buildPartial();
+          } else {
+            msg_ = value;
+          }
+          onChanged();
+        } else {
+          msgBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder clearMsg() {
+        if (msgBuilder_ == null) {
+          msg_ = null;
+          onChanged();
+        } else {
+          msg_ = null;
+          msgBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public pto.TestProto.ResponseMsg.Builder getMsgBuilder() {
+        
+        onChanged();
+        return getMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder() {
+        if (msgBuilder_ != null) {
+          return msgBuilder_.getMessageOrBuilder();
+        } else {
+          return msg_ == null ?
+              pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+        }
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder> 
+          getMsgFieldBuilder() {
+        if (msgBuilder_ == null) {
+          msgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder>(
+                  getMsg(),
+                  getParentForChildren(),
+                  isClean());
+          msg_ = null;
+        }
+        return msgBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_ProdStartTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_ProdStartTask)
+    private static final pto.TestProto.S2C_ProdStartTask DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.S2C_ProdStartTask();
+    }
+
+    public static pto.TestProto.S2C_ProdStartTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_ProdStartTask>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_ProdStartTask>() {
+      @java.lang.Override
+      public S2C_ProdStartTask parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new S2C_ProdStartTask(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_ProdStartTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_ProdStartTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.S2C_ProdStartTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface C2S_prodAddTaskOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2S_prodAddTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.Task task = 1;</code>
+     * @return Whether the task field is set.
+     */
+    boolean hasTask();
+    /**
+     * <code>.Task task = 1;</code>
+     * @return The task.
+     */
+    pto.TestProto.Task getTask();
+    /**
+     * <code>.Task task = 1;</code>
+     */
+    pto.TestProto.TaskOrBuilder getTaskOrBuilder();
+  }
+  /**
+   * Protobuf type {@code C2S_prodAddTask}
+   */
+  public static final class C2S_prodAddTask extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2S_prodAddTask)
+      C2S_prodAddTaskOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use C2S_prodAddTask.newBuilder() to construct.
+    private C2S_prodAddTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2S_prodAddTask() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new C2S_prodAddTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private C2S_prodAddTask(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              pto.TestProto.Task.Builder subBuilder = null;
+              if (task_ != null) {
+                subBuilder = task_.toBuilder();
+              }
+              task_ = input.readMessage(pto.TestProto.Task.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(task_);
+                task_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_C2S_prodAddTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_C2S_prodAddTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.C2S_prodAddTask.class, pto.TestProto.C2S_prodAddTask.Builder.class);
+    }
+
+    public static final int TASK_FIELD_NUMBER = 1;
+    private pto.TestProto.Task task_;
+    /**
+     * <code>.Task task = 1;</code>
+     * @return Whether the task field is set.
+     */
+    @java.lang.Override
+    public boolean hasTask() {
+      return task_ != null;
+    }
+    /**
+     * <code>.Task task = 1;</code>
+     * @return The task.
+     */
+    @java.lang.Override
+    public pto.TestProto.Task getTask() {
+      return task_ == null ? pto.TestProto.Task.getDefaultInstance() : task_;
+    }
+    /**
+     * <code>.Task task = 1;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.TaskOrBuilder getTaskOrBuilder() {
+      return getTask();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (task_ != null) {
+        output.writeMessage(1, getTask());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (task_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTask());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.C2S_prodAddTask)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.C2S_prodAddTask other = (pto.TestProto.C2S_prodAddTask) obj;
+
+      if (hasTask() != other.hasTask()) return false;
+      if (hasTask()) {
+        if (!getTask()
+            .equals(other.getTask())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTask()) {
+        hash = (37 * hash) + TASK_FIELD_NUMBER;
+        hash = (53 * hash) + getTask().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.C2S_prodAddTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.C2S_prodAddTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code C2S_prodAddTask}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2S_prodAddTask)
+        pto.TestProto.C2S_prodAddTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_C2S_prodAddTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_C2S_prodAddTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.C2S_prodAddTask.class, pto.TestProto.C2S_prodAddTask.Builder.class);
+      }
+
+      // Construct using pto.TestProto.C2S_prodAddTask.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (taskBuilder_ == null) {
+          task_ = null;
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_C2S_prodAddTask_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_prodAddTask getDefaultInstanceForType() {
+        return pto.TestProto.C2S_prodAddTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_prodAddTask build() {
+        pto.TestProto.C2S_prodAddTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.C2S_prodAddTask buildPartial() {
+        pto.TestProto.C2S_prodAddTask result = new pto.TestProto.C2S_prodAddTask(this);
+        if (taskBuilder_ == null) {
+          result.task_ = task_;
+        } else {
+          result.task_ = taskBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.C2S_prodAddTask) {
+          return mergeFrom((pto.TestProto.C2S_prodAddTask)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.C2S_prodAddTask other) {
+        if (other == pto.TestProto.C2S_prodAddTask.getDefaultInstance()) return this;
+        if (other.hasTask()) {
+          mergeTask(other.getTask());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.C2S_prodAddTask parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.C2S_prodAddTask) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private pto.TestProto.Task task_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> taskBuilder_;
+      /**
+       * <code>.Task task = 1;</code>
+       * @return Whether the task field is set.
+       */
+      public boolean hasTask() {
+        return taskBuilder_ != null || task_ != null;
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       * @return The task.
+       */
+      public pto.TestProto.Task getTask() {
+        if (taskBuilder_ == null) {
+          return task_ == null ? pto.TestProto.Task.getDefaultInstance() : task_;
+        } else {
+          return taskBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public Builder setTask(pto.TestProto.Task value) {
+        if (taskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          task_ = value;
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public Builder setTask(
+          pto.TestProto.Task.Builder builderForValue) {
+        if (taskBuilder_ == null) {
+          task_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public Builder mergeTask(pto.TestProto.Task value) {
+        if (taskBuilder_ == null) {
+          if (task_ != null) {
+            task_ =
+              pto.TestProto.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+          } else {
+            task_ = value;
+          }
+          onChanged();
+        } else {
+          taskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public Builder clearTask() {
+        if (taskBuilder_ == null) {
+          task_ = null;
+          onChanged();
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public pto.TestProto.Task.Builder getTaskBuilder() {
+        
+        onChanged();
+        return getTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      public pto.TestProto.TaskOrBuilder getTaskOrBuilder() {
+        if (taskBuilder_ != null) {
+          return taskBuilder_.getMessageOrBuilder();
+        } else {
+          return task_ == null ?
+              pto.TestProto.Task.getDefaultInstance() : task_;
+        }
+      }
+      /**
+       * <code>.Task task = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> 
+          getTaskFieldBuilder() {
+        if (taskBuilder_ == null) {
+          taskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder>(
+                  getTask(),
+                  getParentForChildren(),
+                  isClean());
+          task_ = null;
+        }
+        return taskBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2S_prodAddTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2S_prodAddTask)
+    private static final pto.TestProto.C2S_prodAddTask DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.C2S_prodAddTask();
+    }
+
+    public static pto.TestProto.C2S_prodAddTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<C2S_prodAddTask>
+        PARSER = new com.google.protobuf.AbstractParser<C2S_prodAddTask>() {
+      @java.lang.Override
+      public C2S_prodAddTask parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new C2S_prodAddTask(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2S_prodAddTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2S_prodAddTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.C2S_prodAddTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface S2C_prodAddTaskOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:S2C_prodAddTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return Whether the msg field is set.
+     */
+    boolean hasMsg();
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return The msg.
+     */
+    pto.TestProto.ResponseMsg getMsg();
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     */
+    pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder();
+  }
+  /**
+   * Protobuf type {@code S2C_prodAddTask}
+   */
+  public static final class S2C_prodAddTask extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:S2C_prodAddTask)
+      S2C_prodAddTaskOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use S2C_prodAddTask.newBuilder() to construct.
+    private S2C_prodAddTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private S2C_prodAddTask() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new S2C_prodAddTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private S2C_prodAddTask(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              pto.TestProto.ResponseMsg.Builder subBuilder = null;
+              if (msg_ != null) {
+                subBuilder = msg_.toBuilder();
+              }
+              msg_ = input.readMessage(pto.TestProto.ResponseMsg.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msg_);
+                msg_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_S2C_prodAddTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_S2C_prodAddTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.S2C_prodAddTask.class, pto.TestProto.S2C_prodAddTask.Builder.class);
+    }
+
+    public static final int MSG_FIELD_NUMBER = 1;
+    private pto.TestProto.ResponseMsg msg_;
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return Whether the msg field is set.
+     */
+    @java.lang.Override
+    public boolean hasMsg() {
+      return msg_ != null;
+    }
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public pto.TestProto.ResponseMsg getMsg() {
+      return msg_ == null ? pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+    }
+    /**
+     * <code>.ResponseMsg msg = 1;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder() {
+      return getMsg();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (msg_ != null) {
+        output.writeMessage(1, getMsg());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (msg_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMsg());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.S2C_prodAddTask)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.S2C_prodAddTask other = (pto.TestProto.S2C_prodAddTask) obj;
+
+      if (hasMsg() != other.hasMsg()) return false;
+      if (hasMsg()) {
+        if (!getMsg()
+            .equals(other.getMsg())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMsg()) {
+        hash = (37 * hash) + MSG_FIELD_NUMBER;
+        hash = (53 * hash) + getMsg().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.S2C_prodAddTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.S2C_prodAddTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code S2C_prodAddTask}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:S2C_prodAddTask)
+        pto.TestProto.S2C_prodAddTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_S2C_prodAddTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_S2C_prodAddTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.S2C_prodAddTask.class, pto.TestProto.S2C_prodAddTask.Builder.class);
+      }
+
+      // Construct using pto.TestProto.S2C_prodAddTask.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (msgBuilder_ == null) {
+          msg_ = null;
+        } else {
+          msg_ = null;
+          msgBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_S2C_prodAddTask_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_prodAddTask getDefaultInstanceForType() {
+        return pto.TestProto.S2C_prodAddTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_prodAddTask build() {
+        pto.TestProto.S2C_prodAddTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.S2C_prodAddTask buildPartial() {
+        pto.TestProto.S2C_prodAddTask result = new pto.TestProto.S2C_prodAddTask(this);
+        if (msgBuilder_ == null) {
+          result.msg_ = msg_;
+        } else {
+          result.msg_ = msgBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.S2C_prodAddTask) {
+          return mergeFrom((pto.TestProto.S2C_prodAddTask)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.S2C_prodAddTask other) {
+        if (other == pto.TestProto.S2C_prodAddTask.getDefaultInstance()) return this;
+        if (other.hasMsg()) {
+          mergeMsg(other.getMsg());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.S2C_prodAddTask parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.S2C_prodAddTask) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private pto.TestProto.ResponseMsg msg_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder> msgBuilder_;
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       * @return Whether the msg field is set.
+       */
+      public boolean hasMsg() {
+        return msgBuilder_ != null || msg_ != null;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       * @return The msg.
+       */
+      public pto.TestProto.ResponseMsg getMsg() {
+        if (msgBuilder_ == null) {
+          return msg_ == null ? pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+        } else {
+          return msgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder setMsg(pto.TestProto.ResponseMsg value) {
+        if (msgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msg_ = value;
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder setMsg(
+          pto.TestProto.ResponseMsg.Builder builderForValue) {
+        if (msgBuilder_ == null) {
+          msg_ = builderForValue.build();
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder mergeMsg(pto.TestProto.ResponseMsg value) {
+        if (msgBuilder_ == null) {
+          if (msg_ != null) {
+            msg_ =
+              pto.TestProto.ResponseMsg.newBuilder(msg_).mergeFrom(value).buildPartial();
+          } else {
+            msg_ = value;
+          }
+          onChanged();
+        } else {
+          msgBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public Builder clearMsg() {
+        if (msgBuilder_ == null) {
+          msg_ = null;
+          onChanged();
+        } else {
+          msg_ = null;
+          msgBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public pto.TestProto.ResponseMsg.Builder getMsgBuilder() {
+        
+        onChanged();
+        return getMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      public pto.TestProto.ResponseMsgOrBuilder getMsgOrBuilder() {
+        if (msgBuilder_ != null) {
+          return msgBuilder_.getMessageOrBuilder();
+        } else {
+          return msg_ == null ?
+              pto.TestProto.ResponseMsg.getDefaultInstance() : msg_;
+        }
+      }
+      /**
+       * <code>.ResponseMsg msg = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder> 
+          getMsgFieldBuilder() {
+        if (msgBuilder_ == null) {
+          msgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              pto.TestProto.ResponseMsg, pto.TestProto.ResponseMsg.Builder, pto.TestProto.ResponseMsgOrBuilder>(
+                  getMsg(),
+                  getParentForChildren(),
+                  isClean());
+          msg_ = null;
+        }
+        return msgBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:S2C_prodAddTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:S2C_prodAddTask)
+    private static final pto.TestProto.S2C_prodAddTask DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.S2C_prodAddTask();
+    }
+
+    public static pto.TestProto.S2C_prodAddTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S2C_prodAddTask>
+        PARSER = new com.google.protobuf.AbstractParser<S2C_prodAddTask>() {
+      @java.lang.Override
+      public S2C_prodAddTask parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new S2C_prodAddTask(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<S2C_prodAddTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S2C_prodAddTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.S2C_prodAddTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_User_descriptor;
   private static final 
@@ -13797,6 +16174,26 @@ pto.TestProto.TaskShell defaultValue);
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ProdAddTasks_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_ProdStartTask_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_ProdStartTask_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_ProdStartTask_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_ProdStartTask_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2S_prodAddTask_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2S_prodAddTask_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_S2C_prodAddTask_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_S2C_prodAddTask_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13843,12 +16240,17 @@ pto.TestProto.TaskShell defaultValue);
       "onduct.ShellMappingEntry\0323\n\021ShellMapping" +
       "Entry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n" +
       "\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030\002 \001(" +
-      "\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task*" +
-      "S\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C" +
-      "_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REGIST" +
-      "ER\020\004*3\n\013TaskProtocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022" +
-      "\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003ptoB\tTestProtob\006pro" +
-      "to3"
+      "\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"" +
+      "#\n\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\".\n\021" +
+      "S2C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.Respons" +
+      "eMsg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132\005." +
+      "Task\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014.R" +
+      "esponseMsg*\203\001\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LO" +
+      "GIN\020\001\022\r\n\tS2C_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020" +
+      "\n\014S2C_REGISTER\020\004\022\027\n\023S2C_PROD_START_TASK\020" +
+      "\005\022\025\n\021S2C_PROD_ADD_TASK\020\006*3\n\013TaskProtocl\022" +
+      "\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n" +
+      "\003ptoB\tTestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13944,6 +16346,30 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProdAddTasks_descriptor,
         new java.lang.String[] { "Tasks", });
+    internal_static_C2S_ProdStartTask_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_C2S_ProdStartTask_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_ProdStartTask_descriptor,
+        new java.lang.String[] { "TaskId", });
+    internal_static_S2C_ProdStartTask_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_S2C_ProdStartTask_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_ProdStartTask_descriptor,
+        new java.lang.String[] { "Msg", });
+    internal_static_C2S_prodAddTask_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_C2S_prodAddTask_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2S_prodAddTask_descriptor,
+        new java.lang.String[] { "Task", });
+    internal_static_S2C_prodAddTask_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_S2C_prodAddTask_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_S2C_prodAddTask_descriptor,
+        new java.lang.String[] { "Msg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
