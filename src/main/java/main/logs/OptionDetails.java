@@ -57,7 +57,9 @@ public enum OptionDetails {
 
     C_TAKE_IS_TAKE("消费者接受任务", "已接受该任务"), C_TAKE_TASK_OK("消费者接受任务", "接受成功"),
     C_START_NO_TAKE("消费者开始任务","没有接受该任务"),C_START_TASK_NOT_START("消费者开始任务","该任务没有开始"),
-    C_START_TASK_OK("消费者接受任务", "任务开始成功"),
+    C_START_TASK_OK("消费者接受任务", "任务开始成功"),C_END_TASK_NO_DOING("消费者结束任务","没有正在执行的任务"),
+    C_END_TASK_OK("消费者结束任务","任务结束成功"),C_DEL_TASK_NO_EXIST("消费者放弃任务","该用户没有接受该任务"),
+    C_DEL_TASK_OK("消费者放弃任务","任务放弃成功"),
 
     USER_NOT_FOUND("获取用户信息失败", "用户不存在"), PUBLIC_CONDUCT_NOT_FOUND("获取任务进行时失败", "任务进行时不存在"),
 
