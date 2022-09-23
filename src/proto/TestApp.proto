@@ -10,8 +10,8 @@ enum Types{
   S2C_LOGIN = 2;
   C2S_REGISTER = 3;
   S2C_REGISTER = 4;
-  S2C_PROD_START_TASK=5;
-  S2C_PROD_ADD_TASK=6;
+  S2C_PROD_START_TASK = 5;
+  S2C_PROD_ADD_TASK = 6;
 }
 
 //--------------------LoginServer--------------------
@@ -113,6 +113,10 @@ message ProdAddTasks{
   repeated Task tasks = 1;
 }
 
+message ConsGetTasks{
+  repeated Task tasks = 1;
+}
+
 
 message C2S_ProdStartTask{
   int32 taskId = 1;
@@ -128,7 +132,7 @@ message C2S_prodAddTask{
 }
 
 message S2C_prodAddTask{
-  ResponseMsg msg =1;
+  ResponseMsg msg = 1;
 }
 
 
