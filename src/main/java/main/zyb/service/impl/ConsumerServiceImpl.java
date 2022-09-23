@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    private final static Logger logger = LogUtil.getLogger(ProducerServiceImpl.class);
+    private final static Logger logger = LogUtil.getLogger(ConsumerServiceImpl.class);
 
     @Autowired
     private ProtocolUtil protocolUtil;

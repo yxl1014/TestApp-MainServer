@@ -61,6 +61,9 @@ public enum OptionDetails {
 
     USER_NOT_FOUND("获取用户信息失败", "用户不存在"), PUBLIC_CONDUCT_NOT_FOUND("获取任务进行时失败", "任务进行时不存在"),
 
+    //数据接口
+    ACCESS_DATA_INTERFACE_ERROR("访问数据接口","访问数据解析错误"),ACCESS_DATA_INTERFACE_NULL("访问数据接口","访问数据为空"),
+    ADD_TASK_USERID_TRUE("添加任务","UserId无误，任务添加成功"),ADD_TASK_USERID_float("添加任务","UserId错误，添加任务失败"),
     ;
 
     private String status;
