@@ -65,7 +65,12 @@ public enum OptionDetails {
 
     //数据接口
     ACCESS_DATA_INTERFACE_ERROR("访问数据接口","访问数据解析错误"),ACCESS_DATA_INTERFACE_NULL("访问数据接口","访问数据为空"),
-    ADD_TASK_USERID_TRUE("添加任务","UserId无误，任务添加成功"),ADD_TASK_USERID_float("添加任务","UserId错误，添加任务失败"),
+    ADD_TASK_USERID_TRUE("添加任务","UserId无误，任务添加成功"),ADD_TASK_USERID_FLOAT("添加任务","UserId错误，添加任务失败"),
+    END_TASK_USERID_TRUE("关闭任务","数据解析成功,任务关闭成功"),END_TASK_USERID_FLOAT("关闭任务","数据解析失败,关闭任务失败"),
+    PROD_TASK_START_TRUE("开始任务","数据解析成功，任务开始成功"),PROD_TASK_START_FLOAT("开始任务","数据解析失败，任务开始失败"),
+    PROD_GetResult_TRUE("获取任务测试结果集","数据解析成功，获取结果成功"),PROD_GetResult_FLOAT("获取任务测试结果集","数据解析失败，获取结果失败"),
+    PROD_Get_Task_TRUE("获取任务信息","数据解析成功，获取任务信息结果成功"),PROD_Get_Task_FLOAT("获取任务信息","数据解析失败，获取任务信息结果失败"),
+    PROD_ADD_TASKS_TRUE("获取发布的所有任务的详细信息","数据解析成功，获取所有任务信息结果成功"),PROD_ADD_TASKS_FLOAT("获取任务信息","数据解析失败，获取所有任务信息结果失败"),
     ;
 
     private String status;

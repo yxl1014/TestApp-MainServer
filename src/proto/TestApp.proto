@@ -8,10 +8,28 @@ enum Types{
   USER = 0;
   C2S_LOGIN = 1;
   S2C_LOGIN = 2;
+
   C2S_REGISTER = 3;
   S2C_REGISTER = 4;
-  S2C_PROD_START_TASK = 5;
-  S2C_PROD_ADD_TASK = 6;
+
+  S2C_PROD_START_TASK=5;
+  C2S_PROD_START_TASK=6;
+
+  S2C_PROD_ADD_TASK=7;
+  C2S_PROD_ADD_TASK=8;
+
+  S2C_PROD_END_TASK=9;
+  C2S_PROD_END_TASK=10;
+
+  S2C_PROD_GETRESULT=11;
+  C2S_PROD_GETRESULT=12;
+
+  S2C_GET_TASK=13;
+  C2S_GET_TASK =14;
+
+  S2C_PROD_ADD_TASKS=15;
+  C2S_PROD_ADD_TASKS=16;
+
 }
 
 //--------------------LoginServer--------------------
@@ -132,9 +150,48 @@ message C2S_prodAddTask{
 }
 
 message S2C_prodAddTask{
+  ResponseMsg msg =1;
+}
+
+message C2S_prod_EndTask{
+  int32 taskId = 1;
+}
+
+message S2C_prod_EndTask{
   ResponseMsg msg = 1;
 }
 
+message C2S_prod_GetResult
+{
+  int32 taskId = 1;
+}
+
+message S2C_prod_GetResult
+{
+  ResponseMsg msg = 1;
+  TaskResult taskResult = 2;
+}
+
+message C2S_Get_Task
+{
+  int32 taskId = 1;
+}
+
+message S2C_Get_Task
+{
+  ResponseMsg msg = 1;
+  Task task = 2;
+}
+
+message S2C_ProdAddTasks
+{
+    ProdAddTasks tasks = 1;
+}
+
+message C2S_ProdAddTasks
+{
+  int32 userId = 1;
+}
 
 
 
