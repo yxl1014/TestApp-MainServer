@@ -27,8 +27,23 @@ enum Types{
   S2C_GET_TASK=13;
   C2S_GET_TASK =14;
 
-  S2C_PROD_ADD_TASKS=15;
-  C2S_PROD_ADD_TASKS=16;
+  S2C_PROD_GET_ALL_ADD_TASKS=15;
+  C2S_PROD_GET_ALL_ADD_TASKS=16;
+
+  S2C_CONS_TAKE_TASK=17;
+  C2S_CONS_TAKE_TASK=18;
+
+  S2C_CONS_START_TASK=19;
+  C2S_CONS_START_TASK=20;
+
+  S2C_CONS_END_TASK=21;
+  C2S_CONS_END_TASK=22;
+
+  S2C_CNS_DEL_TASK=23;
+  C2S_CNS_DEL_TASK=24;
+
+  S2C_CONS_ALL_GET_TASKS=25;
+  C2S_CONS_ALL_GET_TASKS=26;
 
 }
 
@@ -182,20 +197,77 @@ message S2C_Get_Task
   ResponseMsg msg = 1;
   Task task = 2;
 }
-
-message S2C_ProdAddTasks
+message C2S_prod_GetAllAddTasks
 {
-    ProdAddTasks tasks = 1;
+   int32  userId=1;
 }
 
-message C2S_ProdAddTasks
+message S2C_prod_GetAllAddTasks
 {
-  int32 userId = 1;
+  ProdAddTasks tasks=1;
+  ResponseMsg msg = 2;
+
 }
 
 
 
 
 
+
+
+message S2C_Cons_TakeTask
+{
+  ResponseMsg msg=1;
+}
+
+message C2S_Cons_TakeTask
+{
+  int32 taskId = 1;
+  int32 userId = 2;
+}
+
+message S2C_Cons_StartTask
+{
+  ResponseMsg msg=1;
+}
+
+message C2S_Cons_StartTask
+{
+  int32 taskId = 1;
+  int32 userId = 2;
+}
+
+message S2C_Cons_EndTask
+{
+  ResponseMsg msg=1;
+}
+
+message C2S_Cons_EndTask
+{
+  int32 taskId = 1;
+  int32 userId = 2;
+}
+
+message S2C_Cons_DelTask
+{
+  ResponseMsg msg=1;
+}
+
+message C2S_Cons_DelTask
+{
+  int32 taskId = 1;
+  int32 userId = 2;
+}
+
+message S2C_Cons_AllGetTasks
+{
+  ResponseMsg msg=1;
+  ConsGetTasks tasks =2;
+}
+
+message C2S_Cons_AllGetTasks
+{
+  int32 userId = 2;
+}
 
 //--------------------ClientServer--------------------

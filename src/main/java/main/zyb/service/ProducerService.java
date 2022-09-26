@@ -21,8 +21,13 @@ public interface ProducerService {//生产者服务
      */
     public byte[] prod_GetResult(byte[] data);
     /**
+     * 生产者获取发布的所有任务的详细信息
+     */
+    public byte[]  prod_GetAllAddTasks(byte[] data);
+    /**
      * 生产者和消费者公用逻辑、获取任务信息
      */
     public byte[] getTask(byte[] data);
+
 
 }

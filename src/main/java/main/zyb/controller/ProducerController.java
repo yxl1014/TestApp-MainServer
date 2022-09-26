@@ -1,5 +1,6 @@
 package main.zyb.controller;
 import com.google.protobuf.InvalidProtocolBufferException;
+import main.annotation.Consumer;
 import main.annotation.Producer;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
@@ -82,7 +83,7 @@ public class ProducerController {
 
 
     @Producer
-    @PostMapping("/GetTestResults")//获取测试结果接口
+    @PostMapping("/GetTestResults")//获取测试结果集接口
     public byte[] GetTestResults(@RequestBody byte[] data)
     {
         byte[] temp = protocolUtil.decodeProtocol(data);
@@ -105,9 +106,36 @@ public class ProducerController {
 
 
 
+    /**
+     * 生产者获取发布的所有任务的详细信息
+     */
     @Producer
-    @PostMapping("/query")//查询任务接口   获取任务信息
-    public byte[] query(@RequestBody byte[] data)
+    @PostMapping("/queryAllAddTasks")//查询任务接口   获取任务信息
+    public byte[] queryAllAddTasks(@RequestBody byte[] data)
+    {
+        byte[] temp = protocolUtil.decodeProtocol(data);
+        if (temp == null) {
+            logger.info(LogUtil.makeOptionDetails(LogMsg.ACCESS_DATA_INTERFACE , OptionDetails.ACCESS_DATA_INTERFACE_NULL));
+            TestProto.S2C_prod_GetAllAddTasks.Builder result  =TestProto.S2C_prod_GetAllAddTasks.newBuilder();
+            TestProto.ResponseMsg.Builder  ResponseMsg = TestProto.ResponseMsg.newBuilder();
+            ResponseMsg.setStatus(false);
+            ResponseMsg.setMsg(OptionDetails.ACCESS_DATA_INTERFACE_NULL.getMsg());
+            TestProto.ProdAddTasks prodAddTasks = null;
+            result.setMsg(ResponseMsg);
+            result.setTasks(prodAddTasks);
+            byte[] bytes = result.buildPartial().toByteArray();
+            return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_PROD_GET_ALL_ADD_TASKS);
+        }
+        return producerService.prod_GetAllAddTasks(temp);
+    }
+
+    /**
+     * 生产者获取发布的所有任务的详细信息
+     */
+
+    @Producer
+    @PostMapping("/getTaskInformation")//查询任务接口   获取任务信息
+    public byte[] getTaskInformation(@RequestBody byte[] data)
     {
         byte[] temp = protocolUtil.decodeProtocol(data);
         if (temp == null) {
@@ -122,21 +150,6 @@ public class ProducerController {
             byte[] bytes = result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
         }
-        return null;
-    }
-    @Producer
-    @PostMapping("/queryUser")//查询用户任务信息接口
-    public byte[] queryUser(@RequestBody byte[] data)
-    {
-        byte[] temp = protocolUtil.decodeProtocol(data);
-        if (temp == null) {
-            logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.PROTOBUF_ERROR));
-            TestProto.S2C_Login.Builder result = TestProto.S2C_Login.newBuilder();
-            result.setStatus(false);
-            result.setMsg(OptionDetails.PROTOBUF_ERROR.getMsg());
-            byte[] bytes = result.buildPartial().toByteArray();
-            return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_LOGIN);
-        }
-        return null;
+        return producerService.getTask(temp);
     }
 }

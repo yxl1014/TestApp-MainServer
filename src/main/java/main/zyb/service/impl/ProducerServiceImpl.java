@@ -197,6 +197,7 @@ public class ProducerServiceImpl implements ProducerService {
     public byte[] getTask(byte[] data) {
         TestProto.S2C_Get_Task.Builder S2C_result = TestProto.S2C_Get_Task.newBuilder();
         TestProto.C2S_Get_Task builder = null;
+
         try{
             builder = TestProto.C2S_Get_Task.parseFrom(data);
         }catch (Exception e)
@@ -227,6 +228,33 @@ public class ProducerServiceImpl implements ProducerService {
         S2C_result.setTask(Task);
         byte[] bytes = S2C_result.buildPartial().toByteArray();
         return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
+    }
+
+    @Override
+    public byte[] prod_GetAllAddTasks(byte[] data) {
+        TestProto.S2C_prod_GetAllAddTasks.Builder S2C_result = TestProto.S2C_prod_GetAllAddTasks.newBuilder();
+        TestProto.C2S_prod_GetAllAddTasks builder = null;
+        try {
+            builder = TestProto.C2S_prod_GetAllAddTasks.parseFrom(data);
+        } catch (InvalidProtocolBufferException e) {
+            //错误处理打印错误日志、返回错误信息
+            logger.info(LogUtil.makeOptionDetails(LogMsg.ACCESS_DATA_INTERFACE, OptionDetails.PROD_GET_ALL_ADD_TASKS_FLOAT));
+            TestProto.ResponseMsg.Builder  ResponseMsg = TestProto.ResponseMsg.newBuilder();
+            ResponseMsg.setStatus(false);
+            ResponseMsg.setMsg(OptionDetails.PROD_GET_ALL_ADD_TASKS_FLOAT.getMsg());
+            TestProto.ProdAddTasks tasks = null;
+            S2C_result.setMsg(ResponseMsg);
+            S2C_result.setTasks(tasks);
+            byte[] bytes = S2C_result.buildPartial().toByteArray();
+            return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_PROD_GET_ALL_ADD_TASKS);
+        }
+        //获取计算结果填入到返回值中，并返回给客户端
+        TestProto.ProdAddTasks.Builder tasks = publicContext.prod_GetAllAddTasks(builder.getUserId());
+        TestProto.ResponseMsg.Builder  ResponseMsg = TestProto.ResponseMsg.newBuilder().setMsg(OptionDetails.PROD_GET_ALL_ADD_TASKS_TRUE.getMsg()).setStatus(true);
+        S2C_result.setMsg(ResponseMsg);
+        S2C_result.setTasks(tasks);
+        byte[] bytes = S2C_result.buildPartial().toByteArray();
+        return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_PROD_GET_ALL_ADD_TASKS);
     }
 
 

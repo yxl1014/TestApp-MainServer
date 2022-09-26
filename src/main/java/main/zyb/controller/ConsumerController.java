@@ -6,6 +6,7 @@ import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
 import main.util.ProtocolUtil;
+import main.zyb.service.ProducerService;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,15 +24,15 @@ public class ConsumerController {
     @Autowired
     private ProtocolUtil protocolUtil;
 
+    @Autowired
+    private ProducerService producerService;
+
     /**
-     *
-     * @param data
-     * @return
-     * 接收任务接口
+     * 生产者获取发布的所有任务的详细信息
      */
     @Consumer
-    @PostMapping("/query")//查询任务接口   获取任务信息
-    public byte[] query(@RequestBody byte[] data)
+    @PostMapping("/getTaskInformation")//查询任务接口   获取任务信息
+    public byte[] getTaskInformation(@RequestBody byte[] data)
     {
         byte[] temp = protocolUtil.decodeProtocol(data);
         if (temp == null) {
@@ -46,6 +47,6 @@ public class ConsumerController {
             byte[] bytes = result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
         }
-        return null;
+        return producerService.getTask(temp);
     }
 }
