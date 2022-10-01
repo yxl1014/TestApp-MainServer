@@ -26,9 +26,8 @@ public class PowerInterceptor implements HandlerInterceptor {
 
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Method method = handlerMethod.getMethod();
-
-        String session = (String)request.getSession().getAttribute("user");
-        TestProto.User user = TestProto.User.parseFrom(session.getBytes());
+        byte[] session = (byte[])request.getSession().getAttribute("user");
+        TestProto.User user = TestProto.User.parseFrom(session);
         /*
         判断是不是Producer方法
          */

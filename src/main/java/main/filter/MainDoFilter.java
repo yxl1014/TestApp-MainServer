@@ -2,6 +2,8 @@ package main.filter;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
+import main.util.JWTUtil;
+import main.util.ProtocolUtil;
 import main.util.ThreadLocalUtil;
 import main.util.User;
 import main.yxl.publicContext.config.contextBean.UserMapUtil;
@@ -13,10 +15,14 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 import static main.util.Unsign.unsign;
 
-@WebFilter(filterName = "MainDoFilter")
+@WebFilter(filterName = "MainDoFilter",urlPatterns = "/*")
 public class MainDoFilter implements Filter {
+    @Autowired
+    private ProtocolUtil protocolUtil;
 
     @Autowired
     private UserMapUtil userMap;
@@ -32,8 +38,10 @@ public class MainDoFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
 
         String requestURI = request.getRequestURI();//获取本次请求路径
         //记录访问地址日志
@@ -45,43 +53,53 @@ public class MainDoFilter implements Filter {
 
         if (request.getSession().getAttribute("user")!=null)
         {
-            return;
+            //符合条件进入下层义务
+            filterChain.doFilter(servletRequest,servletResponse);
         }
 
         if(token==null)
         {
             logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_ERROR));
-            response.getWriter().write("error：token为空,请重新登陆");
+            TestProto.ResponseMsg.Builder msg = TestProto.ResponseMsg.newBuilder();
+            msg.setMsg("token is null");
+            msg.setStatus(false);
+            byte[] bytes = msg.buildPartial().toByteArray();
+            byte[] bytes1 = protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
+            response.getWriter().write(new String(bytes1, StandardCharsets.UTF_8));
         }else
         {
-            try{
-                byte[] data = unsign(token,byte[].class);
-                /**
-                 * 添加到session中,并添加到userMap中
-                 */
-                logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_OK));
-                request.getSession().setAttribute("user",data);
-                request.getSession().setMaxInactiveInterval(1200);
-                userMap.addUser(data);
 
-                /**
-                 * 将userId存放到ThreadLocal中
-                 */
-                TestProto.User U  = TestProto.User.parseFrom(data);
-                User user = new User();
-                int userId = U.getUserId();
-                user.setUserId(userId);
-                ThreadLocalUtil.addCurrentUser(user);
+                byte[] data = JWTUtil.unsign(token,byte[].class);
+                if(data!=null) {
+                    /**
+                     * 添加到session中,并添加到userMap中
+                     */
+                    logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_OK));
+                    request.getSession().setAttribute("user", data);
+                    request.getSession().setMaxInactiveInterval(1200);
+                    //userMap.addUser(data);
 
-                logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
-            }catch (Exception e)
-            {
-                /**
-                 * 日志方法
-                 */
-                response.getWriter().write("error：token验证不通过");
-                logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_TOKEN_ERROR));
-            }
+                    /**
+                     * 将userId存放到ThreadLocal中
+                     */
+                    TestProto.User U = TestProto.User.parseFrom(data);
+                    User user = new User();
+                    int userId = U.getUserId();
+                    user.setUserId(userId);
+                    ThreadLocalUtil.addCurrentUser(user);
+                    logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
+                    //进入下层业务
+                    filterChain.doFilter(servletRequest,servletResponse);
+                }
+            /**
+             * 日志方法
+             */
+            TestProto.ResponseMsg.Builder msg = TestProto.ResponseMsg.newBuilder();
+            msg.setMsg("token is error");
+            msg.setStatus(false);
+            byte[] bytes = msg.buildPartial().toByteArray();
+            byte[] bytes1 = protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
+            response.getWriter().write(new String(bytes1, StandardCharsets.UTF_8));
         }
 
     }
