@@ -41,7 +41,7 @@ public class ProducerController {
             byte[] bytes = result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_PROD_ADD_TASK);
         }
-        return producerService.prod_AddTask(data);
+        return producerService.prod_AddTask(temp);
     }
 
     @Producer
