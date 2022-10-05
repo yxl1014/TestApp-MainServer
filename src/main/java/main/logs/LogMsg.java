@@ -15,7 +15,7 @@ public enum LogMsg {
     IDENTITY("验证操作"),
     //---------------------MainServer---------------------
     UTIL("工具类"),MYSQL("数据库"),PUBLIC_CONTEXT("核心逻辑区"),
-    ACCESS_DATA_INTERFACE("访问数据接口操作"),
+    ACCESS_DATA_INTERFACE("访问数据接口操作"),KAFKA("KAFKA"),
     ;
 
 
