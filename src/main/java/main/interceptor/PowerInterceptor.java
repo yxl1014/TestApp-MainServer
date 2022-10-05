@@ -1,4 +1,5 @@
 package main.interceptor;
+
 import main.annotation.Consumer;
 import main.annotation.Producer;
 import main.filter.MainDoFilter;
@@ -9,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import pto.TestProto;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
@@ -16,6 +18,7 @@ import java.lang.reflect.Method;
 public class PowerInterceptor implements HandlerInterceptor {
 
     private final static Logger logger = LogUtil.getLogger(MainDoFilter.class);
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -26,7 +29,7 @@ public class PowerInterceptor implements HandlerInterceptor {
 
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Method method = handlerMethod.getMethod();
-        byte[] session = (byte[])request.getSession().getAttribute("user");
+        byte[] session = (byte[]) request.getSession().getAttribute("user");
         TestProto.User user = TestProto.User.parseFrom(session);
         /*
         判断是不是Producer方法

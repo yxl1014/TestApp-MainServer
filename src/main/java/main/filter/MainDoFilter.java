@@ -1,4 +1,5 @@
 package main.filter;
+
 import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
@@ -10,6 +11,7 @@ import main.yxl.publicContext.config.contextBean.UserMapUtil;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import pto.TestProto;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +21,7 @@ import java.nio.charset.StandardCharsets;
 
 import static main.util.Unsign.unsign;
 
-@WebFilter(filterName = "MainDoFilter",urlPatterns = "/*")
+@WebFilter(filterName = "MainDoFilter", urlPatterns = "/*")
 public class MainDoFilter implements Filter {
     @Autowired
     private ProtocolUtil protocolUtil;
@@ -30,6 +32,7 @@ public class MainDoFilter implements Filter {
     private final static Logger logger = LogUtil.getLogger(MainDoFilter.class);
 
     private String url;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         this.url = filterConfig.getInitParameter("main/*");
@@ -48,17 +51,15 @@ public class MainDoFilter implements Filter {
         //到日志枚举添加msg
         //再将参数放入到filterUrl中
         OptionDetails.FILTER_MSG.setMsg(requestURI);
-        logger.info(LogUtil.filterUrl(LogMsg.FILTER,OptionDetails.FILTER_MSG));
-        String token =request.getHeader("token");
+        logger.info(LogUtil.filterUrl(LogMsg.FILTER, OptionDetails.FILTER_MSG));
+        String token = request.getHeader("token");
 
-        if (request.getSession().getAttribute("user")!=null)
-        {
+        if (request.getSession().getAttribute("user") != null) {
             //符合条件进入下层义务
-            filterChain.doFilter(servletRequest,servletResponse);
+            filterChain.doFilter(servletRequest, servletResponse);
         }
 
-        if(token==null)
-        {
+        if (token == null) {
             logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_ERROR));
             TestProto.ResponseMsg.Builder msg = TestProto.ResponseMsg.newBuilder();
             msg.setMsg("token is null");
@@ -66,31 +67,30 @@ public class MainDoFilter implements Filter {
             byte[] bytes = msg.buildPartial().toByteArray();
             byte[] bytes1 = protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
             response.getWriter().write(new String(bytes1, StandardCharsets.UTF_8));
-        }else
-        {
+        } else {
 
-                byte[] data = JWTUtil.unsign(token,byte[].class);
-                if(data!=null) {
-                    /**
-                     * 添加到session中,并添加到userMap中
-                     */
-                    logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_OK));
-                    request.getSession().setAttribute("user", data);
-                    request.getSession().setMaxInactiveInterval(1200);
-                    //userMap.addUser(data);
+            byte[] data = JWTUtil.unsign(token, byte[].class);
+            if (data != null) {
+                /**
+                 * 添加到session中,并添加到userMap中
+                 */
+                logger.info(LogUtil.makeOptionDetails(LogMsg.FILTER, OptionDetails.FILTER_MSG_OK));
+                request.getSession().setAttribute("user", data);
+                request.getSession().setMaxInactiveInterval(1200);
+                //userMap.addUser(data);
 
-                    /**
-                     * 将userId存放到ThreadLocal中
-                     */
-                    TestProto.User U = TestProto.User.parseFrom(data);
-                    User user = new User();
-                    int userId = U.getUserId();
-                    user.setUserId(userId);
-                    ThreadLocalUtil.addCurrentUser(user);
-                    logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
-                    //进入下层业务
-                    filterChain.doFilter(servletRequest,servletResponse);
-                }
+                /**
+                 * 将userId存放到ThreadLocal中
+                 */
+                TestProto.User U = TestProto.User.parseFrom(data);
+                User user = new User();
+                int userId = U.getUserId();
+                user.setUserId(userId);
+                ThreadLocalUtil.addCurrentUser(user);
+                logger.info(LogUtil.makeOptionDetails(LogMsg.LOGIN, OptionDetails.LOGIN_OK));
+                //进入下层业务
+                filterChain.doFilter(servletRequest, servletResponse);
+            }
             /**
              * 日志方法
              */
@@ -103,7 +103,6 @@ public class MainDoFilter implements Filter {
         }
 
     }
-
     @Override
     public void destroy() {
         System.out.println("程序关闭或者主动调用了关闭filter方法");

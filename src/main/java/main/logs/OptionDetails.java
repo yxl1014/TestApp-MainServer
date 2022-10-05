@@ -117,6 +117,13 @@ public enum OptionDetails {
     //KAFKA
     KAFKA_CONSUMER_TOPIC_CLOSE_NO_TOPIC("关闭kafka监听器", "失败", "该topic不存在"),
     KAFKA_CONSUMER_TOPIC_CLOSE_OK("关闭kafka监听器", "成功", "成功"),
+    KAFKA_CONSUMER_TOPIC_START_ERROR("启动监听线程","失败","线程启动失败"),
+    KAFKA_CONSUMER_TOPIC_START_OK("启动监听线程","成功","线程启动成功"),
+
+    KAFKA_CONSUMER_TOPIC_START_EXIST_OK("启动监听线程","成功","该topic存在,关闭"),
+
+    KAFKA_CONSUMER_TOPIC_GET_EXIST("获取监听线程","成功","该队列已存在,直接返回"),
+    KAFKA_CONSUMER_TOPIC_GET_NO_EXIST("获取监听线程","成功","该队列不存在,初始化一个"),
     ;
     private String type;
     private String status;
