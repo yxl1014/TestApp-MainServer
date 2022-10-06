@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class JWTUtil {
 
-    private static final String ISSUE = "YXL";
+    private static final String ISSUE = FinalData.TOKEN_ISSUER;
 
     private static final String SECRET = "011014";
 

@@ -120,6 +120,14 @@
             <version>3.2.3</version>
         </dependency>
         <!--kafka        end-->
+
+        <!--logstash     start-->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>7.2</version>
+        </dependency>
+        <!--logstash     end-->
     </dependencies>
 
     <build>

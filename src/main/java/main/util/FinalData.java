@@ -32,6 +32,12 @@ public class FinalData {
 
 
     /**
+     * 应用程序名,现在只是用在kafka中的topic名创建
+     */
+    public static String APP_NAME = "TestApp";
+
+
+    /**
      * byte数组转int
      */
     public static int byteArrayToInt(byte[] bytes) {
@@ -53,5 +59,13 @@ public class FinalData {
         result[2] = (byte) ((i >> 8) & 0xFF);
         result[3] = (byte) (i & 0xFF);
         return result;
+    }
+
+    /**
+     * @param taskId 任务id
+     * @return topicName
+     */
+    public static String getTopicName(int taskId) {
+        return APP_NAME + "_" + taskId;
     }
 }
