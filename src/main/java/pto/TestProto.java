@@ -11416,6 +11416,1622 @@ pto.TestProto.TaskShell defaultValue);
 
   }
 
+  public interface KafkaMsgOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:KafkaMsg)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *请求者ID
+     * </pre>
+     *
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <pre>
+     *任务ID
+     * </pre>
+     *
+     * <code>int32 taskId = 2;</code>
+     * @return The taskId.
+     */
+    int getTaskId();
+
+    /**
+     * <pre>
+     *脚本ID
+     * </pre>
+     *
+     * <code>int32 shellId = 3;</code>
+     * @return The shellId.
+     */
+    int getShellId();
+
+    /**
+     * <pre>
+     *被测端IP
+     * </pre>
+     *
+     * <code>string ip = 4;</code>
+     * @return The ip.
+     */
+    java.lang.String getIp();
+    /**
+     * <pre>
+     *被测端IP
+     * </pre>
+     *
+     * <code>string ip = 4;</code>
+     * @return The bytes for ip.
+     */
+    com.google.protobuf.ByteString
+        getIpBytes();
+
+    /**
+     * <pre>
+     *被测端port
+     * </pre>
+     *
+     * <code>string port = 5;</code>
+     * @return The port.
+     */
+    java.lang.String getPort();
+    /**
+     * <pre>
+     *被测端port
+     * </pre>
+     *
+     * <code>string port = 5;</code>
+     * @return The bytes for port.
+     */
+    com.google.protobuf.ByteString
+        getPortBytes();
+
+    /**
+     * <pre>
+     *任务耗时
+     * </pre>
+     *
+     * <code>int64 costTime = 6;</code>
+     * @return The costTime.
+     */
+    long getCostTime();
+
+    /**
+     * <pre>
+     *任务请求报文
+     * </pre>
+     *
+     * <code>string requestMsg = 7;</code>
+     * @return The requestMsg.
+     */
+    java.lang.String getRequestMsg();
+    /**
+     * <pre>
+     *任务请求报文
+     * </pre>
+     *
+     * <code>string requestMsg = 7;</code>
+     * @return The bytes for requestMsg.
+     */
+    com.google.protobuf.ByteString
+        getRequestMsgBytes();
+
+    /**
+     * <pre>
+     *任务返回报文
+     * </pre>
+     *
+     * <code>string responseMsg = 8;</code>
+     * @return The responseMsg.
+     */
+    java.lang.String getResponseMsg();
+    /**
+     * <pre>
+     *任务返回报文
+     * </pre>
+     *
+     * <code>string responseMsg = 8;</code>
+     * @return The bytes for responseMsg.
+     */
+    com.google.protobuf.ByteString
+        getResponseMsgBytes();
+
+    /**
+     * <pre>
+     *是否返回成功
+     * </pre>
+     *
+     * <code>bool success = 9;</code>
+     * @return The success.
+     */
+    boolean getSuccess();
+  }
+  /**
+   * Protobuf type {@code KafkaMsg}
+   */
+  public static final class KafkaMsg extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:KafkaMsg)
+      KafkaMsgOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use KafkaMsg.newBuilder() to construct.
+    private KafkaMsg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private KafkaMsg() {
+      ip_ = "";
+      port_ = "";
+      requestMsg_ = "";
+      responseMsg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new KafkaMsg();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private KafkaMsg(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              userId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              taskId_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              shellId_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ip_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              port_ = s;
+              break;
+            }
+            case 48: {
+
+              costTime_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestMsg_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseMsg_ = s;
+              break;
+            }
+            case 72: {
+
+              success_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_KafkaMsg_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_KafkaMsg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.KafkaMsg.class, pto.TestProto.KafkaMsg.Builder.class);
+    }
+
+    public static final int USERID_FIELD_NUMBER = 1;
+    private int userId_;
+    /**
+     * <pre>
+     *请求者ID
+     * </pre>
+     *
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int TASKID_FIELD_NUMBER = 2;
+    private int taskId_;
+    /**
+     * <pre>
+     *任务ID
+     * </pre>
+     *
+     * <code>int32 taskId = 2;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public int getTaskId() {
+      return taskId_;
+    }
+
+    public static final int SHELLID_FIELD_NUMBER = 3;
+    private int shellId_;
+    /**
+     * <pre>
+     *脚本ID
+     * </pre>
+     *
+     * <code>int32 shellId = 3;</code>
+     * @return The shellId.
+     */
+    @java.lang.Override
+    public int getShellId() {
+      return shellId_;
+    }
+
+    public static final int IP_FIELD_NUMBER = 4;
+    private volatile java.lang.Object ip_;
+    /**
+     * <pre>
+     *被测端IP
+     * </pre>
+     *
+     * <code>string ip = 4;</code>
+     * @return The ip.
+     */
+    @java.lang.Override
+    public java.lang.String getIp() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ip_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *被测端IP
+     * </pre>
+     *
+     * <code>string ip = 4;</code>
+     * @return The bytes for ip.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIpBytes() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ip_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object port_;
+    /**
+     * <pre>
+     *被测端port
+     * </pre>
+     *
+     * <code>string port = 5;</code>
+     * @return The port.
+     */
+    @java.lang.Override
+    public java.lang.String getPort() {
+      java.lang.Object ref = port_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        port_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *被测端port
+     * </pre>
+     *
+     * <code>string port = 5;</code>
+     * @return The bytes for port.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPortBytes() {
+      java.lang.Object ref = port_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        port_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COSTTIME_FIELD_NUMBER = 6;
+    private long costTime_;
+    /**
+     * <pre>
+     *任务耗时
+     * </pre>
+     *
+     * <code>int64 costTime = 6;</code>
+     * @return The costTime.
+     */
+    @java.lang.Override
+    public long getCostTime() {
+      return costTime_;
+    }
+
+    public static final int REQUESTMSG_FIELD_NUMBER = 7;
+    private volatile java.lang.Object requestMsg_;
+    /**
+     * <pre>
+     *任务请求报文
+     * </pre>
+     *
+     * <code>string requestMsg = 7;</code>
+     * @return The requestMsg.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestMsg() {
+      java.lang.Object ref = requestMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *任务请求报文
+     * </pre>
+     *
+     * <code>string requestMsg = 7;</code>
+     * @return The bytes for requestMsg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRequestMsgBytes() {
+      java.lang.Object ref = requestMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESPONSEMSG_FIELD_NUMBER = 8;
+    private volatile java.lang.Object responseMsg_;
+    /**
+     * <pre>
+     *任务返回报文
+     * </pre>
+     *
+     * <code>string responseMsg = 8;</code>
+     * @return The responseMsg.
+     */
+    @java.lang.Override
+    public java.lang.String getResponseMsg() {
+      java.lang.Object ref = responseMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *任务返回报文
+     * </pre>
+     *
+     * <code>string responseMsg = 8;</code>
+     * @return The bytes for responseMsg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getResponseMsgBytes() {
+      java.lang.Object ref = responseMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUCCESS_FIELD_NUMBER = 9;
+    private boolean success_;
+    /**
+     * <pre>
+     *是否返回成功
+     * </pre>
+     *
+     * <code>bool success = 9;</code>
+     * @return The success.
+     */
+    @java.lang.Override
+    public boolean getSuccess() {
+      return success_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userId_ != 0) {
+        output.writeInt32(1, userId_);
+      }
+      if (taskId_ != 0) {
+        output.writeInt32(2, taskId_);
+      }
+      if (shellId_ != 0) {
+        output.writeInt32(3, shellId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ip_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ip_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(port_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, port_);
+      }
+      if (costTime_ != 0L) {
+        output.writeInt64(6, costTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMsg_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, requestMsg_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMsg_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, responseMsg_);
+      }
+      if (success_ != false) {
+        output.writeBool(9, success_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userId_);
+      }
+      if (taskId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, taskId_);
+      }
+      if (shellId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, shellId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ip_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ip_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(port_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, port_);
+      }
+      if (costTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, costTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestMsg_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, requestMsg_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMsg_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, responseMsg_);
+      }
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, success_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.KafkaMsg)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.KafkaMsg other = (pto.TestProto.KafkaMsg) obj;
+
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (getTaskId()
+          != other.getTaskId()) return false;
+      if (getShellId()
+          != other.getShellId()) return false;
+      if (!getIp()
+          .equals(other.getIp())) return false;
+      if (!getPort()
+          .equals(other.getPort())) return false;
+      if (getCostTime()
+          != other.getCostTime()) return false;
+      if (!getRequestMsg()
+          .equals(other.getRequestMsg())) return false;
+      if (!getResponseMsg()
+          .equals(other.getResponseMsg())) return false;
+      if (getSuccess()
+          != other.getSuccess()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + TASKID_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskId();
+      hash = (37 * hash) + SHELLID_FIELD_NUMBER;
+      hash = (53 * hash) + getShellId();
+      hash = (37 * hash) + IP_FIELD_NUMBER;
+      hash = (53 * hash) + getIp().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort().hashCode();
+      hash = (37 * hash) + COSTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCostTime());
+      hash = (37 * hash) + REQUESTMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestMsg().hashCode();
+      hash = (37 * hash) + RESPONSEMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseMsg().hashCode();
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.KafkaMsg parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.KafkaMsg parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.KafkaMsg parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.KafkaMsg parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.KafkaMsg prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code KafkaMsg}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:KafkaMsg)
+        pto.TestProto.KafkaMsgOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_KafkaMsg_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_KafkaMsg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.KafkaMsg.class, pto.TestProto.KafkaMsg.Builder.class);
+      }
+
+      // Construct using pto.TestProto.KafkaMsg.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = 0;
+
+        taskId_ = 0;
+
+        shellId_ = 0;
+
+        ip_ = "";
+
+        port_ = "";
+
+        costTime_ = 0L;
+
+        requestMsg_ = "";
+
+        responseMsg_ = "";
+
+        success_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_KafkaMsg_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.KafkaMsg getDefaultInstanceForType() {
+        return pto.TestProto.KafkaMsg.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.KafkaMsg build() {
+        pto.TestProto.KafkaMsg result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.KafkaMsg buildPartial() {
+        pto.TestProto.KafkaMsg result = new pto.TestProto.KafkaMsg(this);
+        result.userId_ = userId_;
+        result.taskId_ = taskId_;
+        result.shellId_ = shellId_;
+        result.ip_ = ip_;
+        result.port_ = port_;
+        result.costTime_ = costTime_;
+        result.requestMsg_ = requestMsg_;
+        result.responseMsg_ = responseMsg_;
+        result.success_ = success_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.KafkaMsg) {
+          return mergeFrom((pto.TestProto.KafkaMsg)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.KafkaMsg other) {
+        if (other == pto.TestProto.KafkaMsg.getDefaultInstance()) return this;
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (other.getTaskId() != 0) {
+          setTaskId(other.getTaskId());
+        }
+        if (other.getShellId() != 0) {
+          setShellId(other.getShellId());
+        }
+        if (!other.getIp().isEmpty()) {
+          ip_ = other.ip_;
+          onChanged();
+        }
+        if (!other.getPort().isEmpty()) {
+          port_ = other.port_;
+          onChanged();
+        }
+        if (other.getCostTime() != 0L) {
+          setCostTime(other.getCostTime());
+        }
+        if (!other.getRequestMsg().isEmpty()) {
+          requestMsg_ = other.requestMsg_;
+          onChanged();
+        }
+        if (!other.getResponseMsg().isEmpty()) {
+          responseMsg_ = other.responseMsg_;
+          onChanged();
+        }
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.KafkaMsg parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.KafkaMsg) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int userId_ ;
+      /**
+       * <pre>
+       *请求者ID
+       * </pre>
+       *
+       * <code>int32 userId = 1;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <pre>
+       *请求者ID
+       * </pre>
+       *
+       * <code>int32 userId = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *请求者ID
+       * </pre>
+       *
+       * <code>int32 userId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int taskId_ ;
+      /**
+       * <pre>
+       *任务ID
+       * </pre>
+       *
+       * <code>int32 taskId = 2;</code>
+       * @return The taskId.
+       */
+      @java.lang.Override
+      public int getTaskId() {
+        return taskId_;
+      }
+      /**
+       * <pre>
+       *任务ID
+       * </pre>
+       *
+       * <code>int32 taskId = 2;</code>
+       * @param value The taskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskId(int value) {
+        
+        taskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务ID
+       * </pre>
+       *
+       * <code>int32 taskId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskId() {
+        
+        taskId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int shellId_ ;
+      /**
+       * <pre>
+       *脚本ID
+       * </pre>
+       *
+       * <code>int32 shellId = 3;</code>
+       * @return The shellId.
+       */
+      @java.lang.Override
+      public int getShellId() {
+        return shellId_;
+      }
+      /**
+       * <pre>
+       *脚本ID
+       * </pre>
+       *
+       * <code>int32 shellId = 3;</code>
+       * @param value The shellId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShellId(int value) {
+        
+        shellId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *脚本ID
+       * </pre>
+       *
+       * <code>int32 shellId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShellId() {
+        
+        shellId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ip_ = "";
+      /**
+       * <pre>
+       *被测端IP
+       * </pre>
+       *
+       * <code>string ip = 4;</code>
+       * @return The ip.
+       */
+      public java.lang.String getIp() {
+        java.lang.Object ref = ip_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ip_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *被测端IP
+       * </pre>
+       *
+       * <code>string ip = 4;</code>
+       * @return The bytes for ip.
+       */
+      public com.google.protobuf.ByteString
+          getIpBytes() {
+        java.lang.Object ref = ip_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ip_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *被测端IP
+       * </pre>
+       *
+       * <code>string ip = 4;</code>
+       * @param value The ip to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ip_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被测端IP
+       * </pre>
+       *
+       * <code>string ip = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIp() {
+        
+        ip_ = getDefaultInstance().getIp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被测端IP
+       * </pre>
+       *
+       * <code>string ip = 4;</code>
+       * @param value The bytes for ip to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ip_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object port_ = "";
+      /**
+       * <pre>
+       *被测端port
+       * </pre>
+       *
+       * <code>string port = 5;</code>
+       * @return The port.
+       */
+      public java.lang.String getPort() {
+        java.lang.Object ref = port_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          port_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *被测端port
+       * </pre>
+       *
+       * <code>string port = 5;</code>
+       * @return The bytes for port.
+       */
+      public com.google.protobuf.ByteString
+          getPortBytes() {
+        java.lang.Object ref = port_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          port_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *被测端port
+       * </pre>
+       *
+       * <code>string port = 5;</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        port_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被测端port
+       * </pre>
+       *
+       * <code>string port = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        
+        port_ = getDefaultInstance().getPort();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被测端port
+       * </pre>
+       *
+       * <code>string port = 5;</code>
+       * @param value The bytes for port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPortBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        port_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long costTime_ ;
+      /**
+       * <pre>
+       *任务耗时
+       * </pre>
+       *
+       * <code>int64 costTime = 6;</code>
+       * @return The costTime.
+       */
+      @java.lang.Override
+      public long getCostTime() {
+        return costTime_;
+      }
+      /**
+       * <pre>
+       *任务耗时
+       * </pre>
+       *
+       * <code>int64 costTime = 6;</code>
+       * @param value The costTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostTime(long value) {
+        
+        costTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务耗时
+       * </pre>
+       *
+       * <code>int64 costTime = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostTime() {
+        
+        costTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestMsg_ = "";
+      /**
+       * <pre>
+       *任务请求报文
+       * </pre>
+       *
+       * <code>string requestMsg = 7;</code>
+       * @return The requestMsg.
+       */
+      public java.lang.String getRequestMsg() {
+        java.lang.Object ref = requestMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *任务请求报文
+       * </pre>
+       *
+       * <code>string requestMsg = 7;</code>
+       * @return The bytes for requestMsg.
+       */
+      public com.google.protobuf.ByteString
+          getRequestMsgBytes() {
+        java.lang.Object ref = requestMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *任务请求报文
+       * </pre>
+       *
+       * <code>string requestMsg = 7;</code>
+       * @param value The requestMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务请求报文
+       * </pre>
+       *
+       * <code>string requestMsg = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestMsg() {
+        
+        requestMsg_ = getDefaultInstance().getRequestMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务请求报文
+       * </pre>
+       *
+       * <code>string requestMsg = 7;</code>
+       * @param value The bytes for requestMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object responseMsg_ = "";
+      /**
+       * <pre>
+       *任务返回报文
+       * </pre>
+       *
+       * <code>string responseMsg = 8;</code>
+       * @return The responseMsg.
+       */
+      public java.lang.String getResponseMsg() {
+        java.lang.Object ref = responseMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *任务返回报文
+       * </pre>
+       *
+       * <code>string responseMsg = 8;</code>
+       * @return The bytes for responseMsg.
+       */
+      public com.google.protobuf.ByteString
+          getResponseMsgBytes() {
+        java.lang.Object ref = responseMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *任务返回报文
+       * </pre>
+       *
+       * <code>string responseMsg = 8;</code>
+       * @param value The responseMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回报文
+       * </pre>
+       *
+       * <code>string responseMsg = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseMsg() {
+        
+        responseMsg_ = getDefaultInstance().getResponseMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回报文
+       * </pre>
+       *
+       * <code>string responseMsg = 8;</code>
+       * @param value The bytes for responseMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean success_ ;
+      /**
+       * <pre>
+       *是否返回成功
+       * </pre>
+       *
+       * <code>bool success = 9;</code>
+       * @return The success.
+       */
+      @java.lang.Override
+      public boolean getSuccess() {
+        return success_;
+      }
+      /**
+       * <pre>
+       *是否返回成功
+       * </pre>
+       *
+       * <code>bool success = 9;</code>
+       * @param value The success to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccess(boolean value) {
+        
+        success_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *是否返回成功
+       * </pre>
+       *
+       * <code>bool success = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccess() {
+        
+        success_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:KafkaMsg)
+    }
+
+    // @@protoc_insertion_point(class_scope:KafkaMsg)
+    private static final pto.TestProto.KafkaMsg DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.KafkaMsg();
+    }
+
+    public static pto.TestProto.KafkaMsg getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KafkaMsg>
+        PARSER = new com.google.protobuf.AbstractParser<KafkaMsg>() {
+      @java.lang.Override
+      public KafkaMsg parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new KafkaMsg(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<KafkaMsg> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KafkaMsg> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.KafkaMsg getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TaskConductOrBuilder extends
       // @@protoc_insertion_point(interface_extends:TaskConduct)
       com.google.protobuf.MessageOrBuilder {
@@ -28239,6 +29855,11 @@ pto.TestProto.TaskShell defaultValue);
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_S_User_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_KafkaMsg_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_KafkaMsg_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_TaskConduct_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -28414,59 +30035,63 @@ pto.TestProto.TaskShell defaultValue);
       "8\001\"u\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
       "(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskI" +
       "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003(" +
-      "\005\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n\007use" +
-      "rIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.TaskC" +
-      "onduct.ShellMappingEntry\0323\n\021ShellMapping" +
-      "Entry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n" +
-      "\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030\002 \001(" +
-      "\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"" +
-      "$\n\014ConsGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"#\n" +
-      "\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\".\n\021S2" +
-      "C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseM" +
-      "sg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132\005.Ta" +
-      "sk\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014.Res" +
-      "ponseMsg\"\"\n\020C2S_prod_EndTask\022\016\n\006taskId\030\001" +
-      " \001(\005\"-\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001(\0132\014." +
-      "ResponseMsg\"$\n\022C2S_prod_GetResult\022\016\n\006tas" +
-      "kId\030\001 \001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003msg\030\001" +
-      " \001(\0132\014.ResponseMsg\022\037\n\ntaskResult\030\002 \001(\0132\013" +
-      ".TaskResult\"\036\n\014C2S_Get_Task\022\016\n\006taskId\030\001 " +
-      "\001(\005\">\n\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
-      "nseMsg\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_prod_" +
-      "GetAllAddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S2C_pr" +
-      "od_GetAllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r.ProdA" +
-      "ddTasks\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\".\n\021S2" +
-      "C_Cons_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseM" +
-      "sg\"3\n\021C2S_Cons_TakeTask\022\016\n\006taskId\030\001 \001(\005\022" +
-      "\016\n\006userId\030\002 \001(\005\"/\n\022S2C_Cons_StartTask\022\031\n" +
-      "\003msg\030\001 \001(\0132\014.ResponseMsg\"4\n\022C2S_Cons_Sta" +
-      "rtTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-" +
-      "\n\020S2C_Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.Respon" +
-      "seMsg\"2\n\020C2S_Cons_EndTask\022\016\n\006taskId\030\001 \001(" +
-      "\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_DelTask\022\031\n" +
-      "\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons_Del" +
-      "Task\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"O\n\024" +
-      "S2C_Cons_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014.Resp" +
-      "onseMsg\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTasks\"&\n" +
-      "\024C2S_Cons_AllGetTasks\022\016\n\006userId\030\002 \001(\005*\351\004" +
-      "\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_" +
-      "LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REGISTE" +
-      "R\020\004\022\027\n\023S2C_PROD_START_TASK\020\005\022\027\n\023C2S_PROD" +
-      "_START_TASK\020\006\022\025\n\021S2C_PROD_ADD_TASK\020\007\022\025\n\021" +
-      "C2S_PROD_ADD_TASK\020\010\022\025\n\021S2C_PROD_END_TASK" +
-      "\020\t\022\025\n\021C2S_PROD_END_TASK\020\n\022\026\n\022S2C_PROD_GE" +
-      "TRESULT\020\013\022\026\n\022C2S_PROD_GETRESULT\020\014\022\020\n\014S2C" +
-      "_GET_TASK\020\r\022\020\n\014C2S_GET_TASK\020\016\022\036\n\032S2C_PRO" +
-      "D_GET_ALL_ADD_TASKS\020\017\022\036\n\032C2S_PROD_GET_AL" +
-      "L_ADD_TASKS\020\020\022\026\n\022S2C_CONS_TAKE_TASK\020\021\022\026\n" +
-      "\022C2S_CONS_TAKE_TASK\020\022\022\027\n\023S2C_CONS_START_" +
-      "TASK\020\023\022\027\n\023C2S_CONS_START_TASK\020\024\022\025\n\021S2C_C" +
-      "ONS_END_TASK\020\025\022\025\n\021C2S_CONS_END_TASK\020\026\022\024\n" +
-      "\020S2C_CNS_DEL_TASK\020\027\022\024\n\020C2S_CNS_DEL_TASK\020" +
-      "\030\022\032\n\026S2C_CONS_ALL_GET_TASKS\020\031\022\032\n\026C2S_CON" +
-      "S_ALL_GET_TASKS\020\032*3\n\013TaskProtocl\022\010\n\004NONE" +
-      "\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003ptoB\tT" +
-      "estProtob\006proto3"
+      "\005\"\241\001\n\010KafkaMsg\022\016\n\006userId\030\001 \001(\005\022\016\n\006taskId" +
+      "\030\002 \001(\005\022\017\n\007shellId\030\003 \001(\005\022\n\n\002ip\030\004 \001(\t\022\014\n\004p" +
+      "ort\030\005 \001(\t\022\020\n\010costTime\030\006 \001(\003\022\022\n\nrequestMs" +
+      "g\030\007 \001(\t\022\023\n\013responseMsg\030\010 \001(\t\022\017\n\007success\030" +
+      "\t \001(\010\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n" +
+      "\007userIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.T" +
+      "askConduct.ShellMappingEntry\0323\n\021ShellMap" +
+      "pingEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028" +
+      "\001\"*\n\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030" +
+      "\002 \001(\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.T" +
+      "ask\"$\n\014ConsGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Tas" +
+      "k\"#\n\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\"." +
+      "\n\021S2C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
+      "nseMsg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132" +
+      "\005.Task\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014" +
+      ".ResponseMsg\"\"\n\020C2S_prod_EndTask\022\016\n\006task" +
+      "Id\030\001 \001(\005\"-\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001(" +
+      "\0132\014.ResponseMsg\"$\n\022C2S_prod_GetResult\022\016\n" +
+      "\006taskId\030\001 \001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003m" +
+      "sg\030\001 \001(\0132\014.ResponseMsg\022\037\n\ntaskResult\030\002 \001" +
+      "(\0132\013.TaskResult\"\036\n\014C2S_Get_Task\022\016\n\006taskI" +
+      "d\030\001 \001(\005\">\n\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014.R" +
+      "esponseMsg\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_p" +
+      "rod_GetAllAddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S2" +
+      "C_prod_GetAllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r.P" +
+      "rodAddTasks\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\"." +
+      "\n\021S2C_Cons_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
+      "nseMsg\"3\n\021C2S_Cons_TakeTask\022\016\n\006taskId\030\001 " +
+      "\001(\005\022\016\n\006userId\030\002 \001(\005\"/\n\022S2C_Cons_StartTas" +
+      "k\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"4\n\022C2S_Cons" +
+      "_StartTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001" +
+      "(\005\"-\n\020S2C_Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.Re" +
+      "sponseMsg\"2\n\020C2S_Cons_EndTask\022\016\n\006taskId\030" +
+      "\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_DelTas" +
+      "k\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons" +
+      "_DelTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005" +
+      "\"O\n\024S2C_Cons_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014." +
+      "ResponseMsg\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTask" +
+      "s\"&\n\024C2S_Cons_AllGetTasks\022\016\n\006userId\030\002 \001(" +
+      "\005*\351\004\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\t" +
+      "S2C_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REG" +
+      "ISTER\020\004\022\027\n\023S2C_PROD_START_TASK\020\005\022\027\n\023C2S_" +
+      "PROD_START_TASK\020\006\022\025\n\021S2C_PROD_ADD_TASK\020\007" +
+      "\022\025\n\021C2S_PROD_ADD_TASK\020\010\022\025\n\021S2C_PROD_END_" +
+      "TASK\020\t\022\025\n\021C2S_PROD_END_TASK\020\n\022\026\n\022S2C_PRO" +
+      "D_GETRESULT\020\013\022\026\n\022C2S_PROD_GETRESULT\020\014\022\020\n" +
+      "\014S2C_GET_TASK\020\r\022\020\n\014C2S_GET_TASK\020\016\022\036\n\032S2C" +
+      "_PROD_GET_ALL_ADD_TASKS\020\017\022\036\n\032C2S_PROD_GE" +
+      "T_ALL_ADD_TASKS\020\020\022\026\n\022S2C_CONS_TAKE_TASK\020" +
+      "\021\022\026\n\022C2S_CONS_TAKE_TASK\020\022\022\027\n\023S2C_CONS_ST" +
+      "ART_TASK\020\023\022\027\n\023C2S_CONS_START_TASK\020\024\022\025\n\021S" +
+      "2C_CONS_END_TASK\020\025\022\025\n\021C2S_CONS_END_TASK\020" +
+      "\026\022\024\n\020S2C_CNS_DEL_TASK\020\027\022\024\n\020C2S_CNS_DEL_T" +
+      "ASK\020\030\022\032\n\026S2C_CONS_ALL_GET_TASKS\020\031\022\032\n\026C2S" +
+      "_CONS_ALL_GET_TASKS\020\032*3\n\013TaskProtocl\022\010\n\004" +
+      "NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003pt" +
+      "oB\tTestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28538,8 +30163,14 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S_User_descriptor,
         new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", "Online", "AddTasks", });
-    internal_static_TaskConduct_descriptor =
+    internal_static_KafkaMsg_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_KafkaMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_KafkaMsg_descriptor,
+        new java.lang.String[] { "UserId", "TaskId", "ShellId", "Ip", "Port", "CostTime", "RequestMsg", "ResponseMsg", "Success", });
+    internal_static_TaskConduct_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_TaskConduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TaskConduct_descriptor,
@@ -28551,151 +30182,151 @@ pto.TestProto.TaskShell defaultValue);
         internal_static_TaskConduct_ShellMappingEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_ResponseMsg_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_ResponseMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResponseMsg_descriptor,
         new java.lang.String[] { "Status", "Msg", });
     internal_static_ProdAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_ProdAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProdAddTasks_descriptor,
         new java.lang.String[] { "Tasks", });
     internal_static_ConsGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_ConsGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ConsGetTasks_descriptor,
         new java.lang.String[] { "Tasks", });
     internal_static_C2S_ProdStartTask_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_C2S_ProdStartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ProdStartTask_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_ProdStartTask_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_S2C_ProdStartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ProdStartTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prodAddTask_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_C2S_prodAddTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prodAddTask_descriptor,
         new java.lang.String[] { "Task", });
     internal_static_S2C_prodAddTask_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_S2C_prodAddTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prodAddTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prod_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_C2S_prod_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_EndTask_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_prod_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_S2C_prod_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_EndTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prod_GetResult_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_C2S_prod_GetResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_GetResult_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_prod_GetResult_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_S2C_prod_GetResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_GetResult_descriptor,
         new java.lang.String[] { "Msg", "TaskResult", });
     internal_static_C2S_Get_Task_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_C2S_Get_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Get_Task_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_Get_Task_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_S2C_Get_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Get_Task_descriptor,
         new java.lang.String[] { "Msg", "Task", });
     internal_static_C2S_prod_GetAllAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_C2S_prod_GetAllAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_GetAllAddTasks_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_S2C_prod_GetAllAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_S2C_prod_GetAllAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_GetAllAddTasks_descriptor,
         new java.lang.String[] { "Tasks", "Msg", });
     internal_static_S2C_Cons_TakeTask_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_S2C_Cons_TakeTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_TakeTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_TakeTask_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_C2S_Cons_TakeTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_TakeTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_StartTask_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_S2C_Cons_StartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_StartTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_StartTask_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_C2S_Cons_StartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_StartTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_S2C_Cons_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_EndTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_C2S_Cons_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_EndTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_DelTask_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_S2C_Cons_DelTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_DelTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_DelTask_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_C2S_Cons_DelTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_DelTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_AllGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_S2C_Cons_AllGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_AllGetTasks_descriptor,
         new java.lang.String[] { "Msg", "Tasks", });
     internal_static_C2S_Cons_AllGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_C2S_Cons_AllGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_AllGetTasks_descriptor,

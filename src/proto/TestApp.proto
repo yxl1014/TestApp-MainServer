@@ -12,38 +12,38 @@ enum Types{
   C2S_REGISTER = 3;
   S2C_REGISTER = 4;
 
-  S2C_PROD_START_TASK=5;
-  C2S_PROD_START_TASK=6;
+  S2C_PROD_START_TASK = 5;
+  C2S_PROD_START_TASK = 6;
 
-  S2C_PROD_ADD_TASK=7;
-  C2S_PROD_ADD_TASK=8;
+  S2C_PROD_ADD_TASK = 7;
+  C2S_PROD_ADD_TASK = 8;
 
-  S2C_PROD_END_TASK=9;
-  C2S_PROD_END_TASK=10;
+  S2C_PROD_END_TASK = 9;
+  C2S_PROD_END_TASK = 10;
 
-  S2C_PROD_GETRESULT=11;
-  C2S_PROD_GETRESULT=12;
+  S2C_PROD_GETRESULT = 11;
+  C2S_PROD_GETRESULT = 12;
 
-  S2C_GET_TASK=13;
-  C2S_GET_TASK =14;
+  S2C_GET_TASK = 13;
+  C2S_GET_TASK = 14;
 
-  S2C_PROD_GET_ALL_ADD_TASKS=15;
-  C2S_PROD_GET_ALL_ADD_TASKS=16;
+  S2C_PROD_GET_ALL_ADD_TASKS = 15;
+  C2S_PROD_GET_ALL_ADD_TASKS = 16;
 
-  S2C_CONS_TAKE_TASK=17;
-  C2S_CONS_TAKE_TASK=18;
+  S2C_CONS_TAKE_TASK = 17;
+  C2S_CONS_TAKE_TASK = 18;
 
-  S2C_CONS_START_TASK=19;
-  C2S_CONS_START_TASK=20;
+  S2C_CONS_START_TASK = 19;
+  C2S_CONS_START_TASK = 20;
 
-  S2C_CONS_END_TASK=21;
-  C2S_CONS_END_TASK=22;
+  S2C_CONS_END_TASK = 21;
+  C2S_CONS_END_TASK = 22;
 
-  S2C_CNS_DEL_TASK=23;
-  C2S_CNS_DEL_TASK=24;
+  S2C_CNS_DEL_TASK = 23;
+  C2S_CNS_DEL_TASK = 24;
 
-  S2C_CONS_ALL_GET_TASKS=25;
-  C2S_CONS_ALL_GET_TASKS=26;
+  S2C_CONS_ALL_GET_TASKS = 25;
+  C2S_CONS_ALL_GET_TASKS = 26;
 
 }
 
@@ -131,6 +131,18 @@ message S_User{
 }
 
 
+message KafkaMsg{
+  int32 userId = 1;                   //请求者ID
+  int32 taskId = 2;                   //任务ID
+  int32 shellId = 3;                  //脚本ID
+  string ip = 4;                      //被测端IP
+  string port = 5;                    //被测端port
+  int64 costTime = 6;                 //任务耗时
+  string requestMsg = 7;              //任务请求报文
+  string responseMsg = 8;             //任务返回报文
+  bool success = 9;                   //是否返回成功
+}
+
 message TaskConduct{
   int32 taskId = 1;
   repeated int32 userIds = 2;
@@ -165,7 +177,7 @@ message C2S_prodAddTask{
 }
 
 message S2C_prodAddTask{
-  ResponseMsg msg =1;
+  ResponseMsg msg = 1;
 }
 
 message C2S_prod_EndTask{
@@ -199,12 +211,12 @@ message S2C_Get_Task
 }
 message C2S_prod_GetAllAddTasks
 {
-   int32  userId=1;
+  int32  userId = 1;
 }
 
 message S2C_prod_GetAllAddTasks
 {
-  ProdAddTasks tasks=1;
+  ProdAddTasks tasks = 1;
   ResponseMsg msg = 2;
 
 }
@@ -217,7 +229,7 @@ message S2C_prod_GetAllAddTasks
 
 message S2C_Cons_TakeTask
 {
-  ResponseMsg msg=1;
+  ResponseMsg msg = 1;
 }
 
 message C2S_Cons_TakeTask
@@ -228,7 +240,7 @@ message C2S_Cons_TakeTask
 
 message S2C_Cons_StartTask
 {
-  ResponseMsg msg=1;
+  ResponseMsg msg = 1;
 }
 
 message C2S_Cons_StartTask
@@ -239,7 +251,7 @@ message C2S_Cons_StartTask
 
 message S2C_Cons_EndTask
 {
-  ResponseMsg msg=1;
+  ResponseMsg msg = 1;
 }
 
 message C2S_Cons_EndTask
@@ -250,7 +262,7 @@ message C2S_Cons_EndTask
 
 message S2C_Cons_DelTask
 {
-  ResponseMsg msg=1;
+  ResponseMsg msg = 1;
 }
 
 message C2S_Cons_DelTask
@@ -261,8 +273,8 @@ message C2S_Cons_DelTask
 
 message S2C_Cons_AllGetTasks
 {
-  ResponseMsg msg=1;
-  ConsGetTasks tasks =2;
+  ResponseMsg msg = 1;
+  ConsGetTasks tasks = 2;
 }
 
 message C2S_Cons_AllGetTasks

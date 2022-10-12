@@ -1,14 +1,21 @@
 package main.kafka.runnable;
 
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.util.JsonFormat;
+import io.grpc.internal.JsonUtil;
+import main.kafka.common.KafkaContext;
 import main.logs.LogUtil;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.logging.log4j.Logger;
+import pto.TestProto;
+import scala.Int;
 
 import java.time.Duration;
 import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -22,22 +29,35 @@ public class KafkaConsumerRunner implements Runnable {
     private final AtomicBoolean closed = new AtomicBoolean(false);
     private final KafkaConsumer<String, String> consumer;
 
-    //TODO 还要加上logstash的接口
-    public KafkaConsumerRunner(String topicName, KafkaConsumer<String, String> consumer) {
+    private final KafkaContext kafkaContext;
+
+    public KafkaConsumerRunner(String topicName, KafkaConsumer<String, String> consumer, KafkaContext kafkaContext) {
         this.topicName = topicName;
         this.consumer = consumer;
+        this.kafkaContext = kafkaContext;
     }
 
     @Override
     public void run() {
         try {
             consumer.subscribe(Collections.singleton(topicName));
+            TestProto.KafkaMsg.Builder msgBuilder = TestProto.KafkaMsg.newBuilder();
+            int shellId;
             while (!closed.get()) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-                // TODO: 这里只是一个简单的处理  之后需要改
                 for (ConsumerRecord<String, String> record : records) {
-                    System.out.printf("offset = %d, key = %s, value = %s\n",
-                            record.offset(), record.key(), record.value());
+                    //获取脚本的id
+                    shellId = Integer.parseInt(record.key().split("_")[1]);
+                    //判断没有存这个脚本的返回报文
+                    if (!this.kafkaContext.getConditionMsgMap().containsKey(shellId)) {
+                        JsonFormat.parser().merge(record.value(), msgBuilder);
+                        //请求成功了才会存储
+                        if (msgBuilder.getSuccess()) {
+                            kafkaContext.addResponse(msgBuilder);
+                        }
+                        System.out.printf("offset = %d, key = %s, value = %s\n",
+                                record.offset(), record.key(), record.value());
+                    }
                 }
             }
         } catch (WakeupException e) {
@@ -45,6 +65,10 @@ public class KafkaConsumerRunner implements Runnable {
             if (!closed.get()) {
                 logger.error("topicName : " + topicName + ",error :" + e.getMessage());
                 throw e;
+            }
+        } catch (InvalidProtocolBufferException e) {
+            if (!closed.get()) {
+                logger.error("topicName : " + topicName + ",error :" + e.getMessage() + ",json转换失败！");
             }
         } finally {
             consumer.close();

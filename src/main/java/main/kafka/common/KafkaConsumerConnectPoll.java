@@ -1,4 +1,5 @@
 package main.kafka.common;
+
 import main.kafka.runnable.KafkaConsumerRunner;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
@@ -7,6 +8,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import pto.TestProto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +16,7 @@ import java.util.Properties;
 
 /**
  * kafkaTopic连接池
+ *
  * @author yxl
  * @date: 2022/10/5 下午5:24
  */
@@ -64,9 +67,9 @@ public class KafkaConsumerConnectPoll {
      *
      * @param topicName topic名
      */
-    public void initKafkaTopic(String topicName) {
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
-        KafkaConsumerRunner kafkaConsumerRunner = new KafkaConsumerRunner(topicName, consumer);
+    public void initKafkaTopic(String topicName, KafkaContext kafkaContext) {
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(this.properties);
+        KafkaConsumerRunner kafkaConsumerRunner = new KafkaConsumerRunner(topicName, consumer, kafkaContext);
         KafkaConsumerRunner old = this.consumers.get(topicName);
 
         //若有旧的topic且他还没有关闭
@@ -88,17 +91,18 @@ public class KafkaConsumerConnectPoll {
 
     /**
      * 获取这个监听队列,若为null则初始化并开始一个
+     *
      * @param topicName topic名
      * @return 返回一个runner
      */
-    public KafkaConsumerRunner getConsumerOrInit(String topicName) {
+    public KafkaConsumerRunner getConsumerOrInit(String topicName, KafkaContext kafkaContext) {
         KafkaConsumerRunner consumer = getConsumer(topicName);
         if (consumer != null) {
             logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_GET_EXIST, topicName));
             return consumer;
         }
         logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_GET_NO_EXIST, topicName));
-        initKafkaTopic(topicName);
+        initKafkaTopic(topicName, kafkaContext);
         return getConsumer(topicName);
     }
 
