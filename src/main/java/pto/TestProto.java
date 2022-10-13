@@ -5720,6 +5720,26 @@ java.lang.String defaultValue);
      */
     com.google.protobuf.ByteString
         getRespFindBytes();
+
+    /**
+     * <pre>
+     *开始发送时间
+     * </pre>
+     *
+     * <code>int64 startTime = 10;</code>
+     * @return The startTime.
+     */
+    long getStartTime();
+
+    /**
+     * <pre>
+     *每次发送的时间间隔
+     * </pre>
+     *
+     * <code>int64 timeInterval = 11;</code>
+     * @return The timeInterval.
+     */
+    long getTimeInterval();
   }
   /**
    * Protobuf type {@code TaskShell}
@@ -5828,6 +5848,16 @@ java.lang.String defaultValue);
               java.lang.String s = input.readStringRequireUtf8();
 
               respFind_ = s;
+              break;
+            }
+            case 80: {
+
+              startTime_ = input.readInt64();
+              break;
+            }
+            case 88: {
+
+              timeInterval_ = input.readInt64();
               break;
             }
             default: {
@@ -6248,6 +6278,36 @@ java.lang.String defaultValue);
       }
     }
 
+    public static final int STARTTIME_FIELD_NUMBER = 10;
+    private long startTime_;
+    /**
+     * <pre>
+     *开始发送时间
+     * </pre>
+     *
+     * <code>int64 startTime = 10;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int TIMEINTERVAL_FIELD_NUMBER = 11;
+    private long timeInterval_;
+    /**
+     * <pre>
+     *每次发送的时间间隔
+     * </pre>
+     *
+     * <code>int64 timeInterval = 11;</code>
+     * @return The timeInterval.
+     */
+    @java.lang.Override
+    public long getTimeInterval() {
+      return timeInterval_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6291,6 +6351,12 @@ java.lang.String defaultValue);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(respFind_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, respFind_);
+      }
+      if (startTime_ != 0L) {
+        output.writeInt64(10, startTime_);
+      }
+      if (timeInterval_ != 0L) {
+        output.writeInt64(11, timeInterval_);
       }
       unknownFields.writeTo(output);
     }
@@ -6338,6 +6404,14 @@ java.lang.String defaultValue);
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(respFind_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, respFind_);
       }
+      if (startTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, startTime_);
+      }
+      if (timeInterval_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, timeInterval_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6371,6 +6445,10 @@ java.lang.String defaultValue);
           != other.getResponseType()) return false;
       if (!getRespFind()
           .equals(other.getRespFind())) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
+      if (getTimeInterval()
+          != other.getTimeInterval()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6402,6 +6480,12 @@ java.lang.String defaultValue);
       hash = (53 * hash) + getResponseType();
       hash = (37 * hash) + RESPFIND_FIELD_NUMBER;
       hash = (53 * hash) + getRespFind().hashCode();
+      hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTime());
+      hash = (37 * hash) + TIMEINTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimeInterval());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6574,6 +6658,10 @@ java.lang.String defaultValue);
 
         respFind_ = "";
 
+        startTime_ = 0L;
+
+        timeInterval_ = 0L;
+
         return this;
       }
 
@@ -6611,6 +6699,8 @@ java.lang.String defaultValue);
         result.conditionMsg_ = conditionMsg_;
         result.responseType_ = responseType_;
         result.respFind_ = respFind_;
+        result.startTime_ = startTime_;
+        result.timeInterval_ = timeInterval_;
         onBuilt();
         return result;
       }
@@ -6689,6 +6779,12 @@ java.lang.String defaultValue);
         if (!other.getRespFind().isEmpty()) {
           respFind_ = other.respFind_;
           onChanged();
+        }
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.getTimeInterval() != 0L) {
+          setTimeInterval(other.getTimeInterval());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7484,6 +7580,92 @@ java.lang.String defaultValue);
   checkByteStringIsUtf8(value);
         
         respFind_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       *开始发送时间
+       * </pre>
+       *
+       * <code>int64 startTime = 10;</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       *开始发送时间
+       * </pre>
+       *
+       * <code>int64 startTime = 10;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+        
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *开始发送时间
+       * </pre>
+       *
+       * <code>int64 startTime = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+        
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timeInterval_ ;
+      /**
+       * <pre>
+       *每次发送的时间间隔
+       * </pre>
+       *
+       * <code>int64 timeInterval = 11;</code>
+       * @return The timeInterval.
+       */
+      @java.lang.Override
+      public long getTimeInterval() {
+        return timeInterval_;
+      }
+      /**
+       * <pre>
+       *每次发送的时间间隔
+       * </pre>
+       *
+       * <code>int64 timeInterval = 11;</code>
+       * @param value The timeInterval to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeInterval(long value) {
+        
+        timeInterval_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *每次发送的时间间隔
+       * </pre>
+       *
+       * <code>int64 timeInterval = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimeInterval() {
+        
+        timeInterval_ = 0L;
         onChanged();
         return this;
       }
@@ -30019,79 +30201,80 @@ pto.TestProto.TaskShell defaultValue);
       "H\000\210\001\001\022\023\n\006status\030\003 \001(\010H\001\210\001\001B\010\n\006_tokenB\t\n\007" +
       "_status\"#\n\014C2S_Register\022\023\n\004user\030\001 \001(\0132\005." +
       "User\"+\n\014S2C_Register\022\016\n\006status\030\001 \001(\010\022\013\n\003" +
-      "msg\030\002 \001(\t\"\346\001\n\tTaskShell\022\n\n\002ip\030\001 \001(\t\022\014\n\004p" +
+      "msg\030\002 \001(\t\"\217\002\n\tTaskShell\022\n\n\002ip\030\001 \001(\t\022\014\n\004p" +
       "ort\030\002 \001(\t\022$\n\005heads\030\003 \003(\0132\025.TaskShell.Hea" +
       "dsEntry\022\014\n\004body\030\004 \001(\t\022\014\n\004type\030\005 \001(\005\022\021\n\tc" +
       "ondition\030\006 \001(\005\022\024\n\014conditionMsg\030\007 \001(\t\022\024\n\014" +
-      "responseType\030\010 \001(\005\022\020\n\010respFind\030\t \001(\t\032,\n\n" +
-      "HeadsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"\014\n\nTaskResult\"\207\002\n\004Task\022\016\n\006taskId\030\001 \001(" +
-      "\005\022\020\n\010taskName\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022!\n\013t" +
-      "askProtocl\030\004 \001(\0162\014.TaskProtocl\022\037\n\005shell\030" +
-      "\005 \003(\0132\020.Task.ShellEntry\022\020\n\010taskCost\030\006 \001(" +
-      "\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.Ta" +
-      "skResult\022\016\n\006status\030\t \001(\010\0328\n\nShellEntry\022\013" +
-      "\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:\002" +
-      "8\001\"u\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
-      "(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskI" +
-      "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003(" +
-      "\005\"\241\001\n\010KafkaMsg\022\016\n\006userId\030\001 \001(\005\022\016\n\006taskId" +
-      "\030\002 \001(\005\022\017\n\007shellId\030\003 \001(\005\022\n\n\002ip\030\004 \001(\t\022\014\n\004p" +
-      "ort\030\005 \001(\t\022\020\n\010costTime\030\006 \001(\003\022\022\n\nrequestMs" +
-      "g\030\007 \001(\t\022\023\n\013responseMsg\030\010 \001(\t\022\017\n\007success\030" +
-      "\t \001(\010\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n" +
-      "\007userIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.T" +
-      "askConduct.ShellMappingEntry\0323\n\021ShellMap" +
-      "pingEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028" +
-      "\001\"*\n\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030" +
-      "\002 \001(\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.T" +
-      "ask\"$\n\014ConsGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Tas" +
-      "k\"#\n\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\"." +
-      "\n\021S2C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
-      "nseMsg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132" +
-      "\005.Task\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014" +
-      ".ResponseMsg\"\"\n\020C2S_prod_EndTask\022\016\n\006task" +
-      "Id\030\001 \001(\005\"-\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001(" +
-      "\0132\014.ResponseMsg\"$\n\022C2S_prod_GetResult\022\016\n" +
-      "\006taskId\030\001 \001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003m" +
-      "sg\030\001 \001(\0132\014.ResponseMsg\022\037\n\ntaskResult\030\002 \001" +
-      "(\0132\013.TaskResult\"\036\n\014C2S_Get_Task\022\016\n\006taskI" +
-      "d\030\001 \001(\005\">\n\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014.R" +
-      "esponseMsg\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_p" +
-      "rod_GetAllAddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S2" +
-      "C_prod_GetAllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r.P" +
-      "rodAddTasks\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\"." +
-      "\n\021S2C_Cons_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
-      "nseMsg\"3\n\021C2S_Cons_TakeTask\022\016\n\006taskId\030\001 " +
-      "\001(\005\022\016\n\006userId\030\002 \001(\005\"/\n\022S2C_Cons_StartTas" +
-      "k\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"4\n\022C2S_Cons" +
-      "_StartTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001" +
-      "(\005\"-\n\020S2C_Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.Re" +
-      "sponseMsg\"2\n\020C2S_Cons_EndTask\022\016\n\006taskId\030" +
-      "\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_DelTas" +
-      "k\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons" +
-      "_DelTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005" +
-      "\"O\n\024S2C_Cons_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014." +
-      "ResponseMsg\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTask" +
-      "s\"&\n\024C2S_Cons_AllGetTasks\022\016\n\006userId\030\002 \001(" +
-      "\005*\351\004\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\t" +
-      "S2C_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REG" +
-      "ISTER\020\004\022\027\n\023S2C_PROD_START_TASK\020\005\022\027\n\023C2S_" +
-      "PROD_START_TASK\020\006\022\025\n\021S2C_PROD_ADD_TASK\020\007" +
-      "\022\025\n\021C2S_PROD_ADD_TASK\020\010\022\025\n\021S2C_PROD_END_" +
-      "TASK\020\t\022\025\n\021C2S_PROD_END_TASK\020\n\022\026\n\022S2C_PRO" +
-      "D_GETRESULT\020\013\022\026\n\022C2S_PROD_GETRESULT\020\014\022\020\n" +
-      "\014S2C_GET_TASK\020\r\022\020\n\014C2S_GET_TASK\020\016\022\036\n\032S2C" +
-      "_PROD_GET_ALL_ADD_TASKS\020\017\022\036\n\032C2S_PROD_GE" +
-      "T_ALL_ADD_TASKS\020\020\022\026\n\022S2C_CONS_TAKE_TASK\020" +
-      "\021\022\026\n\022C2S_CONS_TAKE_TASK\020\022\022\027\n\023S2C_CONS_ST" +
-      "ART_TASK\020\023\022\027\n\023C2S_CONS_START_TASK\020\024\022\025\n\021S" +
-      "2C_CONS_END_TASK\020\025\022\025\n\021C2S_CONS_END_TASK\020" +
-      "\026\022\024\n\020S2C_CNS_DEL_TASK\020\027\022\024\n\020C2S_CNS_DEL_T" +
-      "ASK\020\030\022\032\n\026S2C_CONS_ALL_GET_TASKS\020\031\022\032\n\026C2S" +
-      "_CONS_ALL_GET_TASKS\020\032*3\n\013TaskProtocl\022\010\n\004" +
-      "NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003pt" +
-      "oB\tTestProtob\006proto3"
+      "responseType\030\010 \001(\005\022\020\n\010respFind\030\t \001(\t\022\021\n\t" +
+      "startTime\030\n \001(\003\022\024\n\014timeInterval\030\013 \001(\003\032,\n" +
+      "\nHeadsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"\014\n\nTaskResult\"\207\002\n\004Task\022\016\n\006taskId\030\001 \001" +
+      "(\005\022\020\n\010taskName\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022!\n\013" +
+      "taskProtocl\030\004 \001(\0162\014.TaskProtocl\022\037\n\005shell" +
+      "\030\005 \003(\0132\020.Task.ShellEntry\022\020\n\010taskCost\030\006 \001" +
+      "(\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.T" +
+      "askResult\022\016\n\006status\030\t \001(\010\0328\n\nShellEntry\022" +
+      "\013\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:" +
+      "\0028\001\"u\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 " +
+      "\001(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTask" +
+      "Id\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003" +
+      "(\005\"\241\001\n\010KafkaMsg\022\016\n\006userId\030\001 \001(\005\022\016\n\006taskI" +
+      "d\030\002 \001(\005\022\017\n\007shellId\030\003 \001(\005\022\n\n\002ip\030\004 \001(\t\022\014\n\004" +
+      "port\030\005 \001(\t\022\020\n\010costTime\030\006 \001(\003\022\022\n\nrequestM" +
+      "sg\030\007 \001(\t\022\023\n\013responseMsg\030\010 \001(\t\022\017\n\007success" +
+      "\030\t \001(\010\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017" +
+      "\n\007userIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036." +
+      "TaskConduct.ShellMappingEntry\0323\n\021ShellMa" +
+      "ppingEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\002" +
+      "8\001\"*\n\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg" +
+      "\030\002 \001(\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005." +
+      "Task\"$\n\014ConsGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Ta" +
+      "sk\"#\n\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\"" +
+      ".\n\021S2C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.Resp" +
+      "onseMsg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\013" +
+      "2\005.Task\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132" +
+      "\014.ResponseMsg\"\"\n\020C2S_prod_EndTask\022\016\n\006tas" +
+      "kId\030\001 \001(\005\"-\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001" +
+      "(\0132\014.ResponseMsg\"$\n\022C2S_prod_GetResult\022\016" +
+      "\n\006taskId\030\001 \001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003" +
+      "msg\030\001 \001(\0132\014.ResponseMsg\022\037\n\ntaskResult\030\002 " +
+      "\001(\0132\013.TaskResult\"\036\n\014C2S_Get_Task\022\016\n\006task" +
+      "Id\030\001 \001(\005\">\n\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014." +
+      "ResponseMsg\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_" +
+      "prod_GetAllAddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S" +
+      "2C_prod_GetAllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r." +
+      "ProdAddTasks\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\"" +
+      ".\n\021S2C_Cons_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.Resp" +
+      "onseMsg\"3\n\021C2S_Cons_TakeTask\022\016\n\006taskId\030\001" +
+      " \001(\005\022\016\n\006userId\030\002 \001(\005\"/\n\022S2C_Cons_StartTa" +
+      "sk\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"4\n\022C2S_Con" +
+      "s_StartTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 " +
+      "\001(\005\"-\n\020S2C_Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.R" +
+      "esponseMsg\"2\n\020C2S_Cons_EndTask\022\016\n\006taskId" +
+      "\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_DelTa" +
+      "sk\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Con" +
+      "s_DelTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(" +
+      "\005\"O\n\024S2C_Cons_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014" +
+      ".ResponseMsg\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTas" +
+      "ks\"&\n\024C2S_Cons_AllGetTasks\022\016\n\006userId\030\002 \001" +
+      "(\005*\351\004\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n" +
+      "\tS2C_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_RE" +
+      "GISTER\020\004\022\027\n\023S2C_PROD_START_TASK\020\005\022\027\n\023C2S" +
+      "_PROD_START_TASK\020\006\022\025\n\021S2C_PROD_ADD_TASK\020" +
+      "\007\022\025\n\021C2S_PROD_ADD_TASK\020\010\022\025\n\021S2C_PROD_END" +
+      "_TASK\020\t\022\025\n\021C2S_PROD_END_TASK\020\n\022\026\n\022S2C_PR" +
+      "OD_GETRESULT\020\013\022\026\n\022C2S_PROD_GETRESULT\020\014\022\020" +
+      "\n\014S2C_GET_TASK\020\r\022\020\n\014C2S_GET_TASK\020\016\022\036\n\032S2" +
+      "C_PROD_GET_ALL_ADD_TASKS\020\017\022\036\n\032C2S_PROD_G" +
+      "ET_ALL_ADD_TASKS\020\020\022\026\n\022S2C_CONS_TAKE_TASK" +
+      "\020\021\022\026\n\022C2S_CONS_TAKE_TASK\020\022\022\027\n\023S2C_CONS_S" +
+      "TART_TASK\020\023\022\027\n\023C2S_CONS_START_TASK\020\024\022\025\n\021" +
+      "S2C_CONS_END_TASK\020\025\022\025\n\021C2S_CONS_END_TASK" +
+      "\020\026\022\024\n\020S2C_CNS_DEL_TASK\020\027\022\024\n\020C2S_CNS_DEL_" +
+      "TASK\020\030\022\032\n\026S2C_CONS_ALL_GET_TASKS\020\031\022\032\n\026C2" +
+      "S_CONS_ALL_GET_TASKS\020\032*3\n\013TaskProtocl\022\010\n" +
+      "\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003p" +
+      "toB\tTestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30132,7 +30315,7 @@ pto.TestProto.TaskShell defaultValue);
     internal_static_TaskShell_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TaskShell_descriptor,
-        new java.lang.String[] { "Ip", "Port", "Heads", "Body", "Type", "Condition", "ConditionMsg", "ResponseType", "RespFind", });
+        new java.lang.String[] { "Ip", "Port", "Heads", "Body", "Type", "Condition", "ConditionMsg", "ResponseType", "RespFind", "StartTime", "TimeInterval", });
     internal_static_TaskShell_HeadsEntry_descriptor =
       internal_static_TaskShell_descriptor.getNestedTypes().get(0);
     internal_static_TaskShell_HeadsEntry_fieldAccessorTable = new

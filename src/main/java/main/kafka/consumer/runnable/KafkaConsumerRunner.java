@@ -1,9 +1,8 @@
-package main.kafka.runnable;
+package main.kafka.consumer.runnable;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
-import io.grpc.internal.JsonUtil;
-import main.kafka.common.KafkaContext;
+import main.kafka.consumer.common.KafkaContext;
 import main.logs.LogUtil;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -11,11 +10,9 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.logging.log4j.Logger;
 import pto.TestProto;
-import scala.Int;
 
 import java.time.Duration;
 import java.util.Collections;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**

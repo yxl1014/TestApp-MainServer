@@ -1,14 +1,14 @@
-package main.kafka.common;
+package main.kafka.consumer.common;
 
-import main.kafka.runnable.KafkaConsumerRunner;
+import main.kafka.consumer.runnable.KafkaConsumerRunner;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
+import main.util.FinalData;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import pto.TestProto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,9 +39,10 @@ public class KafkaConsumerConnectPoll {
     /**
      * 关闭这条队列的监听
      *
-     * @param topicName topic名
+     * @param taskId taskId
      */
-    public void shutdown(String topicName) {
+    public void shutdown(int taskId) {
+        String topicName = FinalData.getKafkaC2SName(taskId);
         if (consumers.containsKey(topicName)) {
             consumers.get(topicName).shutdown();
             logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_CLOSE_OK, topicName));
@@ -55,19 +56,22 @@ public class KafkaConsumerConnectPoll {
     /**
      * 获取consumerRunner
      *
-     * @param topicName topic名
+     * @param taskId taskId
      * @return 返回一个runner
      */
-    public KafkaConsumerRunner getConsumer(String topicName) {
+    public KafkaConsumerRunner getConsumer(int taskId) {
+        String topicName = FinalData.getKafkaC2SName(taskId);
         return consumers.get(topicName);
     }
 
     /**
      * 初始化并开始消费这条队列
      *
-     * @param topicName topic名
+     * @param taskId taskId
+     * @param kafkaContext 任务脚本上下文
      */
-    public void initKafkaTopic(String topicName, KafkaContext kafkaContext) {
+    public void initKafkaTopic(int taskId, KafkaContext kafkaContext) {
+        String topicName = FinalData.getKafkaC2SName(taskId);
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(this.properties);
         KafkaConsumerRunner kafkaConsumerRunner = new KafkaConsumerRunner(topicName, consumer, kafkaContext);
         KafkaConsumerRunner old = this.consumers.get(topicName);
@@ -92,18 +96,19 @@ public class KafkaConsumerConnectPoll {
     /**
      * 获取这个监听队列,若为null则初始化并开始一个
      *
-     * @param topicName topic名
+     * @param taskId taskId
      * @return 返回一个runner
      */
-    public KafkaConsumerRunner getConsumerOrInit(String topicName, KafkaContext kafkaContext) {
-        KafkaConsumerRunner consumer = getConsumer(topicName);
+    public KafkaConsumerRunner getConsumerOrInit(int taskId, KafkaContext kafkaContext) {
+        String topicName = FinalData.getKafkaC2SName(taskId);
+        KafkaConsumerRunner consumer = getConsumer(taskId);
         if (consumer != null) {
             logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_GET_EXIST, topicName));
             return consumer;
         }
         logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_GET_NO_EXIST, topicName));
-        initKafkaTopic(topicName, kafkaContext);
-        return getConsumer(topicName);
+        initKafkaTopic(taskId, kafkaContext);
+        return getConsumer(taskId);
     }
 
 

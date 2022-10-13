@@ -1,8 +1,6 @@
 package main.util;
 
 
-import java.util.List;
-
 /**
  * @author yxl.testapp.domain.yxl
  * @date: 2022/9/12 下午1:37
@@ -63,9 +61,15 @@ public class FinalData {
 
     /**
      * @param taskId 任务id
-     * @return topicName
+     * @return 监听请求结果的队列名
      */
-    public static String getTopicName(int taskId) {
+    public static String getKafkaC2SName(int taskId) {
         return APP_NAME + "_" + taskId;
     }
+
+
+    public static String getKafkaS2CName(int taskId) {
+        return APP_NAME + "_" + taskId + "_rep";
+    }
+
 }

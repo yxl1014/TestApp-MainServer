@@ -1,4 +1,4 @@
-package main.kafka.common;
+package main.kafka.consumer.common;
 
 import lombok.Data;
 import lombok.Getter;

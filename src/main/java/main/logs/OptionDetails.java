@@ -124,6 +124,15 @@ public enum OptionDetails {
 
     KAFKA_CONSUMER_TOPIC_GET_EXIST("获取监听线程","成功","该队列已存在,直接返回"),
     KAFKA_CONSUMER_TOPIC_GET_NO_EXIST("获取监听线程","成功","该队列不存在,初始化一个"),
+
+    KAFKA_PRODUCER_CREATE_IS_EXIST("创建producer对象","失败","该对象已存在"),
+    KAFKA_PRODUCER_CREATE_SUCCESS("创建producer对象","成功","创建成功"),
+
+    KAFKA_PRODUCER_CLOSE_NOT_EXIST("关闭producer对象","失败","该对象不存在"),
+    KAFKA_PRODUCER_CLOSE_SUCCESS("关闭producer对象","成功","关闭成功"),
+
+    KAFKA_PRODUCER_SEND_NO_PRODUCER("发送信息","失败","producer对象不存在"),
+    KAFKA_PRODUCER_SEND_SUCCESS("发送信息","成功","发送成功"),
     ;
     private String type;
     private String status;

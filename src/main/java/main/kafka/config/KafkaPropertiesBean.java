@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class KafkaConsumerBean {
+public class KafkaPropertiesBean {
     @Value("${spring.kafka.consumer.bootstrap-servers}")
     private String bootstrap;
 
