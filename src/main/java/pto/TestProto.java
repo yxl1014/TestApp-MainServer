@@ -29981,6 +29981,1392 @@ pto.TestProto.TaskShell defaultValue);
 
   }
 
+  public interface UserLoadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserLoad)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 loadUserId = 1;</code>
+     * @return The loadUserId.
+     */
+    int getLoadUserId();
+
+    /**
+     * <code>.S_User user = 2;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.S_User user = 2;</code>
+     * @return The user.
+     */
+    pto.TestProto.S_User getUser();
+    /**
+     * <code>.S_User user = 2;</code>
+     */
+    pto.TestProto.S_UserOrBuilder getUserOrBuilder();
+  }
+  /**
+   * Protobuf type {@code UserLoad}
+   */
+  public static final class UserLoad extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UserLoad)
+      UserLoadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserLoad.newBuilder() to construct.
+    private UserLoad(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserLoad() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserLoad();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UserLoad(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              loadUserId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              pto.TestProto.S_User.Builder subBuilder = null;
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
+              }
+              user_ = input.readMessage(pto.TestProto.S_User.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_UserLoad_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_UserLoad_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.UserLoad.class, pto.TestProto.UserLoad.Builder.class);
+    }
+
+    public static final int LOADUSERID_FIELD_NUMBER = 1;
+    private int loadUserId_;
+    /**
+     * <code>int32 loadUserId = 1;</code>
+     * @return The loadUserId.
+     */
+    @java.lang.Override
+    public int getLoadUserId() {
+      return loadUserId_;
+    }
+
+    public static final int USER_FIELD_NUMBER = 2;
+    private pto.TestProto.S_User user_;
+    /**
+     * <code>.S_User user = 2;</code>
+     * @return Whether the user field is set.
+     */
+    @java.lang.Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.S_User user = 2;</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public pto.TestProto.S_User getUser() {
+      return user_ == null ? pto.TestProto.S_User.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.S_User user = 2;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.S_UserOrBuilder getUserOrBuilder() {
+      return getUser();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (loadUserId_ != 0) {
+        output.writeInt32(1, loadUserId_);
+      }
+      if (user_ != null) {
+        output.writeMessage(2, getUser());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (loadUserId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, loadUserId_);
+      }
+      if (user_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getUser());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.UserLoad)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.UserLoad other = (pto.TestProto.UserLoad) obj;
+
+      if (getLoadUserId()
+          != other.getLoadUserId()) return false;
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LOADUSERID_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadUserId();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.UserLoad parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.UserLoad parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.UserLoad parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.UserLoad parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.UserLoad parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.UserLoad parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.UserLoad prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code UserLoad}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UserLoad)
+        pto.TestProto.UserLoadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_UserLoad_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_UserLoad_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.UserLoad.class, pto.TestProto.UserLoad.Builder.class);
+      }
+
+      // Construct using pto.TestProto.UserLoad.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        loadUserId_ = 0;
+
+        if (userBuilder_ == null) {
+          user_ = null;
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_UserLoad_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.UserLoad getDefaultInstanceForType() {
+        return pto.TestProto.UserLoad.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.UserLoad build() {
+        pto.TestProto.UserLoad result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.UserLoad buildPartial() {
+        pto.TestProto.UserLoad result = new pto.TestProto.UserLoad(this);
+        result.loadUserId_ = loadUserId_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.UserLoad) {
+          return mergeFrom((pto.TestProto.UserLoad)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.UserLoad other) {
+        if (other == pto.TestProto.UserLoad.getDefaultInstance()) return this;
+        if (other.getLoadUserId() != 0) {
+          setLoadUserId(other.getLoadUserId());
+        }
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.UserLoad parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.UserLoad) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int loadUserId_ ;
+      /**
+       * <code>int32 loadUserId = 1;</code>
+       * @return The loadUserId.
+       */
+      @java.lang.Override
+      public int getLoadUserId() {
+        return loadUserId_;
+      }
+      /**
+       * <code>int32 loadUserId = 1;</code>
+       * @param value The loadUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoadUserId(int value) {
+        
+        loadUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 loadUserId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLoadUserId() {
+        
+        loadUserId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private pto.TestProto.S_User user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.S_User, pto.TestProto.S_User.Builder, pto.TestProto.S_UserOrBuilder> userBuilder_;
+      /**
+       * <code>.S_User user = 2;</code>
+       * @return Whether the user field is set.
+       */
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       * @return The user.
+       */
+      public pto.TestProto.S_User getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? pto.TestProto.S_User.getDefaultInstance() : user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public Builder setUser(pto.TestProto.S_User value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+          onChanged();
+        } else {
+          userBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public Builder setUser(
+          pto.TestProto.S_User.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+          onChanged();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public Builder mergeUser(pto.TestProto.S_User value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              pto.TestProto.S_User.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
+          }
+          onChanged();
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
+          onChanged();
+        } else {
+          user_ = null;
+          userBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public pto.TestProto.S_User.Builder getUserBuilder() {
+        
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      public pto.TestProto.S_UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_ == null ?
+              pto.TestProto.S_User.getDefaultInstance() : user_;
+        }
+      }
+      /**
+       * <code>.S_User user = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.S_User, pto.TestProto.S_User.Builder, pto.TestProto.S_UserOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              pto.TestProto.S_User, pto.TestProto.S_User.Builder, pto.TestProto.S_UserOrBuilder>(
+                  getUser(),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UserLoad)
+    }
+
+    // @@protoc_insertion_point(class_scope:UserLoad)
+    private static final pto.TestProto.UserLoad DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.UserLoad();
+    }
+
+    public static pto.TestProto.UserLoad getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserLoad>
+        PARSER = new com.google.protobuf.AbstractParser<UserLoad>() {
+      @java.lang.Override
+      public UserLoad parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserLoad(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserLoad> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserLoad> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.UserLoad getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TaskLoadOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TaskLoad)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 loadTaskId = 1;</code>
+     * @return The loadTaskId.
+     */
+    int getLoadTaskId();
+
+    /**
+     * <code>.Task task = 2;</code>
+     * @return Whether the task field is set.
+     */
+    boolean hasTask();
+    /**
+     * <code>.Task task = 2;</code>
+     * @return The task.
+     */
+    pto.TestProto.Task getTask();
+    /**
+     * <code>.Task task = 2;</code>
+     */
+    pto.TestProto.TaskOrBuilder getTaskOrBuilder();
+  }
+  /**
+   * Protobuf type {@code TaskLoad}
+   */
+  public static final class TaskLoad extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TaskLoad)
+      TaskLoadOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TaskLoad.newBuilder() to construct.
+    private TaskLoad(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskLoad() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TaskLoad();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TaskLoad(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              loadTaskId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              pto.TestProto.Task.Builder subBuilder = null;
+              if (task_ != null) {
+                subBuilder = task_.toBuilder();
+              }
+              task_ = input.readMessage(pto.TestProto.Task.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(task_);
+                task_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_TaskLoad_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_TaskLoad_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.TaskLoad.class, pto.TestProto.TaskLoad.Builder.class);
+    }
+
+    public static final int LOADTASKID_FIELD_NUMBER = 1;
+    private int loadTaskId_;
+    /**
+     * <code>int32 loadTaskId = 1;</code>
+     * @return The loadTaskId.
+     */
+    @java.lang.Override
+    public int getLoadTaskId() {
+      return loadTaskId_;
+    }
+
+    public static final int TASK_FIELD_NUMBER = 2;
+    private pto.TestProto.Task task_;
+    /**
+     * <code>.Task task = 2;</code>
+     * @return Whether the task field is set.
+     */
+    @java.lang.Override
+    public boolean hasTask() {
+      return task_ != null;
+    }
+    /**
+     * <code>.Task task = 2;</code>
+     * @return The task.
+     */
+    @java.lang.Override
+    public pto.TestProto.Task getTask() {
+      return task_ == null ? pto.TestProto.Task.getDefaultInstance() : task_;
+    }
+    /**
+     * <code>.Task task = 2;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.TaskOrBuilder getTaskOrBuilder() {
+      return getTask();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (loadTaskId_ != 0) {
+        output.writeInt32(1, loadTaskId_);
+      }
+      if (task_ != null) {
+        output.writeMessage(2, getTask());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (loadTaskId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, loadTaskId_);
+      }
+      if (task_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTask());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.TaskLoad)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.TaskLoad other = (pto.TestProto.TaskLoad) obj;
+
+      if (getLoadTaskId()
+          != other.getLoadTaskId()) return false;
+      if (hasTask() != other.hasTask()) return false;
+      if (hasTask()) {
+        if (!getTask()
+            .equals(other.getTask())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LOADTASKID_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadTaskId();
+      if (hasTask()) {
+        hash = (37 * hash) + TASK_FIELD_NUMBER;
+        hash = (53 * hash) + getTask().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.TaskLoad parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskLoad parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskLoad parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskLoad parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.TaskLoad prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code TaskLoad}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TaskLoad)
+        pto.TestProto.TaskLoadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_TaskLoad_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_TaskLoad_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.TaskLoad.class, pto.TestProto.TaskLoad.Builder.class);
+      }
+
+      // Construct using pto.TestProto.TaskLoad.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        loadTaskId_ = 0;
+
+        if (taskBuilder_ == null) {
+          task_ = null;
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_TaskLoad_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskLoad getDefaultInstanceForType() {
+        return pto.TestProto.TaskLoad.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskLoad build() {
+        pto.TestProto.TaskLoad result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskLoad buildPartial() {
+        pto.TestProto.TaskLoad result = new pto.TestProto.TaskLoad(this);
+        result.loadTaskId_ = loadTaskId_;
+        if (taskBuilder_ == null) {
+          result.task_ = task_;
+        } else {
+          result.task_ = taskBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.TaskLoad) {
+          return mergeFrom((pto.TestProto.TaskLoad)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.TaskLoad other) {
+        if (other == pto.TestProto.TaskLoad.getDefaultInstance()) return this;
+        if (other.getLoadTaskId() != 0) {
+          setLoadTaskId(other.getLoadTaskId());
+        }
+        if (other.hasTask()) {
+          mergeTask(other.getTask());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.TaskLoad parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.TaskLoad) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int loadTaskId_ ;
+      /**
+       * <code>int32 loadTaskId = 1;</code>
+       * @return The loadTaskId.
+       */
+      @java.lang.Override
+      public int getLoadTaskId() {
+        return loadTaskId_;
+      }
+      /**
+       * <code>int32 loadTaskId = 1;</code>
+       * @param value The loadTaskId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoadTaskId(int value) {
+        
+        loadTaskId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 loadTaskId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLoadTaskId() {
+        
+        loadTaskId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private pto.TestProto.Task task_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> taskBuilder_;
+      /**
+       * <code>.Task task = 2;</code>
+       * @return Whether the task field is set.
+       */
+      public boolean hasTask() {
+        return taskBuilder_ != null || task_ != null;
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       * @return The task.
+       */
+      public pto.TestProto.Task getTask() {
+        if (taskBuilder_ == null) {
+          return task_ == null ? pto.TestProto.Task.getDefaultInstance() : task_;
+        } else {
+          return taskBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public Builder setTask(pto.TestProto.Task value) {
+        if (taskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          task_ = value;
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public Builder setTask(
+          pto.TestProto.Task.Builder builderForValue) {
+        if (taskBuilder_ == null) {
+          task_ = builderForValue.build();
+          onChanged();
+        } else {
+          taskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public Builder mergeTask(pto.TestProto.Task value) {
+        if (taskBuilder_ == null) {
+          if (task_ != null) {
+            task_ =
+              pto.TestProto.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+          } else {
+            task_ = value;
+          }
+          onChanged();
+        } else {
+          taskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public Builder clearTask() {
+        if (taskBuilder_ == null) {
+          task_ = null;
+          onChanged();
+        } else {
+          task_ = null;
+          taskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public pto.TestProto.Task.Builder getTaskBuilder() {
+        
+        onChanged();
+        return getTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      public pto.TestProto.TaskOrBuilder getTaskOrBuilder() {
+        if (taskBuilder_ != null) {
+          return taskBuilder_.getMessageOrBuilder();
+        } else {
+          return task_ == null ?
+              pto.TestProto.Task.getDefaultInstance() : task_;
+        }
+      }
+      /**
+       * <code>.Task task = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder> 
+          getTaskFieldBuilder() {
+        if (taskBuilder_ == null) {
+          taskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              pto.TestProto.Task, pto.TestProto.Task.Builder, pto.TestProto.TaskOrBuilder>(
+                  getTask(),
+                  getParentForChildren(),
+                  isClean());
+          task_ = null;
+        }
+        return taskBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TaskLoad)
+    }
+
+    // @@protoc_insertion_point(class_scope:TaskLoad)
+    private static final pto.TestProto.TaskLoad DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.TaskLoad();
+    }
+
+    public static pto.TestProto.TaskLoad getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskLoad>
+        PARSER = new com.google.protobuf.AbstractParser<TaskLoad>() {
+      @java.lang.Override
+      public TaskLoad parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskLoad(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskLoad> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskLoad> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.TaskLoad getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_User_descriptor;
   private static final 
@@ -30176,6 +31562,16 @@ pto.TestProto.TaskShell defaultValue);
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_C2S_Cons_AllGetTasks_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UserLoad_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UserLoad_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TaskLoad_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TaskLoad_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -30205,6 +31601,73 @@ pto.TestProto.TaskShell defaultValue);
       "ort\030\002 \001(\t\022$\n\005heads\030\003 \003(\0132\025.TaskShell.Hea" +
       "dsEntry\022\014\n\004body\030\004 \001(\t\022\014\n\004type\030\005 \001(\005\022\021\n\tc" +
       "ondition\030\006 \001(\005\022\024\n\014conditionMsg\030\007 \001(\t\022\024\n\014" +
+      "responseType\030\010 \001(\005\022\020\n\010respFind\030\t \001(\t\032,\n\n" +
+      "HeadsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"\014\n\nTaskResult\"\207\002\n\004Task\022\016\n\006taskId\030\001 \001(" +
+      "\005\022\020\n\010taskName\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022!\n\013t" +
+      "askProtocl\030\004 \001(\0162\014.TaskProtocl\022\037\n\005shell\030" +
+      "\005 \003(\0132\020.Task.ShellEntry\022\020\n\010taskCost\030\006 \001(" +
+      "\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.Ta" +
+      "skResult\022\016\n\006status\030\t \001(\010\0328\n\nShellEntry\022\013" +
+      "\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:\002" +
+      "8\001\"u\n\006S_User\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001" +
+      "(\0132\005.User\022\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskI" +
+      "d\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003(" +
+      "\005\"\231\001\n\013TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n\007use" +
+      "rIds\030\002 \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.TaskC" +
+      "onduct.ShellMappingEntry\0323\n\021ShellMapping" +
+      "Entry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n" +
+      "\013ResponseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030\002 \001(" +
+      "\t\"$\n\014ProdAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"" +
+      "$\n\014ConsGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"#\n" +
+      "\021C2S_ProdStartTask\022\016\n\006taskId\030\001 \001(\005\".\n\021S2" +
+      "C_ProdStartTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseM" +
+      "sg\"&\n\017C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132\005.Ta" +
+      "sk\",\n\017S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014.Res" +
+      "ponseMsg\"\"\n\020C2S_prod_EndTask\022\016\n\006taskId\030\001" +
+      " \001(\005\"-\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001(\0132\014." +
+      "ResponseMsg\"$\n\022C2S_prod_GetResult\022\016\n\006tas" +
+      "kId\030\001 \001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003msg\030\001" +
+      " \001(\0132\014.ResponseMsg\022\037\n\ntaskResult\030\002 \001(\0132\013" +
+      ".TaskResult\"\036\n\014C2S_Get_Task\022\016\n\006taskId\030\001 " +
+      "\001(\005\">\n\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014.Respo" +
+      "nseMsg\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_prod_" +
+      "GetAllAddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S2C_pr" +
+      "od_GetAllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r.ProdA" +
+      "ddTasks\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\".\n\021S2" +
+      "C_Cons_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseM" +
+      "sg\"3\n\021C2S_Cons_TakeTask\022\016\n\006taskId\030\001 \001(\005\022" +
+      "\016\n\006userId\030\002 \001(\005\"/\n\022S2C_Cons_StartTask\022\031\n" +
+      "\003msg\030\001 \001(\0132\014.ResponseMsg\"4\n\022C2S_Cons_Sta" +
+      "rtTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-" +
+      "\n\020S2C_Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.Respon" +
+      "seMsg\"2\n\020C2S_Cons_EndTask\022\016\n\006taskId\030\001 \001(" +
+      "\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_DelTask\022\031\n" +
+      "\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons_Del" +
+      "Task\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"O\n\024" +
+      "S2C_Cons_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014.Resp" +
+      "onseMsg\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTasks\"&\n" +
+      "\024C2S_Cons_AllGetTasks\022\016\n\006userId\030\002 \001(\005\"5\n" +
+      "\010UserLoad\022\022\n\nloadUserId\030\001 \001(\005\022\025\n\004user\030\002 " +
+      "\001(\0132\007.S_User\"3\n\010TaskLoad\022\022\n\nloadTaskId\030\001" +
+      " \001(\005\022\023\n\004task\030\002 \001(\0132\005.Task*\351\004\n\005Types\022\010\n\004U" +
+      "SER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_LOGIN\020\002\022\020\n\014C" +
+      "2S_REGISTER\020\003\022\020\n\014S2C_REGISTER\020\004\022\027\n\023S2C_P" +
+      "ROD_START_TASK\020\005\022\027\n\023C2S_PROD_START_TASK\020" +
+      "\006\022\025\n\021S2C_PROD_ADD_TASK\020\007\022\025\n\021C2S_PROD_ADD" +
+      "_TASK\020\010\022\025\n\021S2C_PROD_END_TASK\020\t\022\025\n\021C2S_PR" +
+      "OD_END_TASK\020\n\022\026\n\022S2C_PROD_GETRESULT\020\013\022\026\n" +
+      "\022C2S_PROD_GETRESULT\020\014\022\020\n\014S2C_GET_TASK\020\r\022" +
+      "\020\n\014C2S_GET_TASK\020\016\022\036\n\032S2C_PROD_GET_ALL_AD" +
+      "D_TASKS\020\017\022\036\n\032C2S_PROD_GET_ALL_ADD_TASKS\020" +
+      "\020\022\026\n\022S2C_CONS_TAKE_TASK\020\021\022\026\n\022C2S_CONS_TA" +
+      "KE_TASK\020\022\022\027\n\023S2C_CONS_START_TASK\020\023\022\027\n\023C2" +
+      "S_CONS_START_TASK\020\024\022\025\n\021S2C_CONS_END_TASK" +
+      "\020\025\022\025\n\021C2S_CONS_END_TASK\020\026\022\024\n\020S2C_CNS_DEL" +
+      "_TASK\020\027\022\024\n\020C2S_CNS_DEL_TASK\020\030\022\032\n\026S2C_CON" +
+      "S_ALL_GET_TASKS\020\031\022\032\n\026C2S_CONS_ALL_GET_TA" +
+      "SKS\020\032*3\n\013TaskProtocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001" +
+      "\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020\n\003ptoB\tTestProtob\006pr" +
       "responseType\030\010 \001(\005\022\020\n\010respFind\030\t \001(\t\022\021\n\t" +
       "startTime\030\n \001(\003\022\024\n\014timeInterval\030\013 \001(\003\032,\n" +
       "\nHeadsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
@@ -30514,6 +31977,18 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_AllGetTasks_descriptor,
         new java.lang.String[] { "UserId", });
+    internal_static_UserLoad_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_UserLoad_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UserLoad_descriptor,
+        new java.lang.String[] { "LoadUserId", "User", });
+    internal_static_TaskLoad_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_TaskLoad_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TaskLoad_descriptor,
+        new java.lang.String[] { "LoadTaskId", "Task", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

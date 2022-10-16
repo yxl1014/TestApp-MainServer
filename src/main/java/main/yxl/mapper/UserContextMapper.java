@@ -18,4 +18,7 @@ public interface UserContextMapper {
 
     @Insert("insert into UserContext(userId,data) values(#{userId},#{data})")
     int insertUserContext(@Param("userId") int userId, @Param("data") byte[] data);
+
+    @Update("update UserContext set data= #{data} where userId = #{userId}")
+    int updateUserContext(@Param("userId") int taskId, @Param("data") byte[] data);
 }

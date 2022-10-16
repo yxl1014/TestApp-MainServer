@@ -1,9 +1,10 @@
 package main.util.config;
 
-import main.util.Unsign;
+import main.ly.config.LruBean.LruUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import main.util.ProtocolUtil;
+import pto.TestProto;
 
 /**
  * @author yxl.testapp.domain.yxl
@@ -18,4 +19,5 @@ public class UtilConfig {
     public ProtocolUtil getProtocolUtil() {
         return new ProtocolUtil();
     }
+
 }
