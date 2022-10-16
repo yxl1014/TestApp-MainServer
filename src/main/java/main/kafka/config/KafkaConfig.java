@@ -1,6 +1,5 @@
 package main.kafka.config;
 
-import main.kafka.common.KafkaConsumerConnectPoll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +15,7 @@ import java.util.Properties;
 public class KafkaConfig {
 
     @Autowired
-    private KafkaConsumerBean bean;
+    private KafkaPropertiesBean bean;
 
     @Bean(name = "kafkaProperties")
     public Properties getKafkaConsumerProperties() {
