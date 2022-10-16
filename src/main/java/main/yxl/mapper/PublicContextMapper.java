@@ -17,4 +17,7 @@ public interface PublicContextMapper {
 
     @Insert("insert into PublicContext(taskId,data) values(#{taskId},#{data})")
     int insertPublicContext(@Param("taskId") int taskId, @Param("data") byte[] data);
+
+    @Update("update PublicContext set data= #{data} where taskId = #{taskId}")
+    int updatePublicContext(@Param("taskId") int taskId, @Param("data") byte[] data);
 }
