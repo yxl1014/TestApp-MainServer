@@ -9,9 +9,14 @@ import org.apache.logging.log4j.Logger;
 public class LruUtil<T> {
     private int maxSize;
 
-    public void setMaxSize(int maxSize) {
+    public LruUtil(int maxSize) {
         this.maxSize = maxSize;
     }
+
+
+//    public void setMaxSize(int maxSize) {
+//        this.maxSize = maxSize;
+//    }
 
     class Node {
         int key;

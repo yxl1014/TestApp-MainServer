@@ -9,7 +9,7 @@ import pto.TestProto;
 public class LruConfig {
 
     @Bean
-    public LruUtil<TestProto.Task.Builder> getLruList(){
-        return new LruUtil<>();
+    public LruUtil<TestProto.Task.Builder> getLruList(int capacity){
+        return new LruUtil<>(capacity);
     }
 }
