@@ -108,7 +108,10 @@ message TaskShell{
 }
 
 message TaskResult{
-
+  string resultJson = 1;
+  int64 resultNum = 2;
+  int64 failNumber = 3;
+  int64 successNumber = 4;
 }
 
 message Task{

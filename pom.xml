@@ -139,8 +139,27 @@
             <artifactId>logstash-logback-encoder</artifactId>
             <version>7.2</version>
         </dependency>
-        <!--logstash     end-->
+        <!--elasticsearch -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>7.4.0</version>
+        </dependency>
+
+        <!--fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.54</version>
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <finalName>TestApp-LoginServer</finalName>
