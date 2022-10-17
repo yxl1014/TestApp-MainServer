@@ -11,24 +11,18 @@ enum Types{
 
   C2S_REGISTER = 3;
   S2C_REGISTER = 4;
-
-  S2C_PROD_START_TASK = 5;
-  C2S_PROD_START_TASK = 6;
-
-  S2C_PROD_ADD_TASK = 7;
-  C2S_PROD_ADD_TASK = 8;
-
-  S2C_PROD_END_TASK = 9;
-  C2S_PROD_END_TASK = 10;
-
-  S2C_PROD_GETRESULT = 11;
-  C2S_PROD_GETRESULT = 12;
-
-  S2C_GET_TASK = 13;
-  C2S_GET_TASK = 14;
-
-  S2C_PROD_GET_ALL_ADD_TASKS = 15;
-  C2S_PROD_GET_ALL_ADD_TASKS = 16;
+  C2S_UPDATEPWD = 5;
+  S2C_UPDATEPWD = 6;
+  C2S_UPDATEEMAIL = 7;
+  S2C_UPDATEEMAIL = 8;
+  C2S_UPDATEALL = 9;
+  S2C_UPDATEALL = 10;
+  C2S_UPDATETEL = 11;
+  S2C_UPDATETEL = 12;
+  C2S_BINDMAILBOX = 13;
+  S2C_BINDMAILBOX = 14;
+  C2S_CHECKMAILBOX = 15;
+  S2C_CHECKMAILBOX = 16;
 
   S2C_CONS_TAKE_TASK = 17;
   C2S_CONS_TAKE_TASK = 18;
@@ -44,6 +38,26 @@ enum Types{
 
   S2C_CONS_ALL_GET_TASKS = 25;
   C2S_CONS_ALL_GET_TASKS = 26;
+
+
+  S2C_PROD_START_TASK = 35;
+  C2S_PROD_START_TASK = 36;
+
+  S2C_PROD_ADD_TASK = 37;
+  C2S_PROD_ADD_TASK = 38;
+
+  S2C_PROD_END_TASK = 39;
+  C2S_PROD_END_TASK = 40;
+
+  S2C_PROD_GETRESULT = 41;
+  C2S_PROD_GETRESULT = 42;
+
+  S2C_GET_TASK = 43;
+  C2S_GET_TASK = 44;
+
+  S2C_PROD_GET_ALL_ADD_TASKS = 45;
+  C2S_PROD_GET_ALL_ADD_TASKS = 46;
+
 
 }
 
@@ -82,7 +96,74 @@ message S2C_Register{
   string msg = 2;
 }
 
+//修改密码
+message C2S_UpdatePwd {
+  User user = 1;
+}
 
+message S2C_UpdatePwd{
+  bool status = 1;
+  string msg = 2;
+}
+
+//修改邮箱
+message C2S_UpdateEmail {
+  User user = 1;
+}
+
+message S2C_UpdateEmail{
+  bool status = 1;
+  string msg = 2;
+}
+
+//修改电话
+message C2S_UpdateTel {
+  User user = 1;
+}
+
+message S2C_UpdateTel{
+  bool status = 1;
+  string msg = 2;
+}
+
+//修改全部信息
+message C2S_UpdateAll {
+  User user = 1;
+}
+
+message S2C_UpdateAll{
+  bool status = 1;
+  string msg = 2;
+}
+
+//redis缓存
+message Redis_Test{
+  string un = 1;
+  string pwd = 2;
+}
+
+
+//邮箱绑定
+message C2S_BindMailBox {
+  User user = 1;
+}
+
+message S2C_BindMailBox{
+  bool status = 1;
+  string msg = 2;
+}
+
+
+//验证邮箱
+message C2S_CheckMailBox{
+  string code = 1;
+  User user = 2;
+}
+
+message S2C_CheckMailBox{
+  bool status = 1;
+  string msg = 2;
+}
 
 //--------------------MainServer--------------------
 
@@ -103,8 +184,6 @@ message TaskShell{
   string conditionMsg = 7;            //先行条件内容
   int32 responseType = 8;             //先行条件获取方式1、html 2、json  3、byte数[] 4、responseHead  5、responseSession 6、responseCookie  ...
   string respFind = 9;                //先行条件获取关键字
-  int64 startTime = 10;               //开始发送时间
-  int64 timeInterval = 11;              //每次发送的时间间隔
 }
 
 message TaskResult{
