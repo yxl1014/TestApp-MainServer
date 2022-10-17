@@ -30,5 +30,7 @@ logging:
 #基础配置
 kafka:
   bootstrap: 192.168.56.101:9092
+lru:
+  maxsize: 20
 
 
