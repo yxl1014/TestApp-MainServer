@@ -108,10 +108,11 @@ message TaskShell{
 }
 
 message TaskResult{
-  string resultJson = 1;
-  int64 resultNum = 2;
-  int64 failNumber = 3;
-  int64 successNumber = 4;
+  int32 taskId = 1;
+  string resultJson = 2;
+  int64 resultNum = 3;
+  int64 failNumber = 4;
+  int64 successNumber = 5;
 }
 
 message Task{
@@ -286,5 +287,11 @@ message C2S_Cons_AllGetTasks
 {
   int32 userId = 2;
 }
+
+message S2C_Es_DeleteToTestId
+{
+  ResponseMsg msg = 1;
+}
+
 
 //--------------------ClientServer--------------------
