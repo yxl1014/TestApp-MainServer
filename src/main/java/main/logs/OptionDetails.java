@@ -112,36 +112,41 @@ public enum OptionDetails {
     CONS_DEL_TASk_FLOAT("消费者放弃任务", "失败", "数据解析失败，消费者放弃任务失败"),
     CONS_ALL_GET_TASkS_TRUE("消费者获取接受的所有任务的详细信息", "成功", "数据解析成功，消费者获取接受的所有任务的详细信息成功"),
     CONS_ALL_GET_TASkS_FLOAT("消费者放弃任务", "失败", "数据解析失败，消费者获取接受的所有任务的详细信息失败"),
-    
+
     //定时器
-    SCHEDULED_EXECUTE_START("任务开始执行","成功","成功"),
-    SCHEDULED_EXECUTE_OVER("任务执行完成","成功","成功"),
+    SCHEDULED_EXECUTE_START("任务开始执行", "成功", "成功"),
+    SCHEDULED_EXECUTE_OVER("任务执行完成", "成功", "成功"),
 
     //Lru
-    LRU_GET_LIST_OK("获取List","成功","成功"),
-    LRU_GET_VALUE_NULL("获取value","失败","该任务Id不存在"),
-    LRU_GET_VALUE_OK("获取value","成功","成功"),
-    LRU_PUT_TASK_OK("存放TASK","成功","成功"),
+    LRU_GET_LIST_OK("获取List", "成功", "成功"),
+    LRU_GET_VALUE_NULL("获取value", "失败", "该任务Id不存在"),
+    LRU_GET_VALUE_OK("获取value", "成功", "成功"),
+    LRU_PUT_TASK_OK("存放TASK", "成功", "成功"),
 
 
     //KAFKA
     KAFKA_CONSUMER_TOPIC_CLOSE_NO_TOPIC("关闭kafka监听器", "失败", "该topic不存在"),
     KAFKA_CONSUMER_TOPIC_CLOSE_OK("关闭kafka监听器", "成功", "成功"),
-    KAFKA_CONSUMER_TOPIC_START_ERROR("启动监听线程","失败","线程启动失败"),
-    KAFKA_CONSUMER_TOPIC_START_OK("启动监听线程","成功","线程启动成功"),
+    KAFKA_CONSUMER_TOPIC_START_ERROR("启动监听线程", "失败", "线程启动失败"),
+    KAFKA_CONSUMER_TOPIC_START_OK("启动监听线程", "成功", "线程启动成功"),
 
-    KAFKA_CONSUMER_TOPIC_START_EXIST_OK("启动监听线程","成功","该topic存在,关闭"),
+    KAFKA_CONSUMER_TOPIC_START_EXIST_OK("启动监听线程", "成功", "该topic存在,关闭"),
 
-    KAFKA_CONSUMER_TOPIC_GET_EXIST("获取监听线程","成功","该队列已存在,直接返回"),
-    KAFKA_CONSUMER_TOPIC_GET_NO_EXIST("获取监听线程","成功","该队列不存在,初始化一个"),
-    KAFKA_PRODUCER_CREATE_IS_EXIST("创建producer对象","失败","该对象已存在"),
-    KAFKA_PRODUCER_CREATE_SUCCESS("创建producer对象","成功","创建成功"),
+    KAFKA_CONSUMER_TOPIC_GET_EXIST("获取监听线程", "成功", "该队列已存在,直接返回"),
+    KAFKA_CONSUMER_TOPIC_GET_NO_EXIST("获取监听线程", "成功", "该队列不存在,初始化一个"),
+    KAFKA_PRODUCER_CREATE_IS_EXIST("创建producer对象", "失败", "该对象已存在"),
+    KAFKA_PRODUCER_CREATE_SUCCESS("创建producer对象", "成功", "创建成功"),
 
-    KAFKA_PRODUCER_CLOSE_NOT_EXIST("关闭producer对象","失败","该对象不存在"),
-    KAFKA_PRODUCER_CLOSE_SUCCESS("关闭producer对象","成功","关闭成功"),
+    KAFKA_PRODUCER_CLOSE_NOT_EXIST("关闭producer对象", "失败", "该对象不存在"),
+    KAFKA_PRODUCER_CLOSE_SUCCESS("关闭producer对象", "成功", "关闭成功"),
 
-    KAFKA_PRODUCER_SEND_NO_PRODUCER("发送信息","失败","producer对象不存在"),
-    KAFKA_PRODUCER_SEND_SUCCESS("发送信息","成功","发送成功"),
+    KAFKA_PRODUCER_SEND_NO_PRODUCER("发送信息", "失败", "producer对象不存在"),
+    KAFKA_PRODUCER_SEND_SUCCESS("发送信息", "成功", "发送成功"),
+
+    CONTROL_START_S2C_TOPIC("启动同步调用推送", "启动", "启动"),
+    CONTROL_RE_CONTROL_ERROR_CONDUCT_NOT_EXIST("重新分配任务","失败","进行时上下文不存在"),
+
+    CONTROL_RE_CONTROL_ERROR_KAFKA_CONTEXT_NOT_EXIST("重新分配任务","失败","任务上下文不存在"),
     ;
     private String type;
     private String status;

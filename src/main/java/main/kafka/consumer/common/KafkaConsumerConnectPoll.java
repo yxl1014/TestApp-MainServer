@@ -33,7 +33,7 @@ public class KafkaConsumerConnectPoll {
      * String               topicName
      * KafkaConsumerRunner  kafka异步消费对象
      */
-    public final Map<String, KafkaConsumerRunner> consumers = new HashMap<>();
+    private final Map<String, KafkaConsumerRunner> consumers = new HashMap<>();
 
 
     /**
@@ -77,7 +77,7 @@ public class KafkaConsumerConnectPoll {
         KafkaConsumerRunner old = this.consumers.get(topicName);
 
         //若有旧的topic且他还没有关闭
-        if (old != null && !old.getClosed().get()) {
+        if (old != null && !old.getClosed()) {
             logger.info(LogUtil.makeKafkaLog(LogMsg.KAFKA, OptionDetails.KAFKA_CONSUMER_TOPIC_START_EXIST_OK, topicName));
             old.shutdown();
         }

@@ -52,8 +52,8 @@ public class KafkaConsumerRunner implements Runnable {
                         if (msgBuilder.getSuccess()) {
                             kafkaContext.addResponse(msgBuilder);
                         }
-                        System.out.printf("offset = %d, key = %s, value = %s\n",
-                                record.offset(), record.key(), record.value());
+/*                        System.out.printf("offset = %d, key = %s, value = %s\n",
+                                record.offset(), record.key(), record.value());*/
                     }
                 }
             }
@@ -78,7 +78,11 @@ public class KafkaConsumerRunner implements Runnable {
         consumer.wakeup();
     }
 
-    public AtomicBoolean getClosed() {
-        return closed;
+    public boolean getClosed() {
+        return closed.get();
+    }
+
+    public KafkaContext getKafkaContext() {
+        return kafkaContext;
     }
 }

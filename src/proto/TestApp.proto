@@ -184,6 +184,8 @@ message TaskShell{
   string conditionMsg = 7;            //先行条件内容
   int32 responseType = 8;             //先行条件获取方式1、html 2、json  3、byte数[] 4、responseHead  5、responseSession 6、responseCookie  ...
   string respFind = 9;                //先行条件获取关键字
+  int64 startTime = 10;               //开始时间
+  int64 intervalTime = 11;            //间隔时间
 }
 
 message TaskResult{

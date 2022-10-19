@@ -5,6 +5,7 @@ import main.logs.LogUtil;
 import main.logs.OptionDetails;
 import main.yxl.publicContext.config.contextBean.TaskMapUtil;
 import main.yxl.publicContext.config.contextBean.UserMapUtil;
+import main.yxl.publicContext.scheduled.TaskScheduled;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,12 @@ public class PublicContext {
 
     private final HashMap<Integer, TestProto.TaskConduct.Builder> taskConductMap = new HashMap<>();
 
+    public HashMap<Integer, TestProto.TaskConduct.Builder> getTaskConductMap() {
+        return taskConductMap;
+    }
+
+    @Autowired
+    private TaskScheduled taskScheduled;
 
     /**
      * 任务发布者开始任务
@@ -74,7 +81,9 @@ public class PublicContext {
         logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.P_TASK_START_OK, taskId));
         builder.setMsg(OptionDetails.P_TASK_START_OK.getMsg());
         builder.setStatus(true);
-        //TODO 同时这里需要调用scheduled建立kafka以及logstash的链接
+
+        //调度器初始化
+        taskScheduled.prodStartTask(taskId);
         return builder;
     }
 
@@ -119,7 +128,7 @@ public class PublicContext {
             TestProto.S_User.Builder sUser = this.userMap.getSUser(id);
             sUser.setDoingTaskId(0);
         }
-        //TODO 这里关闭kafka以及logstash
+        taskScheduled.prodStopTask(taskId);
 
         //TODO 这里生成结果集
 
@@ -170,9 +179,6 @@ public class PublicContext {
         builder = task.getResult().toBuilder();
         return builder;
     }
-
-
-
 
 
     /**
@@ -271,7 +277,9 @@ public class PublicContext {
 
         //将用户当前任务设置成这个任务的id
         userMap.getSUser(userId).setDoingTaskId(taskId);
-        //TODO 通过调度器给这个用户分配任务
+
+        //重新分配任务脚本
+        this.taskScheduled.scheduledOne(taskId);
 
         builder.setStatus(true);
         builder.setMsg(OptionDetails.C_START_TASK_OK.getMsg());
@@ -317,7 +325,8 @@ public class PublicContext {
         sUser.setDoingTaskId(0);
 
 
-        //TODO  调用调度器，重新分配任务
+        //重新分配任务脚本
+        this.taskScheduled.scheduledOne(taskId);
 
         builder.setStatus(true);
         builder.setMsg(OptionDetails.C_END_TASK_OK.getMsg());
@@ -377,7 +386,7 @@ public class PublicContext {
     /**
      * 消费者获取接受的所有任务的详细信息
      */
-    public TestProto.ConsGetTasks.Builder cons_AllGetTasks(int userId){
+    public TestProto.ConsGetTasks.Builder cons_AllGetTasks(int userId) {
         TestProto.ConsGetTasks.Builder builder = TestProto.ConsGetTasks.newBuilder();
         TestProto.S_User.Builder sUser = this.userMap.getSUser(userId);
         List<Integer> addTasksList = sUser.getTaskIdsList();

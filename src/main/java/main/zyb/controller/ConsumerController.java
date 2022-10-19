@@ -30,7 +30,7 @@ public class ConsumerController {
     private ConsumerServiceImpl consumerService;
 
     /**
-     * 生产者获取发布的所有任务的详细信息
+     * 消费者获取发布的所有任务的详细信息
      */
     @Consumer
     @PostMapping("/getTaskInformation")//查询任务接口   获取任务信息

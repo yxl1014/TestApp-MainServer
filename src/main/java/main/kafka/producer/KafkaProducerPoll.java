@@ -32,7 +32,7 @@ public class KafkaProducerPoll {
      * key:任务Id
      * value:KafkaProducer
      */
-    public final Map<Integer, Producer<String, String>> producerMaps = new HashMap<>();
+    private final Map<Integer, Producer<String, String>> producerMaps = new HashMap<>();
 
 
     /**

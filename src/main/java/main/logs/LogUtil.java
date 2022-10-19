@@ -59,4 +59,18 @@ public class LogUtil {
         return logMsg.getName() + "---" + optionDetails.getType() + "---" + optionDetails.getStatus() +
                 "---" + optionDetails.getMsg() + "---topicName:" + topicName;
     }
+
+    public static String makeScheduledLog(LogMsg logMsg, OptionDetails optionDetails, boolean success) {
+        return logMsg.getName() + "---" + optionDetails.getType() + "---" + optionDetails.getStatus() +
+                "---" + optionDetails.getMsg() + "---status:" + (success ? "success" : "failed");
+    }
+
+    public static String makeScheduledLog(LogMsg logMsg, OptionDetails optionDetails, int taskId) {
+        return logMsg.getName() + "---" + optionDetails.getType() + "---" + optionDetails.getStatus() +
+                "---" + optionDetails.getMsg() + "---taskId:" + taskId;
+    }
+
+    public static String makeErrorMsg(LogMsg logMsg, String ex) {
+        return logMsg.getName() + "---" + ex;
+    }
 }

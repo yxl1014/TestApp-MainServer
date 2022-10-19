@@ -36,6 +36,12 @@ public class FinalData {
 
 
     /**
+     * 任务开始时间与当前时间的延迟时间
+     */
+    public static long DELAY_TIME = 5000;
+
+
+    /**
      * byte数组转int
      */
     public static int byteArrayToInt(byte[] bytes) {

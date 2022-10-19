@@ -24,7 +24,9 @@ public class KafkaContext {
      * value:脚本信息
      * 任务脚本
      */
-    private final Map<Integer, TestProto.TaskShell> shellMap;
+    private final Map<Integer, TestProto.TaskShell.Builder> shellMap = new HashMap<>();
+
+    private final Map<Integer, Boolean> canRun;
 
 
     /**
@@ -36,10 +38,26 @@ public class KafkaContext {
 
 
     public KafkaContext(Map<Integer, TestProto.TaskShell> shellMap) {
-        this.shellMap = shellMap;
+        for (Map.Entry<Integer, TestProto.TaskShell> entry : shellMap.entrySet()) {
+            this.shellMap.put(entry.getKey(), entry.getValue().toBuilder());
+        }
+        this.canRun = new HashMap<>();
+        for (int id : shellMap.keySet()) {
+            if (shellMap.get(id).getCondition() == 0) {
+                this.canRun.put(id, true);
+            } else {
+                this.canRun.put(id, false);
+            }
+        }
     }
 
     public synchronized void addResponse(TestProto.KafkaMsg.Builder msgBuilder) {
         conditionMsgMap.put(msgBuilder.getShellId(), msgBuilder.getResponseMsg());
+        for (Map.Entry<Integer, TestProto.TaskShell.Builder> entry : this.shellMap.entrySet()) {
+            if (entry.getValue().getCondition() == msgBuilder.getShellId()) {
+                this.canRun.put(entry.getKey(), true);
+                //TODO 这里还需要解析出需要的数据 将他加到shell中
+            }
+        }
     }
 }
