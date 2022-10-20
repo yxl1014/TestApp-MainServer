@@ -8,9 +8,11 @@ import main.yxl.publicContext.config.contextBean.UserMapUtil;
 import main.yxl.publicContext.scheduled.TaskScheduled;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import pto.TestProto;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,11 +34,9 @@ public class PublicContext {
     @Autowired
     private UserMapUtil userMap;
 
-    private final HashMap<Integer, TestProto.TaskConduct.Builder> taskConductMap = new HashMap<>();
 
-    public HashMap<Integer, TestProto.TaskConduct.Builder> getTaskConductMap() {
-        return taskConductMap;
-    }
+    @Resource(name = "conductMap")
+    private HashMap<Integer, TestProto.TaskConduct.Builder> taskConductMap;
 
     @Autowired
     private TaskScheduled taskScheduled;
@@ -83,7 +83,7 @@ public class PublicContext {
         builder.setStatus(true);
 
         //调度器初始化
-        taskScheduled.prodStartTask(taskId);
+        taskScheduled.prodStartTask(taskMap.getTask(taskId));
         return builder;
     }
 

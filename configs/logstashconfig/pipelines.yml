@@ -1,0 +1,8 @@
+ - pipeline.id: spring-es
+   pipeline.workers: 1
+   pipeline.batch.size: 3000
+   path.config: "/opt/logstash-8.4.1/config/spring-es-test.conf" #路径记得改
+ - pipeline.id: kafka-es
+   pipeline.workers: 1
+   pipeline.batch.size: 3000
+   path.config: "/opt/logstash-8.4.1/config/kafka-es.conf" #路径记得改

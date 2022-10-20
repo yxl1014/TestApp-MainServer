@@ -4,6 +4,9 @@ import main.yxl.publicContext.config.contextBean.TaskMapUtil;
 import main.yxl.publicContext.config.contextBean.UserMapUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import pto.TestProto;
+
+import java.util.HashMap;
 
 /**
  * @author main.yxl
@@ -22,5 +25,10 @@ public class PublicContextBean {
     @Bean
     public UserMapUtil getUserMap() {
         return new UserMapUtil();
+    }
+
+    @Bean(name = "conductMap")
+    public HashMap<Integer, TestProto.TaskConduct.Builder> getConductMap() {
+        return new HashMap<>();
     }
 }

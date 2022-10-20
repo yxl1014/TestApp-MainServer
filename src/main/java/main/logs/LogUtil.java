@@ -70,6 +70,11 @@ public class LogUtil {
                 "---" + optionDetails.getMsg() + "---taskId:" + taskId;
     }
 
+    public static String makeScheduledLog(LogMsg logMsg, OptionDetails optionDetails) {
+        return logMsg.getName() + "---" + optionDetails.getType() + "---" + optionDetails.getStatus() +
+                "---" + optionDetails.getMsg();
+    }
+
     public static String makeErrorMsg(LogMsg logMsg, String ex) {
         return logMsg.getName() + "---" + ex;
     }

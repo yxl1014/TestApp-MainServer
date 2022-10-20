@@ -147,6 +147,11 @@ public enum OptionDetails {
     CONTROL_RE_CONTROL_ERROR_CONDUCT_NOT_EXIST("重新分配任务","失败","进行时上下文不存在"),
 
     CONTROL_RE_CONTROL_ERROR_KAFKA_CONTEXT_NOT_EXIST("重新分配任务","失败","任务上下文不存在"),
+
+    CONTROL_ALL_START("重新分配所有正在进行的任务","开始","开始重新分配所有正在进行的任务"),
+    CONTROL_ALL_END("重新分配所有正在进行的任务","结束","重新分配所有正在进行的任务结束"),
+    CONTROL_ONE_START("重新分配一个正在进行的任务","开始","开始重新分配一个正在进行的任务"),
+    CONTROL_ONE_END("重新分配一个正在进行的任务","成功","重新分配一个正在进行的任务结束"),
     ;
     private String type;
     private String status;

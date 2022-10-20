@@ -16,6 +16,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import pto.TestProto;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -31,8 +32,6 @@ public class TaskScheduled {
 
     private final static Logger logger = LogUtil.getLogger(TaskScheduled.class);
 
-    @Autowired
-    private PublicContext publicContext;
 
     @Autowired
     private KafkaProducerPoll producerPoll;
@@ -40,27 +39,31 @@ public class TaskScheduled {
     @Autowired
     private KafkaConsumerConnectPoll consumerPoll;
 
+    @Resource(name = "conductMap")
+    private HashMap<Integer, TestProto.TaskConduct.Builder> taskConductMap;
+
 
     /**
      * 每分钟重新调度一次所有任务
      */
     @Scheduled(cron = "0 * * * * ?")
     public void taskShell() {
+        logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_ALL_START));
         scheduledAll();
+        logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_ALL_END));
     }
 
     @Scheduled(initialDelay = 10000, fixedDelay = 5000)
     public void test() {
-        logger.info(new Date(System.currentTimeMillis()));
+        logger.info("脚本调度器测试---当前时间的是：" + new Date(System.currentTimeMillis()));
     }
 
 
-    public void prodStartTask(int taskId) {
-        TestProto.Task.Builder task = publicContext.getTask(taskId);
+    public void prodStartTask(TestProto.Task.Builder task) {
         //初始化任务测试结果监听线程
-        consumerPoll.initKafkaTopic(taskId, new KafkaContext(task.getShellMap()));
+        consumerPoll.initKafkaTopic(task.getTaskId(), new KafkaContext(task.getShellMap()));
         //初始化同步调用推送者
-        boolean producer = producerPoll.createProducer(taskId);
+        boolean producer = producerPoll.createProducer(task.getTaskId());
         logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_START_S2C_TOPIC, producer));
     }
 
@@ -76,8 +79,7 @@ public class TaskScheduled {
      * 重新调度每一个任务
      */
     public void scheduledAll() {
-        HashMap<Integer, TestProto.TaskConduct.Builder> taskConductMap = this.publicContext.getTaskConductMap();
-        for (Map.Entry<Integer, TestProto.TaskConduct.Builder> entry : taskConductMap.entrySet()) {
+        for (Map.Entry<Integer, TestProto.TaskConduct.Builder> entry : this.taskConductMap.entrySet()) {
             //获取调度进行时上下文
             KafkaContext kafkaContext = this.consumerPoll.getConsumer(entry.getKey()).getKafkaContext();
             if (kafkaContext == null) {
@@ -174,8 +176,9 @@ public class TaskScheduled {
      * @param taskId 任务ID
      */
     public void scheduledOne(int taskId) {
+        logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_ONE_START, taskId));
         //获取任务上下文
-        TestProto.TaskConduct.Builder builder = this.publicContext.getTaskConductMap().get(taskId);
+        TestProto.TaskConduct.Builder builder = this.taskConductMap.get(taskId);
         if (builder == null) {
             logger.warn(LogUtil.makeScheduledLog(LogMsg.CONTROL,
                     OptionDetails.CONTROL_RE_CONTROL_ERROR_CONDUCT_NOT_EXIST, taskId));
@@ -258,6 +261,8 @@ public class TaskScheduled {
                 logger.error(LogUtil.makeErrorMsg(LogMsg.CONTROL, ex.getMessage()));
             }
         }
+
+        logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_ONE_END, taskId));
 
     }
 }
