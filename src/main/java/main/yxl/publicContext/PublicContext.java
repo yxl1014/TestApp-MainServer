@@ -1,5 +1,6 @@
 package main.yxl.publicContext;
 
+import main.elasticsearch.ElasticsearchContext;
 import main.logs.LogMsg;
 import main.logs.LogUtil;
 import main.logs.OptionDetails;
@@ -33,6 +34,9 @@ public class PublicContext {
 
     @Autowired
     private UserMapUtil userMap;
+
+    @Autowired
+    private ElasticsearchContext elasticsearchContext;
 
 
     @Resource(name = "conductMap")
@@ -130,8 +134,12 @@ public class PublicContext {
         }
         taskScheduled.prodStopTask(taskId);
 
-        //TODO 这里生成结果集
-
+        //TODO 这里生成结果集 下标0 是成功数据 1 是失败数据
+        if(task.getResult(0)==null)
+        {
+            task.addResult(elasticsearchContext.getResultToIdSuccess(taskId));
+            task.addResult(elasticsearchContext.getResultToIdFail(taskId));
+        }
         this.taskConductMap.remove(taskId);
         return builder;
     }
@@ -176,7 +184,14 @@ public class PublicContext {
             logger.info(LogUtil.makeOptionDetails(LogMsg.PUBLIC_CONTEXT, OptionDetails.P_TASK_NOT_FOUND, taskId));
             return builder;
         }
-        builder = task.getResult().toBuilder();
+        // TODO 这里生成结果集 下标0 是成功数据 1 是失败数据
+        //通过taskId获取测试结果 repeated
+        if (task.getResult(0)==null)
+        {
+            task.addResult(elasticsearchContext.getResultToIdSuccess(taskId));
+            task.addResult(elasticsearchContext.getResultToIdFail(taskId));
+        }
+        builder = task.getResult(0).toBuilder();
         return builder;
     }
 
