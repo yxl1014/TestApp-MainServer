@@ -175,6 +175,10 @@ public final class TestProto {
      * <code>C2S_PROD_GET_ALL_ADD_TASKS = 46;</code>
      */
     C2S_PROD_GET_ALL_ADD_TASKS(46),
+    /**
+     * <code>ELASTICSEARCH_SEARCH = 47;</code>
+     */
+    ELASTICSEARCH_SEARCH(47),
     UNRECOGNIZED(-1),
     ;
 
@@ -334,6 +338,10 @@ public final class TestProto {
      * <code>C2S_PROD_GET_ALL_ADD_TASKS = 46;</code>
      */
     public static final int C2S_PROD_GET_ALL_ADD_TASKS_VALUE = 46;
+    /**
+     * <code>ELASTICSEARCH_SEARCH = 47;</code>
+     */
+    public static final int ELASTICSEARCH_SEARCH_VALUE = 47;
 
 
     public final int getNumber() {
@@ -399,6 +407,7 @@ public final class TestProto {
         case 44: return C2S_GET_TASK;
         case 45: return S2C_PROD_GET_ALL_ADD_TASKS;
         case 46: return C2S_PROD_GET_ALL_ADD_TASKS;
+        case 47: return ELASTICSEARCH_SEARCH;
         default: return null;
       }
     }
@@ -17193,6 +17202,646 @@ java.lang.String defaultValue);
 
   }
 
+  public interface TaskResultListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TaskResultList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string taskResultList = 1;</code>
+     * @return The taskResultList.
+     */
+    java.lang.String getTaskResultList();
+    /**
+     * <code>string taskResultList = 1;</code>
+     * @return The bytes for taskResultList.
+     */
+    com.google.protobuf.ByteString
+        getTaskResultListBytes();
+
+    /**
+     * <code>int32 taskResultNum = 2;</code>
+     * @return The taskResultNum.
+     */
+    int getTaskResultNum();
+  }
+  /**
+   * Protobuf type {@code TaskResultList}
+   */
+  public static final class TaskResultList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TaskResultList)
+      TaskResultListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TaskResultList.newBuilder() to construct.
+    private TaskResultList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskResultList() {
+      taskResultList_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TaskResultList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TaskResultList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              taskResultList_ = s;
+              break;
+            }
+            case 16: {
+
+              taskResultNum_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pto.TestProto.internal_static_TaskResultList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pto.TestProto.internal_static_TaskResultList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pto.TestProto.TaskResultList.class, pto.TestProto.TaskResultList.Builder.class);
+    }
+
+    public static final int TASKRESULTLIST_FIELD_NUMBER = 1;
+    private volatile java.lang.Object taskResultList_;
+    /**
+     * <code>string taskResultList = 1;</code>
+     * @return The taskResultList.
+     */
+    @java.lang.Override
+    public java.lang.String getTaskResultList() {
+      java.lang.Object ref = taskResultList_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskResultList_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string taskResultList = 1;</code>
+     * @return The bytes for taskResultList.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTaskResultListBytes() {
+      java.lang.Object ref = taskResultList_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskResultList_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TASKRESULTNUM_FIELD_NUMBER = 2;
+    private int taskResultNum_;
+    /**
+     * <code>int32 taskResultNum = 2;</code>
+     * @return The taskResultNum.
+     */
+    @java.lang.Override
+    public int getTaskResultNum() {
+      return taskResultNum_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskResultList_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskResultList_);
+      }
+      if (taskResultNum_ != 0) {
+        output.writeInt32(2, taskResultNum_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskResultList_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskResultList_);
+      }
+      if (taskResultNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, taskResultNum_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pto.TestProto.TaskResultList)) {
+        return super.equals(obj);
+      }
+      pto.TestProto.TaskResultList other = (pto.TestProto.TaskResultList) obj;
+
+      if (!getTaskResultList()
+          .equals(other.getTaskResultList())) return false;
+      if (getTaskResultNum()
+          != other.getTaskResultNum()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TASKRESULTLIST_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskResultList().hashCode();
+      hash = (37 * hash) + TASKRESULTNUM_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskResultNum();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pto.TestProto.TaskResultList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskResultList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskResultList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pto.TestProto.TaskResultList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pto.TestProto.TaskResultList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code TaskResultList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TaskResultList)
+        pto.TestProto.TaskResultListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pto.TestProto.internal_static_TaskResultList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pto.TestProto.internal_static_TaskResultList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pto.TestProto.TaskResultList.class, pto.TestProto.TaskResultList.Builder.class);
+      }
+
+      // Construct using pto.TestProto.TaskResultList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        taskResultList_ = "";
+
+        taskResultNum_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pto.TestProto.internal_static_TaskResultList_descriptor;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskResultList getDefaultInstanceForType() {
+        return pto.TestProto.TaskResultList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskResultList build() {
+        pto.TestProto.TaskResultList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public pto.TestProto.TaskResultList buildPartial() {
+        pto.TestProto.TaskResultList result = new pto.TestProto.TaskResultList(this);
+        result.taskResultList_ = taskResultList_;
+        result.taskResultNum_ = taskResultNum_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pto.TestProto.TaskResultList) {
+          return mergeFrom((pto.TestProto.TaskResultList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pto.TestProto.TaskResultList other) {
+        if (other == pto.TestProto.TaskResultList.getDefaultInstance()) return this;
+        if (!other.getTaskResultList().isEmpty()) {
+          taskResultList_ = other.taskResultList_;
+          onChanged();
+        }
+        if (other.getTaskResultNum() != 0) {
+          setTaskResultNum(other.getTaskResultNum());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pto.TestProto.TaskResultList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pto.TestProto.TaskResultList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object taskResultList_ = "";
+      /**
+       * <code>string taskResultList = 1;</code>
+       * @return The taskResultList.
+       */
+      public java.lang.String getTaskResultList() {
+        java.lang.Object ref = taskResultList_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taskResultList_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string taskResultList = 1;</code>
+       * @return The bytes for taskResultList.
+       */
+      public com.google.protobuf.ByteString
+          getTaskResultListBytes() {
+        java.lang.Object ref = taskResultList_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskResultList_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string taskResultList = 1;</code>
+       * @param value The taskResultList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskResultList(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taskResultList_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string taskResultList = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskResultList() {
+        
+        taskResultList_ = getDefaultInstance().getTaskResultList();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string taskResultList = 1;</code>
+       * @param value The bytes for taskResultList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskResultListBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taskResultList_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int taskResultNum_ ;
+      /**
+       * <code>int32 taskResultNum = 2;</code>
+       * @return The taskResultNum.
+       */
+      @java.lang.Override
+      public int getTaskResultNum() {
+        return taskResultNum_;
+      }
+      /**
+       * <code>int32 taskResultNum = 2;</code>
+       * @param value The taskResultNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskResultNum(int value) {
+        
+        taskResultNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 taskResultNum = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskResultNum() {
+        
+        taskResultNum_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TaskResultList)
+    }
+
+    // @@protoc_insertion_point(class_scope:TaskResultList)
+    private static final pto.TestProto.TaskResultList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pto.TestProto.TaskResultList();
+    }
+
+    public static pto.TestProto.TaskResultList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskResultList>
+        PARSER = new com.google.protobuf.AbstractParser<TaskResultList>() {
+      @java.lang.Override
+      public TaskResultList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TaskResultList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskResultList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskResultList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public pto.TestProto.TaskResultList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TaskOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Task)
       com.google.protobuf.MessageOrBuilder {
@@ -17356,27 +18005,44 @@ pto.TestProto.TaskShell defaultValue);
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
-     * @return Whether the result field is set.
+     * <code>repeated .TaskResult result = 8;</code>
      */
-    boolean hasResult();
+    java.util.List<pto.TestProto.TaskResult> 
+        getResultList();
     /**
      * <pre>
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
-     * @return The result.
+     * <code>repeated .TaskResult result = 8;</code>
      */
-    pto.TestProto.TaskResult getResult();
+    pto.TestProto.TaskResult getResult(int index);
     /**
      * <pre>
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
+     * <code>repeated .TaskResult result = 8;</code>
      */
-    pto.TestProto.TaskResultOrBuilder getResultOrBuilder();
+    int getResultCount();
+    /**
+     * <pre>
+     *任务返回结果集
+     * </pre>
+     *
+     * <code>repeated .TaskResult result = 8;</code>
+     */
+    java.util.List<? extends pto.TestProto.TaskResultOrBuilder> 
+        getResultOrBuilderList();
+    /**
+     * <pre>
+     *任务返回结果集
+     * </pre>
+     *
+     * <code>repeated .TaskResult result = 8;</code>
+     */
+    pto.TestProto.TaskResultOrBuilder getResultOrBuilder(
+        int index);
 
     /**
      * <pre>
@@ -17404,6 +18070,7 @@ pto.TestProto.TaskShell defaultValue);
       taskName_ = "";
       taskProtocl_ = 0;
       taskCons_ = emptyIntList();
+      result_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -17499,16 +18166,12 @@ pto.TestProto.TaskShell defaultValue);
               break;
             }
             case 66: {
-              pto.TestProto.TaskResult.Builder subBuilder = null;
-              if (result_ != null) {
-                subBuilder = result_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                result_ = new java.util.ArrayList<pto.TestProto.TaskResult>();
+                mutable_bitField0_ |= 0x00000004;
               }
-              result_ = input.readMessage(pto.TestProto.TaskResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(result_);
-                result_ = subBuilder.buildPartial();
-              }
-
+              result_.add(
+                  input.readMessage(pto.TestProto.TaskResult.parser(), extensionRegistry));
               break;
             }
             case 72: {
@@ -17535,6 +18198,9 @@ pto.TestProto.TaskShell defaultValue);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           taskCons_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          result_ = java.util.Collections.unmodifiableList(result_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -17821,41 +18487,63 @@ pto.TestProto.TaskShell defaultValue);
     private int taskConsMemoizedSerializedSize = -1;
 
     public static final int RESULT_FIELD_NUMBER = 8;
-    private pto.TestProto.TaskResult result_;
+    private java.util.List<pto.TestProto.TaskResult> result_;
     /**
      * <pre>
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
-     * @return Whether the result field is set.
+     * <code>repeated .TaskResult result = 8;</code>
      */
     @java.lang.Override
-    public boolean hasResult() {
-      return result_ != null;
+    public java.util.List<pto.TestProto.TaskResult> getResultList() {
+      return result_;
     }
     /**
      * <pre>
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
-     * @return The result.
+     * <code>repeated .TaskResult result = 8;</code>
      */
     @java.lang.Override
-    public pto.TestProto.TaskResult getResult() {
-      return result_ == null ? pto.TestProto.TaskResult.getDefaultInstance() : result_;
+    public java.util.List<? extends pto.TestProto.TaskResultOrBuilder> 
+        getResultOrBuilderList() {
+      return result_;
     }
     /**
      * <pre>
      *任务返回结果集
      * </pre>
      *
-     * <code>.TaskResult result = 8;</code>
+     * <code>repeated .TaskResult result = 8;</code>
      */
     @java.lang.Override
-    public pto.TestProto.TaskResultOrBuilder getResultOrBuilder() {
-      return getResult();
+    public int getResultCount() {
+      return result_.size();
+    }
+    /**
+     * <pre>
+     *任务返回结果集
+     * </pre>
+     *
+     * <code>repeated .TaskResult result = 8;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.TaskResult getResult(int index) {
+      return result_.get(index);
+    }
+    /**
+     * <pre>
+     *任务返回结果集
+     * </pre>
+     *
+     * <code>repeated .TaskResult result = 8;</code>
+     */
+    @java.lang.Override
+    public pto.TestProto.TaskResultOrBuilder getResultOrBuilder(
+        int index) {
+      return result_.get(index);
     }
 
     public static final int STATUS_FIELD_NUMBER = 9;
@@ -17916,8 +18604,8 @@ pto.TestProto.TaskShell defaultValue);
       for (int i = 0; i < taskCons_.size(); i++) {
         output.writeInt32NoTag(taskCons_.getInt(i));
       }
-      if (result_ != null) {
-        output.writeMessage(8, getResult());
+      for (int i = 0; i < result_.size(); i++) {
+        output.writeMessage(8, result_.get(i));
       }
       if (status_ != false) {
         output.writeBool(9, status_);
@@ -17974,9 +18662,9 @@ pto.TestProto.TaskShell defaultValue);
         }
         taskConsMemoizedSerializedSize = dataSize;
       }
-      if (result_ != null) {
+      for (int i = 0; i < result_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getResult());
+          .computeMessageSize(8, result_.get(i));
       }
       if (status_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -18010,11 +18698,8 @@ pto.TestProto.TaskShell defaultValue);
           != other.getTaskCost()) return false;
       if (!getTaskConsList()
           .equals(other.getTaskConsList())) return false;
-      if (hasResult() != other.hasResult()) return false;
-      if (hasResult()) {
-        if (!getResult()
-            .equals(other.getResult())) return false;
-      }
+      if (!getResultList()
+          .equals(other.getResultList())) return false;
       if (getStatus()
           != other.getStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -18046,9 +18731,9 @@ pto.TestProto.TaskShell defaultValue);
         hash = (37 * hash) + TASKCONS_FIELD_NUMBER;
         hash = (53 * hash) + getTaskConsList().hashCode();
       }
-      if (hasResult()) {
+      if (getResultCount() > 0) {
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
-        hash = (53 * hash) + getResult().hashCode();
+        hash = (53 * hash) + getResultList().hashCode();
       }
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -18203,6 +18888,7 @@ pto.TestProto.TaskShell defaultValue);
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getResultFieldBuilder();
         }
       }
       @java.lang.Override
@@ -18222,10 +18908,10 @@ pto.TestProto.TaskShell defaultValue);
         taskCons_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         if (resultBuilder_ == null) {
-          result_ = null;
+          result_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          result_ = null;
-          resultBuilder_ = null;
+          resultBuilder_.clear();
         }
         status_ = false;
 
@@ -18269,6 +18955,10 @@ pto.TestProto.TaskShell defaultValue);
         }
         result.taskCons_ = taskCons_;
         if (resultBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            result_ = java.util.Collections.unmodifiableList(result_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
           result.result_ = result_;
         } else {
           result.result_ = resultBuilder_.build();
@@ -18350,8 +19040,31 @@ pto.TestProto.TaskShell defaultValue);
           }
           onChanged();
         }
-        if (other.hasResult()) {
-          mergeResult(other.getResult());
+        if (resultBuilder_ == null) {
+          if (!other.result_.isEmpty()) {
+            if (result_.isEmpty()) {
+              result_ = other.result_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureResultIsMutable();
+              result_.addAll(other.result_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.result_.isEmpty()) {
+            if (resultBuilder_.isEmpty()) {
+              resultBuilder_.dispose();
+              resultBuilder_ = null;
+              result_ = other.result_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              resultBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getResultFieldBuilder() : null;
+            } else {
+              resultBuilder_.addAllMessages(other.result_);
+            }
+          }
         }
         if (other.getStatus() != false) {
           setStatus(other.getStatus());
@@ -18951,33 +19664,30 @@ pto.TestProto.TaskShell defaultValue);
         return this;
       }
 
-      private pto.TestProto.TaskResult result_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          pto.TestProto.TaskResult, pto.TestProto.TaskResult.Builder, pto.TestProto.TaskResultOrBuilder> resultBuilder_;
-      /**
-       * <pre>
-       *任务返回结果集
-       * </pre>
-       *
-       * <code>.TaskResult result = 8;</code>
-       * @return Whether the result field is set.
-       */
-      public boolean hasResult() {
-        return resultBuilder_ != null || result_ != null;
+      private java.util.List<pto.TestProto.TaskResult> result_ =
+        java.util.Collections.emptyList();
+      private void ensureResultIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          result_ = new java.util.ArrayList<pto.TestProto.TaskResult>(result_);
+          bitField0_ |= 0x00000004;
+         }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          pto.TestProto.TaskResult, pto.TestProto.TaskResult.Builder, pto.TestProto.TaskResultOrBuilder> resultBuilder_;
+
       /**
        * <pre>
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
-       * @return The result.
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      public pto.TestProto.TaskResult getResult() {
+      public java.util.List<pto.TestProto.TaskResult> getResultList() {
         if (resultBuilder_ == null) {
-          return result_ == null ? pto.TestProto.TaskResult.getDefaultInstance() : result_;
+          return java.util.Collections.unmodifiableList(result_);
         } else {
-          return resultBuilder_.getMessage();
+          return resultBuilder_.getMessageList();
         }
       }
       /**
@@ -18985,19 +19695,48 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      public Builder setResult(pto.TestProto.TaskResult value) {
+      public int getResultCount() {
+        if (resultBuilder_ == null) {
+          return result_.size();
+        } else {
+          return resultBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public pto.TestProto.TaskResult getResult(int index) {
+        if (resultBuilder_ == null) {
+          return result_.get(index);
+        } else {
+          return resultBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public Builder setResult(
+          int index, pto.TestProto.TaskResult value) {
         if (resultBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          result_ = value;
+          ensureResultIsMutable();
+          result_.set(index, value);
           onChanged();
         } else {
-          resultBuilder_.setMessage(value);
+          resultBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
@@ -19005,17 +19744,76 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
       public Builder setResult(
+          int index, pto.TestProto.TaskResult.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public Builder addResult(pto.TestProto.TaskResult value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultIsMutable();
+          result_.add(value);
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public Builder addResult(
+          int index, pto.TestProto.TaskResult value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultIsMutable();
+          result_.add(index, value);
+          onChanged();
+        } else {
+          resultBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public Builder addResult(
           pto.TestProto.TaskResult.Builder builderForValue) {
         if (resultBuilder_ == null) {
-          result_ = builderForValue.build();
+          ensureResultIsMutable();
+          result_.add(builderForValue.build());
           onChanged();
         } else {
-          resultBuilder_.setMessage(builderForValue.build());
+          resultBuilder_.addMessage(builderForValue.build());
         }
-
         return this;
       }
       /**
@@ -19023,21 +19821,17 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      public Builder mergeResult(pto.TestProto.TaskResult value) {
+      public Builder addResult(
+          int index, pto.TestProto.TaskResult.Builder builderForValue) {
         if (resultBuilder_ == null) {
-          if (result_ != null) {
-            result_ =
-              pto.TestProto.TaskResult.newBuilder(result_).mergeFrom(value).buildPartial();
-          } else {
-            result_ = value;
-          }
+          ensureResultIsMutable();
+          result_.add(index, builderForValue.build());
           onChanged();
         } else {
-          resultBuilder_.mergeFrom(value);
+          resultBuilder_.addMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
@@ -19045,17 +19839,35 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public Builder addAllResult(
+          java.lang.Iterable<? extends pto.TestProto.TaskResult> values) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, result_);
+          onChanged();
+        } else {
+          resultBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
        */
       public Builder clearResult() {
         if (resultBuilder_ == null) {
-          result_ = null;
+          result_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          result_ = null;
-          resultBuilder_ = null;
+          resultBuilder_.clear();
         }
-
         return this;
       }
       /**
@@ -19063,26 +19875,41 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      public pto.TestProto.TaskResult.Builder getResultBuilder() {
-        
-        onChanged();
-        return getResultFieldBuilder().getBuilder();
+      public Builder removeResult(int index) {
+        if (resultBuilder_ == null) {
+          ensureResultIsMutable();
+          result_.remove(index);
+          onChanged();
+        } else {
+          resultBuilder_.remove(index);
+        }
+        return this;
       }
       /**
        * <pre>
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      public pto.TestProto.TaskResultOrBuilder getResultOrBuilder() {
-        if (resultBuilder_ != null) {
-          return resultBuilder_.getMessageOrBuilder();
-        } else {
-          return result_ == null ?
-              pto.TestProto.TaskResult.getDefaultInstance() : result_;
+      public pto.TestProto.TaskResult.Builder getResultBuilder(
+          int index) {
+        return getResultFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public pto.TestProto.TaskResultOrBuilder getResultOrBuilder(
+          int index) {
+        if (resultBuilder_ == null) {
+          return result_.get(index);  } else {
+          return resultBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -19090,15 +19917,58 @@ pto.TestProto.TaskShell defaultValue);
        *任务返回结果集
        * </pre>
        *
-       * <code>.TaskResult result = 8;</code>
+       * <code>repeated .TaskResult result = 8;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends pto.TestProto.TaskResultOrBuilder> 
+           getResultOrBuilderList() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(result_);
+        }
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public pto.TestProto.TaskResult.Builder addResultBuilder() {
+        return getResultFieldBuilder().addBuilder(
+            pto.TestProto.TaskResult.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public pto.TestProto.TaskResult.Builder addResultBuilder(
+          int index) {
+        return getResultFieldBuilder().addBuilder(
+            index, pto.TestProto.TaskResult.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       *任务返回结果集
+       * </pre>
+       *
+       * <code>repeated .TaskResult result = 8;</code>
+       */
+      public java.util.List<pto.TestProto.TaskResult.Builder> 
+           getResultBuilderList() {
+        return getResultFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           pto.TestProto.TaskResult, pto.TestProto.TaskResult.Builder, pto.TestProto.TaskResultOrBuilder> 
           getResultFieldBuilder() {
         if (resultBuilder_ == null) {
-          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          resultBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               pto.TestProto.TaskResult, pto.TestProto.TaskResult.Builder, pto.TestProto.TaskResultOrBuilder>(
-                  getResult(),
+                  result_,
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           result_ = null;
@@ -39761,6 +40631,11 @@ pto.TestProto.TaskShell defaultValue);
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_TaskResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TaskResultList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TaskResultList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Task_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -39969,80 +40844,82 @@ pto.TestProto.TaskShell defaultValue);
       "alue\030\002 \001(\t:\0028\001\"n\n\nTaskResult\022\016\n\006taskId\030\001" +
       " \001(\005\022\022\n\nresultJson\030\002 \001(\t\022\021\n\tresultNum\030\003 " +
       "\001(\003\022\022\n\nfailNumber\030\004 \001(\003\022\025\n\rsuccessNumber" +
-      "\030\005 \001(\003\"\207\002\n\004Task\022\016\n\006taskId\030\001 \001(\005\022\020\n\010taskN" +
-      "ame\030\002 \001(\t\022\016\n\006userId\030\003 \001(\005\022!\n\013taskProtocl" +
-      "\030\004 \001(\0162\014.TaskProtocl\022\037\n\005shell\030\005 \003(\0132\020.Ta" +
-      "sk.ShellEntry\022\020\n\010taskCost\030\006 \001(\005\022\020\n\010taskC" +
-      "ons\030\007 \003(\005\022\033\n\006result\030\010 \001(\0132\013.TaskResult\022\016" +
-      "\n\006status\030\t \001(\010\0328\n\nShellEntry\022\013\n\003key\030\001 \001(" +
-      "\005\022\031\n\005value\030\002 \001(\0132\n.TaskShell:\0028\001\"u\n\006S_Us" +
-      "er\022\016\n\006userId\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022" +
-      "\017\n\007taskIds\030\003 \003(\005\022\023\n\013doingTaskId\030\004 \001(\005\022\016\n" +
-      "\006online\030\005 \001(\010\022\020\n\010addTasks\030\006 \003(\005\"\241\001\n\010Kafk" +
-      "aMsg\022\016\n\006userId\030\001 \001(\005\022\016\n\006taskId\030\002 \001(\005\022\017\n\007" +
-      "shellId\030\003 \001(\005\022\n\n\002ip\030\004 \001(\t\022\014\n\004port\030\005 \001(\t\022" +
-      "\020\n\010costTime\030\006 \001(\003\022\022\n\nrequestMsg\030\007 \001(\t\022\023\n" +
-      "\013responseMsg\030\010 \001(\t\022\017\n\007success\030\t \001(\010\"\231\001\n\013" +
-      "TaskConduct\022\016\n\006taskId\030\001 \001(\005\022\017\n\007userIds\030\002" +
-      " \003(\005\0224\n\014shellMapping\030\003 \003(\0132\036.TaskConduct" +
-      ".ShellMappingEntry\0323\n\021ShellMappingEntry\022" +
-      "\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001\"*\n\013Respo" +
-      "nseMsg\022\016\n\006status\030\001 \001(\010\022\013\n\003msg\030\002 \001(\t\"$\n\014P" +
-      "rodAddTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"$\n\014Con" +
-      "sGetTasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"#\n\021C2S_P" +
-      "rodStartTask\022\016\n\006taskId\030\001 \001(\005\".\n\021S2C_Prod" +
-      "StartTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"&\n\017" +
-      "C2S_prodAddTask\022\023\n\004task\030\001 \001(\0132\005.Task\",\n\017" +
-      "S2C_prodAddTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseM" +
-      "sg\"\"\n\020C2S_prod_EndTask\022\016\n\006taskId\030\001 \001(\005\"-" +
-      "\n\020S2C_prod_EndTask\022\031\n\003msg\030\001 \001(\0132\014.Respon" +
-      "seMsg\"$\n\022C2S_prod_GetResult\022\016\n\006taskId\030\001 " +
-      "\001(\005\"P\n\022S2C_prod_GetResult\022\031\n\003msg\030\001 \001(\0132\014" +
-      ".ResponseMsg\022\037\n\ntaskResult\030\002 \001(\0132\013.TaskR" +
-      "esult\"\036\n\014C2S_Get_Task\022\016\n\006taskId\030\001 \001(\005\">\n" +
-      "\014S2C_Get_Task\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg" +
-      "\022\023\n\004task\030\002 \001(\0132\005.Task\")\n\027C2S_prod_GetAll" +
-      "AddTasks\022\016\n\006userId\030\001 \001(\005\"R\n\027S2C_prod_Get" +
-      "AllAddTasks\022\034\n\005tasks\030\001 \001(\0132\r.ProdAddTask" +
-      "s\022\031\n\003msg\030\002 \001(\0132\014.ResponseMsg\".\n\021S2C_Cons" +
-      "_TakeTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"3\n\021" +
-      "C2S_Cons_TakeTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006use" +
-      "rId\030\002 \001(\005\"/\n\022S2C_Cons_StartTask\022\031\n\003msg\030\001" +
-      " \001(\0132\014.ResponseMsg\"4\n\022C2S_Cons_StartTask" +
-      "\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_" +
-      "Cons_EndTask\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"" +
-      "2\n\020C2S_Cons_EndTask\022\016\n\006taskId\030\001 \001(\005\022\016\n\006u" +
-      "serId\030\002 \001(\005\"-\n\020S2C_Cons_DelTask\022\031\n\003msg\030\001" +
-      " \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons_DelTask\022\016" +
-      "\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"O\n\024S2C_Co" +
-      "ns_AllGetTasks\022\031\n\003msg\030\001 \001(\0132\014.ResponseMs" +
-      "g\022\034\n\005tasks\030\002 \001(\0132\r.ConsGetTasks\"&\n\024C2S_C" +
-      "ons_AllGetTasks\022\016\n\006userId\030\002 \001(\005\"2\n\025S2C_E" +
-      "s_DeleteToTestId\022\031\n\003msg\030\001 \001(\0132\014.Response" +
-      "Msg*\333\006\n\005Types\022\010\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r" +
-      "\n\tS2C_LOGIN\020\002\022\020\n\014C2S_REGISTER\020\003\022\020\n\014S2C_R" +
-      "EGISTER\020\004\022\021\n\rC2S_UPDATEPWD\020\005\022\021\n\rS2C_UPDA" +
-      "TEPWD\020\006\022\023\n\017C2S_UPDATEEMAIL\020\007\022\023\n\017S2C_UPDA" +
-      "TEEMAIL\020\010\022\021\n\rC2S_UPDATEALL\020\t\022\021\n\rS2C_UPDA" +
-      "TEALL\020\n\022\021\n\rC2S_UPDATETEL\020\013\022\021\n\rS2C_UPDATE" +
-      "TEL\020\014\022\023\n\017C2S_BINDMAILBOX\020\r\022\023\n\017S2C_BINDMA" +
-      "ILBOX\020\016\022\024\n\020C2S_CHECKMAILBOX\020\017\022\024\n\020S2C_CHE" +
-      "CKMAILBOX\020\020\022\026\n\022S2C_CONS_TAKE_TASK\020\021\022\026\n\022C" +
-      "2S_CONS_TAKE_TASK\020\022\022\027\n\023S2C_CONS_START_TA" +
-      "SK\020\023\022\027\n\023C2S_CONS_START_TASK\020\024\022\025\n\021S2C_CON" +
-      "S_END_TASK\020\025\022\025\n\021C2S_CONS_END_TASK\020\026\022\024\n\020S" +
-      "2C_CNS_DEL_TASK\020\027\022\024\n\020C2S_CNS_DEL_TASK\020\030\022" +
-      "\032\n\026S2C_CONS_ALL_GET_TASKS\020\031\022\032\n\026C2S_CONS_" +
-      "ALL_GET_TASKS\020\032\022\027\n\023S2C_PROD_START_TASK\020#" +
-      "\022\027\n\023C2S_PROD_START_TASK\020$\022\025\n\021S2C_PROD_AD" +
-      "D_TASK\020%\022\025\n\021C2S_PROD_ADD_TASK\020&\022\025\n\021S2C_P" +
-      "ROD_END_TASK\020\'\022\025\n\021C2S_PROD_END_TASK\020(\022\026\n" +
-      "\022S2C_PROD_GETRESULT\020)\022\026\n\022C2S_PROD_GETRES" +
-      "ULT\020*\022\020\n\014S2C_GET_TASK\020+\022\020\n\014C2S_GET_TASK\020" +
-      ",\022\036\n\032S2C_PROD_GET_ALL_ADD_TASKS\020-\022\036\n\032C2S" +
-      "_PROD_GET_ALL_ADD_TASKS\020.*3\n\013TaskProtocl" +
-      "\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002\022\007\n\003UDP\020\003B\020" +
-      "\n\003ptoB\tTestProtob\006proto3"
+      "\030\005 \001(\003\"?\n\016TaskResultList\022\026\n\016taskResultLi" +
+      "st\030\001 \001(\t\022\025\n\rtaskResultNum\030\002 \001(\005\"\207\002\n\004Task" +
+      "\022\016\n\006taskId\030\001 \001(\005\022\020\n\010taskName\030\002 \001(\t\022\016\n\006us" +
+      "erId\030\003 \001(\005\022!\n\013taskProtocl\030\004 \001(\0162\014.TaskPr" +
+      "otocl\022\037\n\005shell\030\005 \003(\0132\020.Task.ShellEntry\022\020" +
+      "\n\010taskCost\030\006 \001(\005\022\020\n\010taskCons\030\007 \003(\005\022\033\n\006re" +
+      "sult\030\010 \003(\0132\013.TaskResult\022\016\n\006status\030\t \001(\010\032" +
+      "8\n\nShellEntry\022\013\n\003key\030\001 \001(\005\022\031\n\005value\030\002 \001(" +
+      "\0132\n.TaskShell:\0028\001\"u\n\006S_User\022\016\n\006userId\030\001 " +
+      "\001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\017\n\007taskIds\030\003 \003(" +
+      "\005\022\023\n\013doingTaskId\030\004 \001(\005\022\016\n\006online\030\005 \001(\010\022\020" +
+      "\n\010addTasks\030\006 \003(\005\"\241\001\n\010KafkaMsg\022\016\n\006userId\030" +
+      "\001 \001(\005\022\016\n\006taskId\030\002 \001(\005\022\017\n\007shellId\030\003 \001(\005\022\n" +
+      "\n\002ip\030\004 \001(\t\022\014\n\004port\030\005 \001(\t\022\020\n\010costTime\030\006 \001" +
+      "(\003\022\022\n\nrequestMsg\030\007 \001(\t\022\023\n\013responseMsg\030\010 " +
+      "\001(\t\022\017\n\007success\030\t \001(\010\"\231\001\n\013TaskConduct\022\016\n\006" +
+      "taskId\030\001 \001(\005\022\017\n\007userIds\030\002 \003(\005\0224\n\014shellMa" +
+      "pping\030\003 \003(\0132\036.TaskConduct.ShellMappingEn" +
+      "try\0323\n\021ShellMappingEntry\022\013\n\003key\030\001 \001(\005\022\r\n" +
+      "\005value\030\002 \001(\005:\0028\001\"*\n\013ResponseMsg\022\016\n\006statu" +
+      "s\030\001 \001(\010\022\013\n\003msg\030\002 \001(\t\"$\n\014ProdAddTasks\022\024\n\005" +
+      "tasks\030\001 \003(\0132\005.Task\"$\n\014ConsGetTasks\022\024\n\005ta" +
+      "sks\030\001 \003(\0132\005.Task\"#\n\021C2S_ProdStartTask\022\016\n" +
+      "\006taskId\030\001 \001(\005\".\n\021S2C_ProdStartTask\022\031\n\003ms" +
+      "g\030\001 \001(\0132\014.ResponseMsg\"&\n\017C2S_prodAddTask" +
+      "\022\023\n\004task\030\001 \001(\0132\005.Task\",\n\017S2C_prodAddTask" +
+      "\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"\"\n\020C2S_prod_" +
+      "EndTask\022\016\n\006taskId\030\001 \001(\005\"-\n\020S2C_prod_EndT" +
+      "ask\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\"$\n\022C2S_pr" +
+      "od_GetResult\022\016\n\006taskId\030\001 \001(\005\"P\n\022S2C_prod" +
+      "_GetResult\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\022\037\n" +
+      "\ntaskResult\030\002 \001(\0132\013.TaskResult\"\036\n\014C2S_Ge" +
+      "t_Task\022\016\n\006taskId\030\001 \001(\005\">\n\014S2C_Get_Task\022\031" +
+      "\n\003msg\030\001 \001(\0132\014.ResponseMsg\022\023\n\004task\030\002 \001(\0132" +
+      "\005.Task\")\n\027C2S_prod_GetAllAddTasks\022\016\n\006use" +
+      "rId\030\001 \001(\005\"R\n\027S2C_prod_GetAllAddTasks\022\034\n\005" +
+      "tasks\030\001 \001(\0132\r.ProdAddTasks\022\031\n\003msg\030\002 \001(\0132" +
+      "\014.ResponseMsg\".\n\021S2C_Cons_TakeTask\022\031\n\003ms" +
+      "g\030\001 \001(\0132\014.ResponseMsg\"3\n\021C2S_Cons_TakeTa" +
+      "sk\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"/\n\022S2" +
+      "C_Cons_StartTask\022\031\n\003msg\030\001 \001(\0132\014.Response" +
+      "Msg\"4\n\022C2S_Cons_StartTask\022\016\n\006taskId\030\001 \001(" +
+      "\005\022\016\n\006userId\030\002 \001(\005\"-\n\020S2C_Cons_EndTask\022\031\n" +
+      "\003msg\030\001 \001(\0132\014.ResponseMsg\"2\n\020C2S_Cons_End" +
+      "Task\022\016\n\006taskId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"-\n\020" +
+      "S2C_Cons_DelTask\022\031\n\003msg\030\001 \001(\0132\014.Response" +
+      "Msg\"2\n\020C2S_Cons_DelTask\022\016\n\006taskId\030\001 \001(\005\022" +
+      "\016\n\006userId\030\002 \001(\005\"O\n\024S2C_Cons_AllGetTasks\022" +
+      "\031\n\003msg\030\001 \001(\0132\014.ResponseMsg\022\034\n\005tasks\030\002 \001(" +
+      "\0132\r.ConsGetTasks\"&\n\024C2S_Cons_AllGetTasks" +
+      "\022\016\n\006userId\030\002 \001(\005\"2\n\025S2C_Es_DeleteToTestI" +
+      "d\022\031\n\003msg\030\001 \001(\0132\014.ResponseMsg*\365\006\n\005Types\022\010" +
+      "\n\004USER\020\000\022\r\n\tC2S_LOGIN\020\001\022\r\n\tS2C_LOGIN\020\002\022\020" +
+      "\n\014C2S_REGISTER\020\003\022\020\n\014S2C_REGISTER\020\004\022\021\n\rC2" +
+      "S_UPDATEPWD\020\005\022\021\n\rS2C_UPDATEPWD\020\006\022\023\n\017C2S_" +
+      "UPDATEEMAIL\020\007\022\023\n\017S2C_UPDATEEMAIL\020\010\022\021\n\rC2" +
+      "S_UPDATEALL\020\t\022\021\n\rS2C_UPDATEALL\020\n\022\021\n\rC2S_" +
+      "UPDATETEL\020\013\022\021\n\rS2C_UPDATETEL\020\014\022\023\n\017C2S_BI" +
+      "NDMAILBOX\020\r\022\023\n\017S2C_BINDMAILBOX\020\016\022\024\n\020C2S_" +
+      "CHECKMAILBOX\020\017\022\024\n\020S2C_CHECKMAILBOX\020\020\022\026\n\022" +
+      "S2C_CONS_TAKE_TASK\020\021\022\026\n\022C2S_CONS_TAKE_TA" +
+      "SK\020\022\022\027\n\023S2C_CONS_START_TASK\020\023\022\027\n\023C2S_CON" +
+      "S_START_TASK\020\024\022\025\n\021S2C_CONS_END_TASK\020\025\022\025\n" +
+      "\021C2S_CONS_END_TASK\020\026\022\024\n\020S2C_CNS_DEL_TASK" +
+      "\020\027\022\024\n\020C2S_CNS_DEL_TASK\020\030\022\032\n\026S2C_CONS_ALL" +
+      "_GET_TASKS\020\031\022\032\n\026C2S_CONS_ALL_GET_TASKS\020\032" +
+      "\022\027\n\023S2C_PROD_START_TASK\020#\022\027\n\023C2S_PROD_ST" +
+      "ART_TASK\020$\022\025\n\021S2C_PROD_ADD_TASK\020%\022\025\n\021C2S" +
+      "_PROD_ADD_TASK\020&\022\025\n\021S2C_PROD_END_TASK\020\'\022" +
+      "\025\n\021C2S_PROD_END_TASK\020(\022\026\n\022S2C_PROD_GETRE" +
+      "SULT\020)\022\026\n\022C2S_PROD_GETRESULT\020*\022\020\n\014S2C_GE" +
+      "T_TASK\020+\022\020\n\014C2S_GET_TASK\020,\022\036\n\032S2C_PROD_G" +
+      "ET_ALL_ADD_TASKS\020-\022\036\n\032C2S_PROD_GET_ALL_A" +
+      "DD_TASKS\020.\022\030\n\024ELASTICSEARCH_SEARCH\020/*3\n\013" +
+      "TaskProtocl\022\010\n\004NONE\020\000\022\010\n\004HTTP\020\001\022\007\n\003TCP\020\002" +
+      "\022\007\n\003UDP\020\003B\020\n\003ptoB\tTestProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -40174,8 +41051,14 @@ pto.TestProto.TaskShell defaultValue);
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TaskResult_descriptor,
         new java.lang.String[] { "TaskId", "ResultJson", "ResultNum", "FailNumber", "SuccessNumber", });
-    internal_static_Task_descriptor =
+    internal_static_TaskResultList_descriptor =
       getDescriptor().getMessageTypes().get(20);
+    internal_static_TaskResultList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TaskResultList_descriptor,
+        new java.lang.String[] { "TaskResultList", "TaskResultNum", });
+    internal_static_Task_descriptor =
+      getDescriptor().getMessageTypes().get(21);
     internal_static_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Task_descriptor,
@@ -40187,19 +41070,19 @@ pto.TestProto.TaskShell defaultValue);
         internal_static_Task_ShellEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_S_User_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_S_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S_User_descriptor,
         new java.lang.String[] { "UserId", "User", "TaskIds", "DoingTaskId", "Online", "AddTasks", });
     internal_static_KafkaMsg_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_KafkaMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KafkaMsg_descriptor,
         new java.lang.String[] { "UserId", "TaskId", "ShellId", "Ip", "Port", "CostTime", "RequestMsg", "ResponseMsg", "Success", });
     internal_static_TaskConduct_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_TaskConduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TaskConduct_descriptor,
@@ -40211,157 +41094,157 @@ pto.TestProto.TaskShell defaultValue);
         internal_static_TaskConduct_ShellMappingEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_ResponseMsg_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_ResponseMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResponseMsg_descriptor,
         new java.lang.String[] { "Status", "Msg", });
     internal_static_ProdAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_ProdAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProdAddTasks_descriptor,
         new java.lang.String[] { "Tasks", });
     internal_static_ConsGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_ConsGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ConsGetTasks_descriptor,
         new java.lang.String[] { "Tasks", });
     internal_static_C2S_ProdStartTask_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_C2S_ProdStartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_ProdStartTask_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_ProdStartTask_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_S2C_ProdStartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_ProdStartTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prodAddTask_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_C2S_prodAddTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prodAddTask_descriptor,
         new java.lang.String[] { "Task", });
     internal_static_S2C_prodAddTask_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_S2C_prodAddTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prodAddTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prod_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_C2S_prod_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_EndTask_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_prod_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_S2C_prod_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_EndTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_prod_GetResult_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_C2S_prod_GetResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_GetResult_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_prod_GetResult_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_S2C_prod_GetResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_GetResult_descriptor,
         new java.lang.String[] { "Msg", "TaskResult", });
     internal_static_C2S_Get_Task_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_C2S_Get_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Get_Task_descriptor,
         new java.lang.String[] { "TaskId", });
     internal_static_S2C_Get_Task_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_S2C_Get_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Get_Task_descriptor,
         new java.lang.String[] { "Msg", "Task", });
     internal_static_C2S_prod_GetAllAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_C2S_prod_GetAllAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_prod_GetAllAddTasks_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_S2C_prod_GetAllAddTasks_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_S2C_prod_GetAllAddTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_prod_GetAllAddTasks_descriptor,
         new java.lang.String[] { "Tasks", "Msg", });
     internal_static_S2C_Cons_TakeTask_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_S2C_Cons_TakeTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_TakeTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_TakeTask_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_C2S_Cons_TakeTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_TakeTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_StartTask_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_S2C_Cons_StartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_StartTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_StartTask_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_C2S_Cons_StartTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_StartTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_S2C_Cons_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_EndTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_EndTask_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_C2S_Cons_EndTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_EndTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_DelTask_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_S2C_Cons_DelTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_DelTask_descriptor,
         new java.lang.String[] { "Msg", });
     internal_static_C2S_Cons_DelTask_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_C2S_Cons_DelTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_DelTask_descriptor,
         new java.lang.String[] { "TaskId", "UserId", });
     internal_static_S2C_Cons_AllGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_S2C_Cons_AllGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Cons_AllGetTasks_descriptor,
         new java.lang.String[] { "Msg", "Tasks", });
     internal_static_C2S_Cons_AllGetTasks_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_C2S_Cons_AllGetTasks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Cons_AllGetTasks_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_S2C_Es_DeleteToTestId_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_S2C_Es_DeleteToTestId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Es_DeleteToTestId_descriptor,
