@@ -152,6 +152,10 @@ public enum OptionDetails {
     CONTROL_ALL_END("重新分配所有正在进行的任务","结束","重新分配所有正在进行的任务结束"),
     CONTROL_ONE_START("重新分配一个正在进行的任务","开始","开始重新分配一个正在进行的任务"),
     CONTROL_ONE_END("重新分配一个正在进行的任务","成功","重新分配一个正在进行的任务结束"),
+
+    //es
+    ELASTICSEARCH_SEARCH("es数据搜索","失败","可能是无此映射、es服务器异常等"),ELASTICSEARCH_CLOSE("es数据搜索","失败","关闭es连接失败"),
+    ELASTICSEARCH_JSON_FORMAT("json解析","失败","json解析失败")
     ;
     private String type;
     private String status;
