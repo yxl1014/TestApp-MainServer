@@ -22,8 +22,6 @@ public class LoadToMysql {
 
     private final static Logger logger = LogUtil.getLogger(LoadToMysql.class);
 
-    @Autowired
-    private LruUtil lruUtil;
 
     @Autowired
     private TaskMapUtil taskMap;
@@ -39,7 +37,6 @@ public class LoadToMysql {
 
     @Scheduled(cron = "* 0/15 * * * ?")
     public void execute(){
-
         logger.info(LogUtil.makeOptionDetails(LogMsg.SCHEDULED, OptionDetails.SCHEDULED_EXECUTE_START));
         Map<Integer, TestProto.Task.Builder> taskMaps = taskMap.cloneTaskMaps();
         for (Map.Entry<Integer,TestProto.Task.Builder> entry : taskMaps.entrySet()){
