@@ -1,6 +1,4 @@
-package main.elasticsearch.config;
-
-import main.elasticsearch.config.contextBean.EsQueryUtil;
+package main.elasticsearch.config.contextBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
