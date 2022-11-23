@@ -43,8 +43,8 @@ public class ConsumerController {
             TestProto.ResponseMsg.Builder ResponseMsg = TestProto.ResponseMsg.newBuilder();
             ResponseMsg.setMsg(OptionDetails.ACCESS_DATA_INTERFACE_NULL.getMsg());
             ResponseMsg.setStatus(false);
-            TestProto.Task task=null;
-            result.setTask(task);
+/*            TestProto.Task task=null;
+            result.setTask(task);*/
             result.setMsg(ResponseMsg);
             byte[] bytes = result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_GET_TASK);
@@ -143,10 +143,10 @@ public class ConsumerController {
             logger.info(LogUtil.makeOptionDetails(LogMsg.ACCESS_DATA_INTERFACE  , OptionDetails.ACCESS_DATA_INTERFACE_NULL));
             TestProto.S2C_Cons_AllGetTasks.Builder result = TestProto.S2C_Cons_AllGetTasks.newBuilder();
             TestProto.ResponseMsg.Builder ResponseMsg = TestProto.ResponseMsg.newBuilder();
-            TestProto.ConsGetTasks consGetTasks = null;
+/*            TestProto.ConsGetTasks consGetTasks = null;*/
             ResponseMsg.setMsg(OptionDetails.ACCESS_DATA_INTERFACE_NULL.getMsg());
             ResponseMsg.setStatus(false);
-            result.setTasks(consGetTasks);
+/*            result.setTasks(consGetTasks);*/
             result.setMsg(ResponseMsg);
             byte[] bytes = result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes, bytes.length, TestProto.Types.S2C_CONS_ALL_GET_TASKS);
