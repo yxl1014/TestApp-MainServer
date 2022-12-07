@@ -37,7 +37,7 @@ public class LoadToMysql {
     @Autowired
     private PublicContextMapper publicContextMapper;
 
-    @Scheduled(cron = "* 0/15 * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void execute(){
 
         logger.info(LogUtil.makeOptionDetails(LogMsg.SCHEDULED, OptionDetails.SCHEDULED_EXECUTE_START));

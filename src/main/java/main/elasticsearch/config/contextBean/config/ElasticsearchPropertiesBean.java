@@ -1,4 +1,5 @@
 package main.elasticsearch.config.contextBean.config;
+
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

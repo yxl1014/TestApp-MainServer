@@ -53,7 +53,7 @@ public class TaskScheduled {
         logger.info(LogUtil.makeScheduledLog(LogMsg.CONTROL, OptionDetails.CONTROL_ALL_END));
     }
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 5000)
+    @Scheduled(initialDelay = 10000, fixedDelay = 30000)
     public void test() {
         logger.info("脚本调度器测试---当前时间的是：" + new Date(System.currentTimeMillis()));
     }
