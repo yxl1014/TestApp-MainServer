@@ -41,11 +41,11 @@ public class LruUtil<T> {
             length = 0;
         }
 
-        void add(Node teamNode)//从尾巴插入
+        void add(Node tempNode)//从尾巴插入
         {
-            tail.next = teamNode;
-            teamNode.pre = tail;
-            tail = teamNode;
+            tail.next = tempNode;
+            tempNode.pre = tail;
+            tail = tempNode;
             length++;
         }
 
