@@ -29,4 +29,5 @@ public class KafkaPropertiesBean {
 
     @Value("${spring.kafka.consumer.value-deserializer}")
     private String value_deserializer;
+
 }

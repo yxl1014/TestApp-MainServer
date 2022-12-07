@@ -61,7 +61,6 @@ enum Types{
   ELASTICSEARCH_SEARCH = 47;
 
 
-
 }
 
 //--------------------LoginServer--------------------
@@ -189,6 +188,7 @@ message TaskShell{
   string respFind = 9;                //先行条件获取关键字
   int64 startTime = 10;               //开始时间
   int64 intervalTime = 11;            //间隔时间
+  int32  shellId = 12;                //shellID
 }
 
 message TaskResult{
@@ -384,3 +384,8 @@ message S2C_Es_DeleteToTestId
 
 
 //--------------------ClientServer--------------------
+message C_User{
+  int32 doingTaskId = 1;
+  repeated int32 getTasks = 2;
+  repeated int32 addTasks = 3;
+}

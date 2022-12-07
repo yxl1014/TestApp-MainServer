@@ -38,9 +38,9 @@ public class ConsumerServiceImpl implements ConsumerService {
             TestProto.ResponseMsg.Builder  ResponseMsg = TestProto.ResponseMsg.newBuilder();
             ResponseMsg.setStatus(false);
             ResponseMsg.setMsg(OptionDetails.PROD_Get_Task_FLOAT.getMsg());
-            TestProto.Task task = null;
+//            TestProto.Task task = null;
             S2C_result.setMsg(ResponseMsg);
-            S2C_result.setTask(task);
+//            S2C_result.setTask(task);
             byte[] bytes = S2C_result.buildPartial().toByteArray();
             return protocolUtil.encodeProtocol(bytes,bytes.length,TestProto.Types.S2C_GET_TASK);
         }
